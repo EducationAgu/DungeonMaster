@@ -22,42 +22,20 @@ import com.threed.jpct.util.MemoryHelper;
 public class MainActivity extends Activity {
 
     // Used to handle pause and resume...
-    protected static MainActivity master = null;
-
-    protected GLSurfaceView mGLView;
-    protected MyRenderer renderer = null;
-
     protected float xpos = -1;
     protected float ypos = -1;
 
     protected float touchTurn = 0;
     protected float touchTurnUp = 0;
 
+
+    protected CubeView mGLView;
+
     protected void onCreate(Bundle savedInstanceState) {
-
-        Logger.log("onCreate");
-
-        if (master != null) {
-            copy(master);
-        }
-
         super.onCreate(savedInstanceState);
-        mGLView = new GLSurfaceView(getApplication());
 
-        mGLView.setEGLConfigChooser(new GLSurfaceView.EGLConfigChooser() {
-            public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display) {
-                // Ensure that we get a 16bit framebuffer. Otherwise, we'll fall
-                // back to Pixelflinger on some device (read: Samsung I7500)
-                int[] attributes = new int[] { EGL10.EGL_DEPTH_SIZE, 16, EGL10.EGL_NONE };
-                EGLConfig[] configs = new EGLConfig[1];
-                int[] result = new int[1];
-                egl.eglChooseConfig(display, attributes, configs, 1, result);
-                return configs[0];
-            }
-        });
+        mGLView = new CubeView(this);
 
-        renderer = new MyRenderer();
-        mGLView.setRenderer(renderer);
         setContentView(mGLView);
     }
     @Override
@@ -76,18 +54,7 @@ public class MainActivity extends Activity {
     protected void onStop() {
         super.onStop();
     }
-    private void copy(Object src) {
-        try {
-            Logger.log("Copying data from master Activity!");
-            Field[] fs = src.getClass().getDeclaredFields();
-            for (Field f : fs) {
-                f.setAccessible(true);
-                f.set(this, f.get(src));
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+
     public boolean onTouchEvent(MotionEvent me) {
 
         if (me.getAction() == MotionEvent.ACTION_DOWN) {
