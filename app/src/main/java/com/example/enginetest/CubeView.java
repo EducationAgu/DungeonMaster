@@ -10,13 +10,13 @@ import javax.microedition.khronos.egl.EGLDisplay;
 
 public class CubeView extends GLSurfaceView {
 
-    private final GlRenderer renderer;
+    private final DiceRoller renderer;
 
     public CubeView(Context context) {
         super(context);
         initOpenGLView();
 
-        renderer = new GlRenderer((MainActivity) context);
+        renderer = new DiceRoller((MainActivity) context);
         setRenderer(renderer);
     }
 
@@ -24,7 +24,7 @@ public class CubeView extends GLSurfaceView {
         super(context, attrs);
         initOpenGLView();
 
-        renderer = new GlRenderer();
+        renderer = new DiceRoller((MainActivity) context);
         setRenderer(renderer);
     }
 

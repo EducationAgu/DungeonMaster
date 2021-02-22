@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
     protected float touchTurn = 0;
     protected float touchTurnUp = 0;
 
+    protected boolean isPressed = false;
 
     protected CubeView mGLView;
 
@@ -56,6 +57,10 @@ public class MainActivity extends Activity {
     }
 
     public boolean onTouchEvent(MotionEvent me) {
+
+        isPressed = me.getAction() == MotionEvent.ACTION_DOWN;
+
+        Logger.log("action " + me.getAction());
 
         if (me.getAction() == MotionEvent.ACTION_DOWN) {
             xpos = me.getX();
