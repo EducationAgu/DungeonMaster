@@ -19,6 +19,7 @@ import com.bulletphysics.dynamics.RigidBodyConstructionInfo;
 import com.bulletphysics.dynamics.constraintsolver.ConstraintSolver;
 import com.bulletphysics.dynamics.constraintsolver.SequentialImpulseConstraintSolver;
 import com.bulletphysics.linearmath.DefaultMotionState;
+import com.bulletphysics.linearmath.MatrixUtil;
 import com.bulletphysics.linearmath.MotionState;
 import com.bulletphysics.linearmath.Transform;
 import com.threed.jpct.Camera;
@@ -27,6 +28,7 @@ import com.threed.jpct.CollisionListener;
 import com.threed.jpct.FrameBuffer;
 import com.threed.jpct.Light;
 import com.threed.jpct.Logger;
+import com.threed.jpct.Matrix;
 import com.threed.jpct.Object3D;
 import com.threed.jpct.RGBColor;
 import com.threed.jpct.SimpleVector;
@@ -38,7 +40,6 @@ import java.util.Set;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-import javax.vecmath.Matrix3f;
 import javax.vecmath.Matrix4f;
 import javax.vecmath.Quat4f;
 import javax.vecmath.Vector3f;
@@ -56,7 +57,7 @@ public class DiceRoller implements GLSurfaceView.Renderer, CollisionListener {
     private final Transform DEFAULT_CUBE_TRANSFORM = new Transform(
             new Matrix4f(
                     new Quat4f(0,0,0,1),
-                    new Vector3f(0, 35, 0),
+                    new Vector3f(0, 0, 0),
                     1.0f));
     private Object3D cube = null;
     private RigidBody cubePhysics;
@@ -99,13 +100,7 @@ public class DiceRoller implements GLSurfaceView.Renderer, CollisionListener {
     public void onDrawFrame(GL10 gl) {
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
 
-        dynamicsWorld.updateAabbs();
-        move();
-        for (RigidBody body : cubesPhysics) {
-            Vector3f cubePosition = body.getWorldTransform(new Transform()).origin;
-            Logger.log("rigid body position is: " + cubePosition.x + " " + cubePosition.y + " " + cubePosition.z);
-//            cube.translate(cubePosition.x, cubePosition.y, cubePosition.z);
-        }
+        update();
 
         if (master.isPressed) {
             isStarted = true;
@@ -142,57 +137,29 @@ public class DiceRoller implements GLSurfaceView.Renderer, CollisionListener {
     private boolean isStarted = false;
 
     /*Метод отвечает за перемещение кубика (и объектов) из jPCT */
-    private void move () {
-        dynamicsWorld.stepSimulation(1.0f / 60.0f);
-        if (applyForce) {
-
-            for (RigidBody body : cubesPhysics) {
-                Transform cubeTransform = new Transform();
-                body.getMotionState().getWorldTransform(cubeTransform);
-                Vector3f controlBallLocation = cubeTransform.origin;
-                SimpleVector camera = world.getCamera().getPosition();
-                Vector3f cameraPosition = new Vector3f(camera.x, camera.y, camera.z);
-                Vector3f force = new Vector3f();
-                force.sub(cameraPosition, controlBallLocation);
-                body.activate(true);
-                body.applyCentralForce(force);
-            }
-
+    private void update() {
+        Transform cubePosition;
+        SimpleVector center = cube.getTransformedCenter();
+        Transform transformWas = new Transform(
+                new Matrix4f(
+                        new Quat4f(0,0, 0, 1),
+                        new Vector3f(center.x, center.z, center.y ),
+                        1.0f));
+        transformWas.setIdentity();
+        cubePosition = cubePhysics.getWorldTransform(transformWas);
+        if (isStarted) {
+            dynamicsWorld.stepSimulation(1.0f / 60000.0f);
+            setGraphicFromTransform(cubePosition);
+//            cube.translate(cubePosition.x, cubePosition.z, cubePosition.y);
         }
 
+// создать трансформ и класть в него текущую позицию куба. приходить будет разница
+        Logger.log("cube collision position is at: " + cubePosition.origin.x + " " + cubePosition.origin.y + " " + cubePosition.origin.z);
 
-        SimpleVector moveRes = new SimpleVector(0, 0, 0);
-        final SimpleVector t = cube.getZAxis();
+        center = cube.getTransformedCenter();
+        Logger.log("cube position is at: " + center.x + " " + center.y + " " + center.z);
 
-        if (isStarted && cube.getTransformedCenter().z < 50) {
-            t.scalarMul(SPEED);
-            moveRes.add(t);
-        }
 
-//        if( master.touchTurn != 0 ) {
-//            final SimpleVector t = cube.getZAxis();
-//            t.scalarMul(SPEED);
-//            moveRes.add(t);
-//
-//            cube.rotateY(master.touchTurn);
-//            master.touchTurn = 0;
-//        }
-//
-//        if( master.touchTurnUp != 0 ) {
-//            final SimpleVector t = cube.getZAxis();
-//            t.scalarMul(-SPEED);
-//            moveRes.add(t);
-//
-//            cube.rotateX(master.touchTurnUp);
-//            master.touchTurnUp = 0;
-//        }
-//        if( moveRes.length() > MAXSPEED ) {
-//            moveRes.makeEqualLength( new SimpleVector(0, 0, MAXSPEED) );
-//        }
-//
-//        moveRes = cube.checkForCollisionEllipsoid(moveRes, ellipsoid, 8);
-        cube.translate(moveRes);
-//        moveRes = new SimpleVector(0, 0, 0);
     }
 
 
@@ -203,7 +170,7 @@ public class DiceRoller implements GLSurfaceView.Renderer, CollisionListener {
 
         BroadphaseInterface broadphase = new DbvtBroadphase();
         dynamicsWorld = new DiscreteDynamicsWorld(collisionDispatcher, broadphase, solver, collisionConfiguration);
-        dynamicsWorld.setGravity(new Vector3f(0, -10, 0));
+        dynamicsWorld.setGravity(new Vector3f(0, -0.1f, 0));
 
         // Коллизия земли
         CollisionShape groundShape = new StaticPlaneShape(new Vector3f(0, 1, 0), 0.25f);
@@ -224,9 +191,17 @@ public class DiceRoller implements GLSurfaceView.Renderer, CollisionListener {
         ground = groundRigidBody;
         // Коллизия для кубика
         SimpleVector simpleVector = cube.getTransformedCenter();
-        Vector3f physicsVector = new Vector3f(simpleVector.x, simpleVector.y, simpleVector.z);
+        Vector3f physicsVector = new Vector3f(simpleVector.x, simpleVector.z, simpleVector.y);
         CollisionShape cubeShape = new BoxShape(physicsVector);
-        MotionState cubeMotionState = new DefaultMotionState(DEFAULT_CUBE_TRANSFORM);
+
+        Transform cubeTransform = new Transform(
+                new Matrix4f(
+                        new Quat4f(0,0,0,1),
+                        new Vector3f(simpleVector.x, simpleVector.z, simpleVector.y),
+                        1.0f));
+        cubeTransform = setTransformFromGraphic(cubeTransform);
+
+        MotionState cubeMotionState = new DefaultMotionState(cubeTransform);
         Vector3f cubeInertia = new Vector3f(0, 0, 0);
         cubeShape.calculateLocalInertia(2.5f, cubeInertia);
         RigidBodyConstructionInfo cubeConstructionInfo = new RigidBodyConstructionInfo(2.5f, cubeMotionState, cubeShape, cubeInertia);
@@ -256,7 +231,11 @@ public class DiceRoller implements GLSurfaceView.Renderer, CollisionListener {
 //        cube.setCollisionMode(Object3D.COLLISION_CHECK_SELF); // Коллизия jPCT движка. Потом может уберу совсем
 //        cube.addCollisionListener(this);
         world.addObject(cube);
-        cube.translate(0, -20, -20); // Позиция кубика
+        SimpleVector cubePos = cube.getTransformedCenter();
+
+        cube.translate(new SimpleVector(-cubePos.x, -cubePos.y, -cubePos.z)); // Позиция кубика
+
+        cubePos = cube.getTransformedCenter();
 
         // Устанавливаем источник света относительно кубика
         SimpleVector sv = new SimpleVector();
@@ -271,5 +250,34 @@ public class DiceRoller implements GLSurfaceView.Renderer, CollisionListener {
     private void setUpWorld() {
         beautyWorld();
         physicsWorld();
+    }
+
+    private Transform setTransformFromGraphic(Transform tran)
+    {
+        SimpleVector p = cube.getTransformedCenter();
+        tran.origin.set(p.x, -p.y, -p.z); // not sure if translation or position
+
+        Matrix matrixGfx = cube.getRotationMatrix();
+        //matrixGfx.rotateX((float)Math.PI);
+        MatrixUtil.getOpenGLSubMatrix(tran.basis, matrixGfx.getDump());
+        return tran;
+    }
+
+    private void setGraphicFromTransform(Transform tran)
+    {
+        SimpleVector pos = cube.getTransformedCenter();
+        cube.translate(tran.origin.x - pos.x,
+                (-tran.origin.y) - pos.y,
+                (-tran.origin.z) - pos.z);
+
+        float[] ma = new float[4];
+        float[] dump = cube.getRotationMatrix().getDump(); //new float[16];
+        Matrix matrixGfx = new Matrix();
+        MatrixUtil.getOpenGLSubMatrix(tran.basis, dump);
+
+        matrixGfx.setDump(dump);
+        matrixGfx.rotateX((float)Math.PI);
+
+        cube.setRotationMatrix(matrixGfx);
     }
 }
