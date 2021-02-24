@@ -38,6 +38,7 @@ import com.threed.jpct.World;
 import com.threed.jpct.util.MemoryHelper;
 
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 import java.util.Vector;
 
@@ -50,29 +51,30 @@ import javax.vecmath.Vector3f;
 public class DiceRoller implements GLSurfaceView.Renderer {
 
     private FrameBuffer fb = null;
-    private MainActivity master = null;
+    private MainActivity master;
 
     private World world = null;
     private DynamicsWorld dynamicsWorld = null;
 
     private Light sun = null;
 
-    private final Transform DEFAULT_CUBE_TRANSFORM = new Transform(
-            new Matrix4f(
-                    new Quat4f(0,0,0,1),
-                    new Vector3f(0, 0, 0),
-                    1.0f));
     private Object3D cube = null;
     private RigidBody cubePhysics;
-    private Set<RigidBody> cubesPhysics = new HashSet<RigidBody>();
 
     private RGBColor back = new RGBColor(50, 50, 100);
 
     private long time = System.currentTimeMillis();
     private int fps = 0;
 
+    private float[] rotations;
+
     public DiceRoller(MainActivity context) {
         master = context;
+        rotations = new float[3];
+        Random random = new Random();
+        rotations[0] = (float)random.nextInt(720_00) / (float)100 - 360;
+        rotations[1] = (float)random.nextInt(720_00) / (float)100 - 360;
+        rotations[2] = (float)random.nextInt(720_00) / (float)100 - 360;
     }
 
     @Override
@@ -145,7 +147,7 @@ public class DiceRoller implements GLSurfaceView.Renderer {
         // земля
         CollisionShape groundShape = new StaticPlaneShape(new Vector3f(0, 1, 0), 1f /* m */);//заметка: planeConstant влияет на скольжение стоящего предмета
         MotionState groundMotionState = new DefaultMotionState(new Transform(new Matrix4f(
-                new Quat4f(0, 0, 0, 1), //вротация
+                new Quat4f(0, 0,0, 1), //вротация
                 new Vector3f(0, 0, 0), 1.0f))); //позиция
         RigidBodyConstructionInfo groundBodyConstructionInfo = new RigidBodyConstructionInfo(0, groundMotionState, groundShape, new Vector3f(0, 0, 0));
         groundBodyConstructionInfo.restitution = 0.25f;
@@ -155,8 +157,8 @@ public class DiceRoller implements GLSurfaceView.Renderer {
         // Кубик
         Transform cubeTransform = new Transform(
                 new Matrix4f(
-                        new Quat4f(0, 140, 0, 1),
-                        new Vector3f(0, 60, 0),
+                        new Quat4f(rotations[0], rotations[1], rotations[2], 1),
+                        new Vector3f(0, 70, 0),
                         1.0f));
         MatrixUtil.getOpenGLSubMatrix(cubeTransform.basis, cube.getRotationMatrix().getDump());
         MotionState cubeMotionState = new DefaultMotionState(cubeTransform);
@@ -186,9 +188,9 @@ public class DiceRoller implements GLSurfaceView.Renderer {
         SimpleVector cubePos = cube.getTransformedCenter();
 
         cube.translate(new SimpleVector(-cubePos.x, -cubePos.y, -cubePos.z)); // Позиция кубика
-//        cube.rotateX(10);
-        cube.rotateY(140);
-//        cube.rotateZ(-10);
+        cube.rotateX(rotations[0]);
+        cube.rotateY(rotations[1]);
+        cube.rotateZ(rotations[2]);
 
         // Устанавливаем источник света относительно кубика
         SimpleVector sv = new SimpleVector();
