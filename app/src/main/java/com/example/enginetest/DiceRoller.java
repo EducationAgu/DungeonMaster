@@ -115,10 +115,7 @@ public class DiceRoller implements GLSurfaceView.Renderer {
         if (isStarted) {
             dynamicsWorld.stepSimulation(1.0f / 60.0f);
             cube = setGraphicFromTransform(cubePhysics.getCenterOfMassTransform(new Transform()), cube);
-        }
-
-        if (!(yA == 0 && xA == yA)) {
-//            cubePhysics.setInvInertiaDiagLocal(new Vector3f(xA, yA, 0));
+            ground = setGraphicFromTransform(groundPhysics.getCenterOfMassTransform(new Transform()), ground);
         }
     }
     private void physicsWorld() {
@@ -181,7 +178,7 @@ public class DiceRoller implements GLSurfaceView.Renderer {
         world.addObject(cube);
 
         //Земля
-        ground = Primitives.getPlane(2, 1000);
+        ground = Primitives.getPlane(2, 10);
         ground.setAdditionalColor( new RGBColor( 0, 0, 0 ) );
         ground.setOrigin(new SimpleVector(0, 0, -5));
         Transform t = groundPhysics.getCenterOfMassTransform(new Transform());
