@@ -10,7 +10,7 @@ import javax.microedition.khronos.egl.EGLDisplay;
 
 public class CubeView extends GLSurfaceView {
 
-    private final DiceRoller renderer;
+    public final DiceRoller renderer;
 
     public CubeView(Context context) {
         super(context);
@@ -29,10 +29,9 @@ public class CubeView extends GLSurfaceView {
     }
 
     private void initOpenGLView() {
-//        setEGLContextClientVersion(2);
         setPreserveEGLContextOnPause(true);
 
-        setEGLConfigChooser(new GLSurfaceView.EGLConfigChooser() {
+        setEGLConfigChooser(new EGLConfigChooser() {
             public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display) {
                 // Ensure that we get a 16bit framebuffer. Otherwise, we'll fall
                 // back to Pixelflinger on some device (read: Samsung I7500)
