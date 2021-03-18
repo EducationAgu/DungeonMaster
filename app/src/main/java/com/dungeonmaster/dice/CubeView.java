@@ -1,4 +1,4 @@
-package com.example.enginetest;
+package com.dungeonmaster.dice;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;

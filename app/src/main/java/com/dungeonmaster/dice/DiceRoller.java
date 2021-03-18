@@ -1,4 +1,4 @@
-package com.example.enginetest;
+package com.dungeonmaster.dice;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
@@ -21,6 +21,7 @@ import com.bulletphysics.linearmath.DefaultMotionState;
 import com.bulletphysics.linearmath.MatrixUtil;
 import com.bulletphysics.linearmath.MotionState;
 import com.bulletphysics.linearmath.Transform;
+import com.example.enginetest.R;
 import com.threed.jpct.Camera;
 import com.threed.jpct.FrameBuffer;
 import com.threed.jpct.Light;
