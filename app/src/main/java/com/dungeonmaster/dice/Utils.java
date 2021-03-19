@@ -1,4 +1,4 @@
-package com.example.enginetest;
+package com.dungeonmaster.dice;
 
 import com.threed.jpct.Loader;
 import com.threed.jpct.Matrix;

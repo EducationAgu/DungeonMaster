@@ -2,4 +2,7 @@
 <resources>
     <string name="hello">Wrorld Sucks</string>
     <string name="app_name">HelloWorld</string>
+    <string name="title_activity_main_menu">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

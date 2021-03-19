@@ -1,18 +1,15 @@
-package com.example.enginetest;
+package com.dungeonmaster.dice;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 
-import com.bulletphysics.collision.broadphase.AxisSweep3;
 import com.bulletphysics.collision.broadphase.BroadphaseInterface;
 import com.bulletphysics.collision.broadphase.DbvtBroadphase;
 import com.bulletphysics.collision.dispatch.CollisionConfiguration;
 import com.bulletphysics.collision.dispatch.CollisionDispatcher;
-import com.bulletphysics.collision.dispatch.CollisionObject;
 import com.bulletphysics.collision.dispatch.DefaultCollisionConfiguration;
 import com.bulletphysics.collision.shapes.BoxShape;
 import com.bulletphysics.collision.shapes.CollisionShape;
-import com.bulletphysics.collision.shapes.SphereShape;
 import com.bulletphysics.collision.shapes.StaticPlaneShape;
 import com.bulletphysics.dynamics.DiscreteDynamicsWorld;
 import com.bulletphysics.dynamics.DynamicsWorld;
@@ -24,23 +21,20 @@ import com.bulletphysics.linearmath.DefaultMotionState;
 import com.bulletphysics.linearmath.MatrixUtil;
 import com.bulletphysics.linearmath.MotionState;
 import com.bulletphysics.linearmath.Transform;
+import com.dungeonmaster.R;
 import com.threed.jpct.Camera;
-import com.threed.jpct.CollisionEvent;
-import com.threed.jpct.CollisionListener;
 import com.threed.jpct.FrameBuffer;
 import com.threed.jpct.Light;
 import com.threed.jpct.Logger;
 import com.threed.jpct.Matrix;
 import com.threed.jpct.Object3D;
+import com.threed.jpct.Primitives;
 import com.threed.jpct.RGBColor;
 import com.threed.jpct.SimpleVector;
 import com.threed.jpct.World;
 import com.threed.jpct.util.MemoryHelper;
 
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
-import java.util.Vector;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -53,20 +47,25 @@ public class DiceRoller implements GLSurfaceView.Renderer {
     private FrameBuffer fb = null;
     private MainActivity master;
 
-    private World world = null;
-    private DynamicsWorld dynamicsWorld = null;
+    private World world;
+    private DynamicsWorld dynamicsWorld;
 
-    private Light sun = null;
+    private Light sun;
 
-    private Object3D cube = null;
+    private Object3D cube;
+    private Object3D ground;
+
+    private RigidBody groundPhysics;
     private RigidBody cubePhysics;
 
-    private RGBColor back = new RGBColor(50, 50, 100);
+    private RGBColor back = new RGBColor(256, 256, 256);
 
     private long time = System.currentTimeMillis();
     private int fps = 0;
 
     private float[] rotations;
+    public float xA, yA;
+    public boolean isStarted = false;
 
     public DiceRoller(MainActivity context) {
         master = context;
@@ -92,21 +91,12 @@ public class DiceRoller implements GLSurfaceView.Renderer {
         fb = new FrameBuffer(gl, width, height);
 
         setUpWorld();
-
-        Camera cam = world.getCamera();
-        cam.moveCamera(Camera.CAMERA_MOVEOUT, 50);
-        cam.lookAt(cube.getTransformedCenter());
     }
-
     @Override
     public void onDrawFrame(GL10 gl) {
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
 
         update();
-
-        if (master.isPressed) {
-            isStarted = true;
-        }
 
         fb.clear(back);
         world.renderScene(fb);
@@ -121,20 +111,14 @@ public class DiceRoller implements GLSurfaceView.Renderer {
         fps++;
     }
 
-    private boolean isStarted = true;
 
     private void update() {
-
-        Transform cubePosition = cubePhysics.getWorldTransform(new Transform());
-        SimpleVector cp = cube.getTransformedCenter();
-        Logger.log("cube collision position before is at: " + cp.x + " " + cp.y + " " + cp.z);
-
         if (isStarted) {
             dynamicsWorld.stepSimulation(1.0f / 60.0f);
-            setGraphicFromTransform(cubePosition);
+            cube = setGraphicFromTransform(cubePhysics.getCenterOfMassTransform(new Transform()), cube);
+            ground = setGraphicFromTransform(groundPhysics.getCenterOfMassTransform(new Transform()), ground);
         }
     }
-
     private void physicsWorld() {
         // мир
         BroadphaseInterface broadphase = new DbvtBroadphase(); // аабб предпроверка колайдов
@@ -145,35 +129,37 @@ public class DiceRoller implements GLSurfaceView.Renderer {
         dynamicsWorld.setGravity(new Vector3f(0, -100 /* m/s2 */, 0));
 
         // земля
-        CollisionShape groundShape = new StaticPlaneShape(new Vector3f(0, 1, 0), 1f /* m */);//заметка: planeConstant влияет на скольжение стоящего предмета
+        CollisionShape groundShape = new StaticPlaneShape(new Vector3f(0, 1f, 0), 1f /* m */);//заметка: planeConstant влияет на скольжение стоящего предмета
         MotionState groundMotionState = new DefaultMotionState(new Transform(new Matrix4f(
                 new Quat4f(0, 0,0, 1), //вротация
                 new Vector3f(0, 0, 0), 1.0f))); //позиция
-        RigidBodyConstructionInfo groundBodyConstructionInfo = new RigidBodyConstructionInfo(0, groundMotionState, groundShape, new Vector3f(0, 0, 0));
-        groundBodyConstructionInfo.restitution = 0.25f;
-        RigidBody groundRigidBody = new RigidBody(groundBodyConstructionInfo);
-        dynamicsWorld.addRigidBody(groundRigidBody);
+        RigidBodyConstructionInfo groundBodyConstructionInfo =
+                new RigidBodyConstructionInfo(0, groundMotionState, groundShape, new Vector3f(0, 0, 0));
+        groundBodyConstructionInfo.restitution = 0.5f;
+        groundBodyConstructionInfo.angularDamping = 0.5f;
+        groundPhysics = new RigidBody(groundBodyConstructionInfo);
+        dynamicsWorld.addRigidBody(groundPhysics);
 
         // Кубик
         Transform cubeTransform = new Transform(
                 new Matrix4f(
+//                        new Quat4f(0, 0, 0, 1),
                         new Quat4f(rotations[0], rotations[1], rotations[2], 1),
                         new Vector3f(0, 70, 0),
                         1.0f));
-        MatrixUtil.getOpenGLSubMatrix(cubeTransform.basis, cube.getRotationMatrix().getDump());
+
         MotionState cubeMotionState = new DefaultMotionState(cubeTransform);
         Vector3f cubeInertia = new Vector3f(0, 0, 0);
-        CollisionShape cubeShape = new BoxShape(new Vector3f(14, 14, 14));
-        cubeShape.calculateLocalInertia(2.5f, cubeInertia);
-        RigidBodyConstructionInfo cubeConstructionInfo = new RigidBodyConstructionInfo(2.5f, cubeMotionState, cubeShape, cubeInertia);
+        CollisionShape cubeShape = new BoxShape(new Vector3f(15, 15, 15));
+        cubeShape.calculateLocalInertia(12.5f, cubeInertia);
+        RigidBodyConstructionInfo cubeConstructionInfo = new RigidBodyConstructionInfo(12.5f, cubeMotionState, cubeShape, cubeInertia);
         cubeConstructionInfo.restitution = 0.5f;
-        cubeConstructionInfo.angularDamping = 0.95f;
+        cubeConstructionInfo.angularDamping = 0.99f;
         cubePhysics = new RigidBody(cubeConstructionInfo);
-        cubePhysics.setActivationState(CollisionObject.DISABLE_DEACTIVATION);
         dynamicsWorld.addRigidBody(cubePhysics);
     }
 
-    private void beautyWorld() {
+    private void graphicsWorld() {
         // Игровой мир
         world = new World();
         world.setAmbientLight(20, 20, 20);
@@ -184,13 +170,22 @@ public class DiceRoller implements GLSurfaceView.Renderer {
 
         // Кубик
         cube = Utils.loadObjModel(master.getResources().openRawResource(R.raw.portal_cube), master.getResources().openRawResource(R.raw.model), 2); // загружаю .obj модельку и .mtl текстуру для кубика
-        world.addObject(cube);
-        SimpleVector cubePos = cube.getTransformedCenter();
 
-        cube.translate(new SimpleVector(-cubePos.x, -cubePos.y, -cubePos.z)); // Позиция кубика
-        cube.rotateX(rotations[0]);
-        cube.rotateY(rotations[1]);
-        cube.rotateZ(rotations[2]);
+        Camera cam = world.getCamera();
+        cam.moveCamera(Camera.CAMERA_MOVEOUT, 120);
+
+        cube = setGraphicFromTransform(cubePhysics.getCenterOfMassTransform(new Transform()), cube);
+
+        world.addObject(cube);
+
+        //Земля
+        ground = Primitives.getPlane(2, 10);
+        ground.setAdditionalColor( new RGBColor( 0, 0, 0 ) );
+        ground.setOrigin(new SimpleVector(0, 0, -5));
+        Transform t = groundPhysics.getCenterOfMassTransform(new Transform());
+        Logger.log(t.origin.x + " " +  t.origin.y + " " + t.origin.z);
+        ground = setGraphicFromTransform(groundPhysics.getCenterOfMassTransform(new Transform()), ground);
+        world.addObject(ground);
 
         // Устанавливаем источник света относительно кубика
         SimpleVector sv = new SimpleVector();
@@ -203,22 +198,23 @@ public class DiceRoller implements GLSurfaceView.Renderer {
     }
 
     private void setUpWorld() {
-        beautyWorld();
         physicsWorld();
+        graphicsWorld();
     }
 
-    private void setGraphicFromTransform(Transform tran) {
-        SimpleVector pos = cube.getTransformedCenter();
-        cube.translate(tran.origin.x - pos.x,
+    private Object3D setGraphicFromTransform(Transform tran, Object3D object) {
+        SimpleVector pos = object.getTransformedCenter();
+        object.translate(tran.origin.x - pos.x,
                 (-tran.origin.z) - pos.y,
-                ((-tran.origin.y) - pos.z) + 60);
+                (-tran.origin.y) - pos.z);
 
-        float[] dump = cube.getRotationMatrix().getDump(); //new float[16];
+        float[] dump = object.getRotationMatrix().getDump();
 
         Matrix matrixGfx = new Matrix();
         MatrixUtil.getOpenGLSubMatrix(tran.basis, dump);
         matrixGfx.setDump(dump);
 
-        cube.setRotationMatrix(matrixGfx);
+        object.setRotationMatrix(matrixGfx);
+        return object;
     }
 }
