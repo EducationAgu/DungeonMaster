@@ -1,4 +1,4 @@
-package com.dungeonmaster.dice;
+package com.dungeonmaster.instuments.dice;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
@@ -16,7 +16,7 @@ public class CubeView extends GLSurfaceView {
         super(context);
         initOpenGLView();
 
-        renderer = new DiceRoller((MainActivity) context);
+        renderer = new DiceRoller((CubeScene) context);
         setRenderer(renderer);
     }
 
@@ -24,7 +24,7 @@ public class CubeView extends GLSurfaceView {
         super(context, attrs);
         initOpenGLView();
 
-        renderer = new DiceRoller((MainActivity) context);
+        renderer = new DiceRoller((CubeScene) context);
         setRenderer(renderer);
     }
 

@@ -1,10 +1,10 @@
-package com.dungeonmaster.dice;
+package com.dungeonmaster.instuments.dice;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 
-public class MainActivity extends Activity {
+public class CubeScene extends Activity {
 
     protected float xpos = -1;
     protected float ypos = -1;

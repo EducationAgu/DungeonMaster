@@ -12,4 +12,9 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+
+    <!-- Тут идут наши цвета, всё что выше -стандартное. Можно поменять тоже -->
+    <color name="main_background_color">#97CADBE1</color>   <!-- фон -->
+    <color name="button_text_color">#000000</color>         <!-- цвет текста кнопок -->
+    <color name="button_color_background">#009688</color>   <!-- цвет фона кнопок -->
 </resources>
