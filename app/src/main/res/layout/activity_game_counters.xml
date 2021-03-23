@@ -12,9 +12,9 @@
         android:id="@+id/button2"
         android:layout_width="292dp"
         android:layout_height="62dp"
-        android:background="#009688"
+        android:background="@color/button_color_background"
         android:text="Типовой счетчик"
-        app:backgroundTint="#009688"
+        app:backgroundTint="@color/button_color_background"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="58dp"
         tools:layout_editor_absoluteY="376dp" />
@@ -23,9 +23,9 @@
         android:id="@+id/button"
         android:layout_width="292dp"
         android:layout_height="62dp"
-        android:background="#009688"
+        android:background="@color/button_color_background"
         android:text="Универсальный счетчик"
-        app:backgroundTint="#009688"
+        app:backgroundTint="@color/button_color_background"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="59dp"
         tools:layout_editor_absoluteY="266dp" />
