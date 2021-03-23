@@ -1,4 +1,4 @@
-package com.dungeonmaster.dice;
+package com.dungeonmaster.instuments.dice;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;

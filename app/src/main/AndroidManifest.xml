@@ -12,7 +12,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EngineTest">
+        android:theme="@style/Theme.DungeonTheme">
+        <activity android:name=".LoadingScreen"></activity>
+        <activity android:name=".instuments.counters.typical.Munchkin" />
+        <activity android:name=".instuments.counters.typical.MagicTheGathering" />
+        <activity android:name=".instuments.counters.TypicalCounters" />
+        <activity android:name=".instuments.counters.GameCounters" />
+        <activity android:name=".tablegames.available.AvailableGames" />
+        <activity android:name=".games.dnd.CreateCharacter" />
+        <activity android:name=".games.dnd.DnDHelper" />
+        <activity android:name=".instuments.Tools" />
+        <activity android:name=".tablegames.TableGames" />
         <activity android:name=".menu.MainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +30,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".dice.MainActivity"></activity>
+        <activity android:name=".instuments.dice.MainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
+
 </manifest>

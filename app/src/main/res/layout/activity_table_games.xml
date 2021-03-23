@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#97CADBE1"
+    android:clickable="true">
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="292dp"
+        android:layout_height="62dp"
+        android:background="#009688"
+        android:onClick="onClickMyGames"
+        android:text="Мои игры"
+        app:backgroundTint="#009688"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="376dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="292dp"
+        android:layout_height="62dp"
+        android:background="#009688"
+        android:onClick="onClickAvailableGames"
+        android:text="Существующие игры"
+        app:backgroundTint="#009688"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

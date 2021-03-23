@@ -1,4 +1,4 @@
-package com.dungeonmaster.dice;
+package com.dungeonmaster.instuments.dice;
 
 import android.app.Activity;
 import android.os.Bundle;
