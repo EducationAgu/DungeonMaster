@@ -12,7 +12,7 @@
         android:id="@+id/button2"
         android:layout_width="@dimen/main_menu_button_size_width"
         android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top"
+        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
         android:background="@color/button_color_background"
         android:onClick="onClickMyGames"
         android:text="Мои игры"

@@ -45,7 +45,7 @@ import javax.vecmath.Vector3f;
 public class DiceRoller implements GLSurfaceView.Renderer {
 
     private FrameBuffer fb = null;
-    private MainActivity master;
+    private CubeScene master;
 
     private World world;
     private DynamicsWorld dynamicsWorld;
@@ -67,7 +67,7 @@ public class DiceRoller implements GLSurfaceView.Renderer {
     public float xA, yA;
     public boolean isStarted = false;
 
-    public DiceRoller(MainActivity context) {
+    public DiceRoller(CubeScene context) {
         master = context;
         rotations = new float[3];
         Random random = new Random();

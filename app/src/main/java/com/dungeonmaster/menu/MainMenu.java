@@ -32,7 +32,7 @@ public class MainMenu extends Activity {
     }
 
     public void onClickFavoriteGame(View view) {
-        Intent tools = new Intent(this, DnDHelper.class);
-        startActivity(tools);
+        Intent dndHelper = new Intent(this, DnDHelper.class);
+        startActivity(dndHelper);
     }
 }

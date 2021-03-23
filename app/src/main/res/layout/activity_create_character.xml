@@ -9,9 +9,9 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="292dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="@dimen/main_menu_button_size_width"
+        android:layout_height="@dimen/main_menu_button_size_height"
+        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
         android:background="@color/button_color_background"
         android:text="Снаряжение"
         app:backgroundTint="@color/button_color_background"
@@ -22,9 +22,9 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="292dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="@dimen/main_menu_button_size_width"
+        android:layout_height="@dimen/main_menu_button_size_height"
+        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
         android:background="@color/button_color_background"
         android:text="Способности"
         app:backgroundTint="@color/button_color_background"
@@ -36,9 +36,9 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="292dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="@dimen/main_menu_button_size_width"
+        android:layout_height="@dimen/main_menu_button_size_height"
+        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
         android:background="@color/button_color_background"
         android:text="Характеристика"
         app:backgroundTint="@color/button_color_background"
@@ -49,8 +49,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="292dp"
-        android:layout_height="62dp"
+        android:layout_width="@dimen/main_menu_button_size_width"
+        android:layout_height="@dimen/main_menu_button_size_height"
         android:layout_marginTop="192dp"
         android:background="@color/button_color_background"
         android:text="Данные персонажа"

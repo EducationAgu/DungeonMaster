@@ -30,7 +30,7 @@
         <activity android:name=".instuments.Tools" />
         <activity android:name=".tablegames.TableGames" />
         <activity android:name=".menu.MainMenu"></activity>
-        <activity android:name=".instuments.dice.MainActivity">
+        <activity android:name=".instuments.dice.CubeScene">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

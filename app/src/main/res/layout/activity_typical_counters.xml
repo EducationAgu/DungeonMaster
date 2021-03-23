@@ -10,24 +10,29 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="292dp"
-        android:layout_height="62dp"
+        android:layout_width="@dimen/main_menu_button_size_width"
+        android:layout_height="@dimen/main_menu_button_size_height"
+        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
         android:background="@color/button_color_background"
         android:text="Манчкин"
         app:backgroundTint="@color/button_color_background"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="292dp"
-        android:layout_height="62dp"
+        android:layout_width="@dimen/main_menu_button_size_width"
+        android:layout_height="@dimen/main_menu_button_size_height"
+        android:layout_marginTop="280dp"
         android:background="@color/button_color_background"
         android:text="Magic The Gathering"
         app:backgroundTint="@color/button_color_background"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="266dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

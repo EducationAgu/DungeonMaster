@@ -10,9 +10,9 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="292dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="@dimen/main_menu_button_size_width"
+        android:layout_height="@dimen/main_menu_button_size_height"
+        android:layout_marginTop="@dimen/main_menu_button_margin_top_big"
         android:background="@color/button_color_background"
         android:onClick="onClickCreateCharacter"
         android:text="Создать персонажа"
@@ -24,8 +24,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="292dp"
-        android:layout_height="62dp"
+        android:layout_width="@dimen/main_menu_button_size_width"
+        android:layout_height="@dimen/main_menu_button_size_height"
         android:layout_marginTop="260dp"
         android:background="@color/button_color_background"
         android:onClick="onClickChooseCharacter"
