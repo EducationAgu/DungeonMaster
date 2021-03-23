@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#97CADBE1"
+    android:background="@color/main_background_color"
     android:clickable="true">
 
 
@@ -12,24 +12,28 @@
         android:id="@+id/button2"
         android:layout_width="292dp"
         android:layout_height="62dp"
-        android:background="#009688"
+        android:layout_marginTop="64dp"
+        android:background="@color/button_color_background"
         android:onClick="onClickCreateCharacter"
         android:text="Создать персонажа"
-        app:backgroundTint="#009688"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:backgroundTint="@color/button_color_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="292dp"
         android:layout_height="62dp"
-        android:background="#009688"
+        android:layout_marginTop="260dp"
+        android:background="@color/button_color_background"
         android:onClick="onClickChooseCharacter"
         android:text="Выбрать персонажа"
-        app:backgroundTint="#009688"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="266dp" />
+        app:backgroundTint="@color/button_color_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
