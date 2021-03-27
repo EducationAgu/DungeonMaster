@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.dungeonmaster.LoadingScreen;
+import com.serverconnection.Server;
+
+import java.io.IOException;
 
 public class DataSynchronizer implements Runnable {
 
@@ -13,6 +16,8 @@ public class DataSynchronizer implements Runnable {
         this.loadingScreen = loadingScreen;
     }
 
+    //Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес.
+    public String connectionString = "http://192.168.0.103:8080";
     @Override
     public void run() {
         try {
@@ -23,6 +28,15 @@ public class DataSynchronizer implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        Server server = new Server();
+        String result = "no connection";
+        try {
+             result = server.run(connectionString + "/note/2");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(result);
         Intent mainMenu = new Intent(loadingScreen, MainMenu.class);
         loadingScreen.startActivity(mainMenu);
     }
