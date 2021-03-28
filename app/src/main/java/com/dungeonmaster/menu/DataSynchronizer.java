@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.dungeonmaster.LoadingScreen;
-import com.serverconnection.Server;
+import com.serverconnection.Person;
 
-import java.io.IOException;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DataSynchronizer implements Runnable {
 
@@ -24,21 +27,12 @@ public class DataSynchronizer implements Runnable {
             // Пока просто останавливаем чтобы увидеть начальный экран с лого
             // TODO: реализовать подключение к базе, синхронизацию аккаунта в момент загрузки экрана
             Thread loadingThread = new Thread();
-            loadingThread.sleep(2000);
+            loadingThread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        Server server = new Server();
-        String result = "no connection";
-        try {
-             result = server.run(connectionString + "/note/2");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(result);
+        Person.connect();
         Intent mainMenu = new Intent(loadingScreen, MainMenu.class);
         loadingScreen.startActivity(mainMenu);
     }
-
 }
