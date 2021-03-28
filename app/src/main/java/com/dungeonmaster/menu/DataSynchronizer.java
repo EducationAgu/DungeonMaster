@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.dungeonmaster.LoadingScreen;
-import com.serverconnection.Person;
+import com.serverconnection.Server;
+import com.serverconnection.model.User;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import org.springframework.http.HttpMethod;
+
+import java.io.IOException;
 
 public class DataSynchronizer implements Runnable {
 
@@ -19,19 +19,20 @@ public class DataSynchronizer implements Runnable {
         this.loadingScreen = loadingScreen;
     }
 
-    //Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес.
-    public String connectionString = "http://192.168.0.103:8080";
     @Override
     public void run() {
         try {
-            // Пока просто останавливаем чтобы увидеть начальный экран с лого
-            // TODO: реализовать подключение к базе, синхронизацию аккаунта в момент загрузки экрана
-            Thread loadingThread = new Thread();
-            loadingThread.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            new Server(loadingScreen);
+        } catch (IOException e) {
+            // Если нет файла с данными пользователя то программа свалится сюда
+            // Нужно будет вызвать экран регистрации
+            try {
+                Server.register(new User("login","password","mail@gmail.com"), loadingScreen);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         }
-        Person.connect();
+
         Intent mainMenu = new Intent(loadingScreen, MainMenu.class);
         loadingScreen.startActivity(mainMenu);
     }
