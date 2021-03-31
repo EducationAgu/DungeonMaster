@@ -1,16 +1,16 @@
 package com.dungeonmaster.menu;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
+
 import com.dungeonmaster.R;
 
-
-public class Login extends Activity{
+public class Registration extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signin_window);
+        setContentView(R.layout.register_window);
     }
 
 }
