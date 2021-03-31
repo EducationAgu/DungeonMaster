@@ -21,19 +21,14 @@ public class DataSynchronizer implements Runnable {
 
     @Override
     public void run() {
+        Intent nextScreen = new Intent(loadingScreen, MainMenu.class);
         try {
             new Server(loadingScreen);
         } catch (IOException e) {
-            // Если нет файла с данными пользователя то программа свалится сюда
-            // Нужно будет вызвать экран регистрации
-            try {
-                Server.register(new User("login","password","mail@gmail.com"), loadingScreen);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
+            nextScreen = new Intent(loadingScreen, Login.class);
         }
 
-        Intent mainMenu = new Intent(loadingScreen, MainMenu.class);
-        loadingScreen.startActivity(mainMenu);
+
+        loadingScreen.startActivity(nextScreen);
     }
 }
