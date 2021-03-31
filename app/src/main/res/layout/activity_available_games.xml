@@ -22,9 +22,13 @@
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/main_background_color"
+
                 android:text="Игра1"
-                app:backgroundTint="@color/main_background_color" />
+
+                android:backgroundTint="@color/button_color_background"
+                android:textColor="@color/button_text_color">
+
+            </Button>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
