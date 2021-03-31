@@ -1,8 +1,6 @@
 package com.serverconnection;
 
-
 import android.app.Activity;
-import android.app.ActivityOptions;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -28,7 +26,6 @@ import java.util.Arrays;
 import java.util.Base64;
 
 import static android.content.Context.MODE_PRIVATE;
-
 
 public class Server {
 
