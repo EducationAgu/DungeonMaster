@@ -1,6 +1,4 @@
-package com.dungeonmaster.instuments;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.dungeonmaster.instruments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,8 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.dungeonmaster.R;
-import com.dungeonmaster.instuments.counters.GameCounters;
-import com.dungeonmaster.instuments.dice.CubeScene;
+import com.dungeonmaster.instruments.counters.GameCounters;
+import com.dungeonmaster.instruments.dice.CubeScene;
 
 public class Tools extends Activity {
 

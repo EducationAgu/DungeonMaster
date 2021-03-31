@@ -10,6 +10,7 @@ import com.serverconnection.model.User;
 import org.springframework.http.HttpMethod;
 
 import java.io.IOException;
+import com.dungeonmaster.R;
 
 public class DataSynchronizer implements Runnable {
 
@@ -30,5 +31,6 @@ public class DataSynchronizer implements Runnable {
 
 
         loadingScreen.startActivity(nextScreen);
+        loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

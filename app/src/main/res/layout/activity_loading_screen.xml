@@ -11,10 +11,10 @@
         android:layout_width="500dp"
         android:layout_height="700dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:weightSum="2pd">
+        android:weightSum="2">
 
         <ImageView
             android:id="@+id/imageView"
