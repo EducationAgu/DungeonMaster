@@ -1,6 +1,4 @@
-package com.dungeonmaster.instuments.counters.typical;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.dungeonmaster.instruments.counters.typical;
 
 import android.app.Activity;
 import android.os.Bundle;

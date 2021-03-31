@@ -20,17 +20,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".instuments.counters.typical.Munchkin" />
-        <activity android:name=".instuments.counters.typical.MagicTheGathering" />
-        <activity android:name=".instuments.counters.TypicalCounters" />
-        <activity android:name=".instuments.counters.GameCounters" />
+        <activity android:name=".instruments.counters.typical.Munchkin" />
+        <activity android:name=".instruments.counters.typical.MagicTheGathering" />
+        <activity android:name=".instruments.counters.TypicalCounters" />
+        <activity android:name=".instruments.counters.GameCounters" />
         <activity android:name=".tablegames.available.AvailableGames" />
         <activity android:name=".games.dnd.CreateCharacter" />
         <activity android:name=".games.dnd.DnDHelper" />
-        <activity android:name=".instuments.Tools" />
+        <activity android:name=".instruments.Tools" />
         <activity android:name=".tablegames.TableGames" />
-        <activity android:name=".menu.MainMenu"></activity>
-        <activity android:name=".instuments.dice.CubeScene">
+        <activity android:name=".menu.MainMenu"/>
+        <activity android:name=".menu.Registration"/>
+        <activity android:name=".menu.SignIn"/>
+        <activity android:name=".instruments.dice.CubeScene">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

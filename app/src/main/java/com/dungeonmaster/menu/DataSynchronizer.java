@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.dungeonmaster.LoadingScreen;
+import com.dungeonmaster.R;
 
 public class DataSynchronizer implements Runnable {
 
@@ -25,6 +26,7 @@ public class DataSynchronizer implements Runnable {
         }
         Intent mainMenu = new Intent(loadingScreen, MainMenu.class);
         loadingScreen.startActivity(mainMenu);
+        loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
 }
