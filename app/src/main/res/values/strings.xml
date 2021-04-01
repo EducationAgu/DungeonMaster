@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Wrorld Sucks</string>
-    <string name="app_name">Dungeon Master</string>
+    <string name="app_name">Dungeon<br></br>Master</string>
     <string name="title_activity_main_menu">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- Подключение к бэку, пока по ip и только локально-->
+    <string name="connection">http://192.168.0.103:8080</string>
 </resources>

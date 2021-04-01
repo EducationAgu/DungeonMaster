@@ -13,9 +13,11 @@
         android:layout_width="@dimen/main_menu_button_size_width"
         android:layout_height="@dimen/main_menu_button_size_height"
         android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
-        android:background="@color/button_color_background"
         android:text="Манчкин"
-        app:backgroundTint="@color/button_color_background"
+
+        android:backgroundTint="@color/button_color_background"
+        android:textColor="@color/button_text_color"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,9 +29,12 @@
         android:layout_width="@dimen/main_menu_button_size_width"
         android:layout_height="@dimen/main_menu_button_size_height"
         android:layout_marginTop="280dp"
-        android:background="@color/button_color_background"
+
+        android:backgroundTint="@color/button_color_background"
+        android:textColor="@color/button_text_color"
         android:text="Magic The Gathering"
-        app:backgroundTint="@color/button_color_background"
+
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

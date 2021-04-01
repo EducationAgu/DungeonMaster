@@ -1,8 +1,5 @@
 package com.dungeonmaster.menu;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +7,7 @@ import android.view.View;
 
 import com.dungeonmaster.R;
 import com.dungeonmaster.games.dnd.DnDHelper;
-import com.dungeonmaster.instuments.Tools;
+import com.dungeonmaster.instruments.Tools;
 import com.dungeonmaster.tablegames.TableGames;
 
 public class MainMenu extends Activity {

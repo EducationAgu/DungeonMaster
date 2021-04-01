@@ -14,7 +14,14 @@
     <color name="black_overlay">#66000000</color>
 
     <!-- Тут идут наши цвета, всё что выше -стандартное. Можно поменять тоже -->
-    <color name="main_background_color">#97CADBE1</color>   <!-- фон -->
+    <color name="main_background_color">#BAAAE368</color>   <!-- фон -->
+    <color name="app_name_color">#FFFFFF</color>   <!-- цвет названия приложения -->
+    
+    <color name="base_text_color">#000000</color>   <!-- основной цвет, используемый для текста -->
+    <color name="for_input_text_color">#B1B1B1</color>   <!-- цвет, используемый в input полях -->
+
     <color name="button_text_color">#000000</color>         <!-- цвет текста кнопок -->
-    <color name="button_color_background">#009688</color>   <!-- цвет фона кнопок -->
+    <color name="button_color_background">#ECF4E2</color>   <!-- цвет фона кнопок -->
+    <color name="button_color_background_in_stroke">#BA4E9100</color>    <!-- цвет обводки кнопок -->
+    <color name="ripple_effect">#FFEB3B</color> <!-- фон для кнопочной анимации -->
 </resources>

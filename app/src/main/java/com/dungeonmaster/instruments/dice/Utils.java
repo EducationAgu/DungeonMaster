@@ -1,4 +1,4 @@
-package com.dungeonmaster.instuments.dice;
+package com.dungeonmaster.instruments.dice;
 
 import com.threed.jpct.Loader;
 import com.threed.jpct.Matrix;
