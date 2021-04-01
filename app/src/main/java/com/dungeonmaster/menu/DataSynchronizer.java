@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.dungeonmaster.LoadingScreen;
+import com.error.NoConnection;
 import com.serverconnection.Server;
 import com.serverconnection.model.User;
 
@@ -25,12 +26,16 @@ public class DataSynchronizer implements Runnable {
         Intent nextScreen = new Intent(loadingScreen, MainMenu.class);
         try {
             new Server(loadingScreen);
+        } catch (NoConnection e) {
+            nextScreen = new Intent(loadingScreen, MainMenu.class);
+            loadingScreen.startActivity(nextScreen);
+            loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            return;
         } catch (IOException e) {
-            nextScreen = new Intent(loadingScreen, Login.class);
+            nextScreen = new Intent(loadingScreen, SignIn.class);
         }
-
-
         loadingScreen.startActivity(nextScreen);
-        loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        loadingScreen.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+
     }
 }

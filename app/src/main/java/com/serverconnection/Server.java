@@ -2,6 +2,7 @@ package com.serverconnection;
 
 import android.app.Activity;
 
+import com.error.NoConnection;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.serverconnection.model.Note;
@@ -14,6 +15,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedReader;
@@ -29,16 +31,16 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Server {
 
-    //Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес.
-    public static final String url = "http://192.168.0.103:8080";
-
+    // Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес.
+    // public static final String url = "http://192.168.0.103:8080";
+    public static final String url = "http://10.255.9.19:8080";
     private static String loginHeader = null;
 
     private final static String loginFileName = "loginData.lgn";
 
     private static Gson gson;
 
-    public Server(Activity activity) throws IOException {
+    public Server(Activity activity) throws NoConnection, IOException {
         //clearUsedData(activity);
         gson = new GsonBuilder()
                 .setPrettyPrinting()
@@ -47,7 +49,13 @@ public class Server {
         UserData userData = readUserData(activity);
 
         loginHeader = userData.encodedAuth;
-
+        if (loginHeader == null) {
+            String response = passRequest(HttpMethod.POST, "/hello", null);
+            if (!response.equals("true")){
+                throw new NoConnection(response);
+            }
+            throw new IOException();
+        }
         Note note = new Note("note name", "note content");
         String response = passRequest(HttpMethod.POST, "/note", note);
     }
@@ -93,8 +101,8 @@ public class Server {
         return passRequest(method, urlEnd, JSONbody);
     }
 
-    public static String passRequest(HttpMethod method, String urlEnd, String body) {
-        RestTemplate restTemplate = new RestTemplate();
+    public static String passRequest(HttpMethod method, String urlEnd, String body)  {
+        RestTemplate restTemplate = new RestTemplateWithTimeOut(1000);
         restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
 
         HttpHeaders headers = new HttpHeaders();
@@ -108,7 +116,7 @@ public class Server {
         ResponseEntity<String> response;
         try {
             response = restTemplate.exchange(url + urlEnd, method, entity, String.class);
-        } catch (Exception e) {
+        } catch (ResourceAccessException e) {
             return e.getMessage();
         }
 
