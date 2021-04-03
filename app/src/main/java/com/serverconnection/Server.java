@@ -1,17 +1,19 @@
 package com.serverconnection;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 
 import com.error.NoConnection;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.serverconnection.model.Note;
+import com.serverconnection.model.Querry;
 import com.serverconnection.model.User;
 import com.serverconnection.model.UserData;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -24,24 +26,33 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.Base64;
+import java.util.HashMap;
+import java.util.concurrent.ExecutionException;
 
 import static android.content.Context.MODE_PRIVATE;
 
 public class Server {
 
-    // Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес.
-    // public static final String url = "http://192.168.0.103:8080";
-    public static final String url = "http://10.255.9.19:8080";
-    private static String loginHeader = null;
+//  Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес
+//  public static final String url = "http://192.168.0.103:8080";
+//  public static final String url = "http://10.255.9.19:8080";
+    public static boolean isAvailable = false;
+
+    public static final String url = "http://192.168.128.109:8080";
+
+    private static String lastUrl = null;
+    private static String loginHeader;
 
     private final static String loginFileName = "loginData.lgn";
 
     private static Gson gson;
 
-    public Server(Activity activity) throws NoConnection, IOException {
-        //clearUsedData(activity);
+    private static HashMap<String, AsyncTask<Querry, Void, ResponseEntity<String>>> queries = new HashMap<>();;
+
+    public Server(Activity activity) throws NoConnection, IOException{
+       // logout(activity);
+
         gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
@@ -49,32 +60,50 @@ public class Server {
         UserData userData = readUserData(activity);
 
         loginHeader = userData.encodedAuth;
+
+        ResponseEntity<String> response;
+
         if (loginHeader == null) {
-            String response = passRequest(HttpMethod.POST, "/hello", null);
-            if (!response.equals("true")){
-                throw new NoConnection(response);
+            passRequest(HttpMethod.POST, URLs.HELLO, null);
+            response = getQueryResult(URLs.HELLO);
+            HttpStatus status = response.getStatusCode();
+            if (status == HttpStatus.SERVICE_UNAVAILABLE){
+                throw new NoConnection(response.getStatusCode() + "::" + response.getBody());
             }
             throw new IOException();
         }
-        Note note = new Note("note name", "note content");
-        String response = passRequest(HttpMethod.POST, "/note", note);
+
+        passRequest(HttpMethod.POST, URLs.HELLO_LOGIN, null);
+        response = getQueryResult(URLs.HELLO_LOGIN);
+
+
+        if (response.getStatusCode() != HttpStatus.OK) {
+            throw new NoConnection(response.getBody());
+        }
+        isAvailable = true;
     }
 
+    /**
+     * Функция читает файл с данными пользователя
+     * @param activity - экран в котором была вызвана функция
+     * @return - возвращает объект  - данные пользователя
+     * @IOExcepton - если не был найден файл/если не смогли записать новый пустой файл
+     */
     private static UserData readUserData(Activity activity) throws IOException {
 
-        FileInputStream fis = null;
+        FileInputStream fis;
         try {
             fis = activity.openFileInput(loginFileName);
         } catch (FileNotFoundException e) {
+            UserData user = new UserData();
             try {
-                // Если файл вообще не был создан, создаём его и выкидываем ошибку "файл не был найден"
                 FileOutputStream outputStream = activity.openFileOutput(loginFileName, MODE_PRIVATE);
-                String JSONed = gson.toJson(new UserData());
+                String JSONed = gson.toJson(user);
                 outputStream.write(JSONed.getBytes());
             } catch (IOException innerEx) {
-                throw innerEx;
+                throw new IOException("Ошибка при попытке создать пустой конфиг пользователя");
             }
-            throw e;
+            return user;
         }
         InputStreamReader isr = new InputStreamReader(fis);
 
@@ -86,23 +115,33 @@ public class Server {
                 sb.append(text).append("\n");
             }
         } catch (IOException e) {
-            throw e;
+             throw  new IOException("Ошибка при попытке считать файл " +
+                    "с конфигом пользователя.\n "+ e.getMessage());
         }
-
         UserData userData = gson.fromJson(sb.toString(), UserData.class);
-        if (userData == null) {
-            throw new IOException("Пустой файл данных пользователя");
-        }
-        return userData;
+        return userData == null ? new UserData() : userData;
     }
 
-    public static String passRequest(HttpMethod method, String urlEnd, Object body) {
-        String JSONbody = gson.toJson(body);
-        return passRequest(method, urlEnd, JSONbody);
+    /**
+     * Передаёт запрос на сервер
+     * @param method тип запроса Post|Get|Delete|Patch
+     * @param urlEnd адрес на который отправляется запрос. e.g. "/home", "/User/register"
+     * @param body объект который необходимо передать на сервер. Может быть пустым. e.g UserData для регистрации
+     */
+    public static void passRequest(HttpMethod method, String urlEnd, Object body) {
+        String JSONBody = gson.toJson(body);
+        passRequest(method, urlEnd, JSONBody);
     }
 
-    public static String passRequest(HttpMethod method, String urlEnd, String body)  {
-        RestTemplate restTemplate = new RestTemplateWithTimeOut(1000);
+
+    /**
+     * Передаёт запрос на сервер
+     * @param method тип запроса Post|Get|Delete|Patch
+     * @param urlEnd адрес на который отправляется запрос. e.g. "/home", "/User/register"
+     * @param body объект-строка который необходимо передать на сервер.
+     */
+    public static void passRequest(HttpMethod method, String urlEnd, String body) throws NoConnection  {
+        RestTemplate restTemplate = new RestTemplateWithTimeOut(5000);
         restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
 
         HttpHeaders headers = new HttpHeaders();
@@ -113,19 +152,27 @@ public class Server {
         }
         HttpEntity<String> entity = new HttpEntity<String>(body, headers);
 
-        ResponseEntity<String> response;
+        AsyncTask<Querry, Void, ResponseEntity<String>> response;
+        Querry querry = new Querry(url + urlEnd, method, entity, restTemplate);
+        ExecuteExchange exchange = new ExecuteExchange();
         try {
-            response = restTemplate.exchange(url + urlEnd, method, entity, String.class);
+            response = exchange.execute(querry);
         } catch (ResourceAccessException e) {
-            return e.getMessage();
+            throw new NoConnection(e.getMessage());
         }
-
-        return response.getBody();
+        lastUrl = urlEnd;
+        queries.put(urlEnd, response);
     }
 
+    /**
+     * Функция для регистрации.
+     * @param user - Данные о пользователе
+     * @param activity - экран в котором была вызвана
+     * @throws IOException если не смогли записать в файл
+     */
     public static void register(User user, Activity activity) throws IOException {
         String body = gson.toJson(user);
-        passRequest(HttpMethod.POST, "/User/registration", body);
+        passRequest(HttpMethod.POST, URLs.REGISTRATION, body);
 
         String loginCredentials = user.getLogin() + ":" + user.getPassword();
         String loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
@@ -142,9 +189,43 @@ public class Server {
         outputStream.write(JSONed.getBytes());
     }
 
-    public static void clearUsedData(Activity activity) throws IOException {
+    /**
+     * Функция очищает все данные о пользователе
+     *  @param activity активность в которой была вызвана функция
+     */
+    public static void logout(Activity activity) throws IOException {
         FileOutputStream outputStream = activity.openFileOutput(loginFileName, MODE_PRIVATE);
         outputStream.write("".getBytes());
+    }
+
+    /**
+     * Получаем результат последнего вызова по определённому  url
+     * допустим вызывалась функция passRequest c urlEnd = "/home"
+     * Чтобы получить результат нужно вызвать эту функцию с таким же
+     * @param urlEnd - концовка адреса, по которому вызывалась функция
+     */
+    public static ResponseEntity<String> getQueryResult(String urlEnd) {
+        AsyncTask<Querry, Void, ResponseEntity<String>> result = queries.get(urlEnd);
+        queries.remove(urlEnd);
+        try {
+            return result.get();
+        } catch (ExecutionException | InterruptedException e) {
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public static String getLastUrl() {
+        return lastUrl;
+    }
+
+    static class ExecuteExchange extends AsyncTask<Querry, Void, ResponseEntity<String>> {
+
+        @Override
+        protected ResponseEntity<String> doInBackground(Querry... querries) {
+            ResponseEntity<String> response = querries[0].execute();
+            return response;
+        }
+
     }
 
 }

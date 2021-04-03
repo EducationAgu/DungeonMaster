@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.dungeonmaster.R;
 import com.dungeonmaster.games.dnd.DnDHelper;
@@ -31,5 +35,20 @@ public class MainMenu extends Activity {
     public void onClickFavoriteGame(View view) {
         Intent dndHelper = new Intent(this, DnDHelper.class);
         startActivity(dndHelper);
+    }
+
+    private static boolean doubleBackToExitPressedOnce;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent startMain = new Intent(Intent.ACTION_MAIN);
+            startMain.addCategory(Intent.CATEGORY_HOME);
+            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(startMain);
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit",
+                Toast.LENGTH_SHORT).show();
     }
 }

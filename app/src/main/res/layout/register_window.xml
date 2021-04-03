@@ -87,13 +87,14 @@
 
         <Button
             android:id="@+id/buttonRegister"
-            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Зарегистрироваться"
+            android:layout_marginTop="40dp"
             android:background="@drawable/button_sign_in"
             android:fontFamily="@font/pt_serif"
-            android:textColor="@color/button_text_color"/>
+            android:onClick="onClickRegistration"
+            android:text="Зарегистрироваться"
+            android:textColor="@color/button_text_color" />
 
 
     </LinearLayout>
