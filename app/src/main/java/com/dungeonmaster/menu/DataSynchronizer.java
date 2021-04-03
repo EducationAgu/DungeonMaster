@@ -11,6 +11,8 @@ import com.serverconnection.model.User;
 import org.springframework.http.HttpMethod;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+
 import com.dungeonmaster.R;
 
 public class DataSynchronizer implements Runnable {
@@ -32,10 +34,12 @@ public class DataSynchronizer implements Runnable {
             loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             return;
         } catch (IOException e) {
-            nextScreen = new Intent(loadingScreen, SignIn.class);
+            nextScreen = new Intent(loadingScreen, Registration.class);
+            loadingScreen.startActivity(nextScreen);
+            loadingScreen.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            return;
         }
         loadingScreen.startActivity(nextScreen);
-        loadingScreen.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-
+        loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }
