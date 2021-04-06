@@ -17,11 +17,12 @@
         android:weightSum="2">
 
         <ImageView
+            android:src="@drawable/var1"
             android:id="@+id/imageView"
             android:layout_width="370dp"
             android:layout_height="320dp"
             android:layout_margin="20dp"
-            app:srcCompat="?android:attr/galleryItemBackground"
+
             tools:ignore="MissingConstraints" />
 
         <TextView
