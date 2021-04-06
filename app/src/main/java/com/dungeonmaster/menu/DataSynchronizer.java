@@ -4,6 +4,16 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.dungeonmaster.LoadingScreen;
+import com.error.NoConnection;
+import com.serverconnection.Server;
+import com.serverconnection.model.User;
+
+import org.springframework.http.HttpMethod;
+
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+
+import com.dungeonmaster.R;
 
 public class DataSynchronizer implements Runnable {
 
@@ -15,16 +25,21 @@ public class DataSynchronizer implements Runnable {
 
     @Override
     public void run() {
+        Intent nextScreen = new Intent(loadingScreen, MainMenu.class);
         try {
-            // Пока просто останавливаем чтобы увидеть начальный экран с лого
-            // TODO: реализовать подключение к базе, синхронизацию аккаунта в момент загрузки экрана
-            Thread loadingThread = new Thread();
-            loadingThread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            new Server(loadingScreen);
+        } catch (NoConnection e) {
+            nextScreen = new Intent(loadingScreen, MainMenu.class);
+            loadingScreen.startActivity(nextScreen);
+            loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            return;
+        } catch (IOException e) {
+            nextScreen = new Intent(loadingScreen, Registration.class);
+            loadingScreen.startActivity(nextScreen);
+            loadingScreen.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            return;
         }
-        Intent mainMenu = new Intent(loadingScreen, MainMenu.class);
-        loadingScreen.startActivity(mainMenu);
+        loadingScreen.startActivity(nextScreen);
+        loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
-
 }

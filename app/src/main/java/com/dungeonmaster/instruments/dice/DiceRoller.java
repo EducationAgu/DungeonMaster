@@ -1,4 +1,4 @@
-package com.dungeonmaster.instuments.dice;
+package com.dungeonmaster.instruments.dice;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;

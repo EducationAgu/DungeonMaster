@@ -5,4 +5,7 @@
     <string name="title_activity_main_menu">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- Подключение к бэку, пока по ip и только локально-->
+    <string name="connection">http://192.168.0.103:8080</string>
 </resources>
