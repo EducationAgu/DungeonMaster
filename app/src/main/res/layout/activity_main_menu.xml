@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,54 +7,64 @@
     android:background="@color/main_background_color"
     android:clickable="true">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="@dimen/main_menu_button_size_width"
+            android:layout_height="@dimen/main_menu_button_size_height"
+            android:layout_marginTop="100dp"
 
-        android:onClick="onClickFavoriteGame"
-        android:text="D&amp;D помошник"
+            android:backgroundTint="@color/button_color_background"
+            android:textColor="@color/button_text_color"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        tools:ignore="MissingConstraints" />
+            android:onClick="onClickFavoriteGame"
+            android:text="D&amp;D помошник"
+            />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
-        android:onClick="onClickInstruments"
-        android:text="Инструментарий"
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="@dimen/main_menu_button_size_width"
+            android:layout_height="@dimen/main_menu_button_size_height"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/button_color_background"
+            android:textColor="@color/button_text_color"
+            android:onClick="onClickInstruments"
+            android:text="Инструментарий" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="@dimen/main_menu_button_size_width"
+            android:layout_height="@dimen/main_menu_button_size_height"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/button_color_background"
+            android:textColor="@color/button_text_color"
+            android:onClick="onClickTableGames"
+            android:text="Настольные игры" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="224dp"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
-        android:onClick="onClickTableGames"
-        android:text="Настольные игры"
+        <Button
+            android:id="@+id/btnSignOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="100dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/marcellus_sc"
+            android:text="Выйти из своего акка"
+            android:background="@drawable/button_sign_in"
+            android:textColor="@color/button_text_color"
+            android:textSize="12dp" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

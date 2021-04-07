@@ -61,6 +61,19 @@
             android:fontFamily="@font/pt_serif"
             android:textColor="@color/button_text_color"/>
 
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="100dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/marcellus_sc"
+            android:text="Нет учетки. Надо зарегаться"
+            android:background="@drawable/button_sign_in"
+            android:textColor="@color/button_text_color"
+            android:textSize="12dp" />
+
 
     </LinearLayout>
 
