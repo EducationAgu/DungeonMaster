@@ -32,14 +32,14 @@ public class DataSynchronizer implements Runnable {
         int secondAnim = R.anim.slide_out_left;
         try {
             new Server(loadingScreen);
-        } catch (UserUnauthorized unauthorized) {
+        } catch (UserUnauthorized | NoLoginInfo unauthorized) {
             nextScreen = new Intent(loadingScreen, SignIn.class);
             firstAnim = R.anim.slide_in_left;
             secondAnim = R.anim.slide_out_right;
-        } catch (NoLoginInfo noLoginInfo) {
+        /*} catch (NoLoginInfo noLoginInfo) {
             nextScreen = new Intent(loadingScreen, Registration.class);
             firstAnim = R.anim.slide_in_left;
-            secondAnim = R.anim.slide_out_right;
+            secondAnim = R.anim.slide_out_right;*/
         } catch (NoConnection | IOException e) {
         }
         loadingScreen.startActivity(nextScreen);

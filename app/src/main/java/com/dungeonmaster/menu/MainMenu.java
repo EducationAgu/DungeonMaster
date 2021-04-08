@@ -44,8 +44,9 @@ public class MainMenu extends Activity {
 
     public void onClickLogout(View view) {
         Server.logout(this);
-        Intent me = new Intent(this, MainMenu.class);
-        startActivity(me);
+        Intent signIn = new Intent(this, SignIn.class);
+        startActivity(signIn);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
     private static boolean doubleBackToExitPressedOnce;
