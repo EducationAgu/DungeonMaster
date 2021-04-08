@@ -67,12 +67,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_margin="100dp"
+            android:layout_margin="120dp"
             android:background="@drawable/button_sign_in"
             android:fontFamily="@font/marcellus_sc"
             android:gravity="center"
             android:onClick="onClickOpenRegistration"
-            android:text="Нет учетки. Надо зарегаться"
+            android:text="       Регистрация       "
             android:textColor="@color/button_text_color"
             android:textSize="12dp" />
 

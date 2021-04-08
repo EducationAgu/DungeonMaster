@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 import com.dungeonmaster.R;
+import com.threed.jpct.Logger;
 
 public class DataSynchronizer implements Runnable {
 
@@ -30,18 +31,17 @@ public class DataSynchronizer implements Runnable {
         Intent nextScreen = new Intent(loadingScreen, MainMenu.class);
         int firstAnim = R.anim.slide_in_right;
         int secondAnim = R.anim.slide_out_left;
+
         try {
             new Server(loadingScreen);
         } catch (UserUnauthorized | NoLoginInfo unauthorized) {
             nextScreen = new Intent(loadingScreen, SignIn.class);
             firstAnim = R.anim.slide_in_left;
             secondAnim = R.anim.slide_out_right;
-        /*} catch (NoLoginInfo noLoginInfo) {
-            nextScreen = new Intent(loadingScreen, Registration.class);
-            firstAnim = R.anim.slide_in_left;
-            secondAnim = R.anim.slide_out_right;*/
         } catch (NoConnection | IOException e) {
+            Logger.log(e.getMessage());
         }
+
         loadingScreen.startActivity(nextScreen);
         loadingScreen.overridePendingTransition(firstAnim, secondAnim);
     }
