@@ -52,12 +52,13 @@
             android:id="@+id/btnSignOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="100dp"
-            android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:fontFamily="@font/marcellus_sc"
-            android:text="Выйти из своего акка"
+            android:layout_margin="100dp"
             android:background="@drawable/button_sign_in"
+            android:fontFamily="@font/marcellus_sc"
+            android:gravity="center"
+            android:onClick="onClickLogout"
+            android:text="Выйти из аккаунта"
             android:textColor="@color/button_text_color"
             android:textSize="12dp" />
 

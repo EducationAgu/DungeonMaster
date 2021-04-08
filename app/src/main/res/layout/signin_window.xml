@@ -53,24 +53,26 @@
 
         <Button
             android:id="@+id/buttonSignIn"
-            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Войти"
+            android:layout_marginTop="40dp"
             android:background="@drawable/button_sign_in"
             android:fontFamily="@font/pt_serif"
-            android:textColor="@color/button_text_color"/>
+            android:onClick="onClickLogin"
+            android:text="Войти"
+            android:textColor="@color/button_text_color" />
 
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="100dp"
-            android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:fontFamily="@font/marcellus_sc"
-            android:text="Нет учетки. Надо зарегаться"
+            android:layout_margin="100dp"
             android:background="@drawable/button_sign_in"
+            android:fontFamily="@font/marcellus_sc"
+            android:gravity="center"
+            android:onClick="onClickOpenRegistration"
+            android:text="Нет учетки. Надо зарегаться"
             android:textColor="@color/button_text_color"
             android:textSize="12dp" />
 
