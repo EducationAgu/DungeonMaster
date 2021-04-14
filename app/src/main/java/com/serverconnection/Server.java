@@ -179,10 +179,11 @@ public class Server {
      */
     public static void register(User user, Activity activity) throws IOException {
         String body = gson.toJson(user);
+        loginHeader = null;
         passRequest(HttpMethod.POST, URLs.REGISTRATION, body);
 
         String loginCredentials = user.getLogin() + ":" + user.getPassword();
-        String loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
+        loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
         UserData userData;
         try {
             userData = readUserData(activity);

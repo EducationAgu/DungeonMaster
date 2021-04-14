@@ -2,11 +2,13 @@ package com.dungeonmaster;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.dungeonmaster.menu.DataSynchronizer;
 import com.dungeonmaster.menu.MainMenu;
+import com.dungeonmaster.menu.Registration;
 import com.serverconnection.Server;
 import com.serverconnection.URLs;
 
@@ -21,23 +23,44 @@ public class LoadingScreen extends Activity {
         setContentView(R.layout.activity_loading_screen);
         String lastUrl = Server.getLastUrl();
         if (lastUrl != null) {
-            ResponseEntity<String> response = Server.getQueryResult(lastUrl);
-            if (lastUrl.equals(URLs.REGISTRATION)) {
-                if (response.getStatusCode() == HttpStatus.CREATED) {
-
-                } else {
-                    Toast.makeText(this, "Ошибка при попытке зарегистрироваться!",
-                            Toast.LENGTH_SHORT).show();
-                }
-                Intent nextScreen = new Intent(this, MainMenu.class);
-                startActivity(nextScreen);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return;
+            switch(lastUrl){
+                case URLs.REGISTRATION:
+                    new WaitRegistration().execute(this);
+                    return;
+                default:
+                    break;
             }
         }
-
         // Запускую отдельный поток на загрузку данных с сервера.
         Thread synchronizer = new Thread(new DataSynchronizer(this));
         synchronizer.start();
     }
+
+    class WaitRegistration extends AsyncTask<Activity, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Activity... activities) {
+            Activity activity = activities[0];
+
+            Intent nextScreen = new Intent(activity, MainMenu.class); // экран в который идём если всё чотко
+            int animIn = R.anim.slide_in_right; // анимация
+            int animOut = R.anim.slide_out_left; // если всё чотко
+
+            ResponseEntity<String> response = Server.getQueryResult(URLs.REGISTRATION);
+            if (response.getStatusCode() != HttpStatus.CREATED) {
+
+                activity.runOnUiThread(() -> Toast.makeText(activity, "Ошибка при попытке зарегистрироваться!",
+                        Toast.LENGTH_SHORT).show());
+
+                nextScreen = new Intent(activity, Registration.class); // экран в который идём если всё чотко
+                animIn = R.anim.slide_in_left; // анимация
+                animOut = R.anim.slide_out_right; // если всё чотко
+            }
+            activity.startActivity(nextScreen);
+            activity.overridePendingTransition(animIn, animOut);
+            return null;
+        }
+
+    }
+
 }
