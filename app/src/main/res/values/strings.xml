@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Wrorld Sucks</string>
     <string name="app_name">Dungeon<br></br>Master</string>
+    <string name="signIn">Авторизация</string>
+    <string name="registration">Регистрация</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="username">Имя пользователя</string>
+    <string name="btn_signIn">Войти</string>
+    <string name="btn_registration">Зарегистрироваться</string>
+    <string name="btn_signOut">Выйти из аккаунта</string>
+
+
+    <string name="btn_DD">D&amp;D помошник</string>
+    <string name="btn_Tools">Инструментарий</string>
+    <string name="btn_TableGames">Настольные игры</string>
+
+    <string name="btn_Notes">Заметки</string>
+    <string name="btn_GameCounters">Счетчики для игр</string>
+    <string name="btn_OpenDice">Симулятор кубика</string>
+
+    <string name="btn_Manchken">Манчкин</string>
+    <string name="btn_MagicTheGathering">Magic The Gathering</string>
+
+    <string name="btn_MyGames">Мои игры</string>
+    <string name="btn_ExistingGames">Существующие игры</string>
+
+    <string name="btn_WashingCounter">Счетчик смывки</string>
+    <string name="btn_EquipmentCounter">Счетчик экипировки</string>
+    <string name="btn_LevelCounter">Счетчик уровня</string>
+
+    <string name="btn_Timer">Таймер</string>
+    <string name="btn_CardCounter">Счетчик карт</string>
+    <string name="btn_LifeCounter">Счетчик жизни</string>
+    <string name="btn_TokenCounter">Счетчик жетонов</string>
+
+    <string name="btn_TypicalCounter">Типовой счетчик</string>
+    <string name="btn_UniversalCounter">Универсальный счетчик</string>
+
+    <string name="btn_CreateCharacter">Создать персонажа</string>
+    <string name="btn_ChooseCharacter">Выбрать персонажа</string>
+
+    <string name="btn_Equipment">Снаряжение</string>
+    <string name="btn_Abilities">Способности</string>
+    <string name="btn_Characteristic">Характеристика</string>
+    <string name="btn_CharacterData">Данные персонажа</string>
+
+
+
     <string name="title_activity_main_menu">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>

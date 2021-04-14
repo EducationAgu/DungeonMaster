@@ -9,57 +9,76 @@
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="@dimen/main_menu_button_size_width"
-            android:layout_height="@dimen/main_menu_button_size_height"
-            android:layout_marginTop="100dp"
-
-            android:backgroundTint="@color/button_color_background"
-            android:textColor="@color/button_text_color"
-
+            android:id="@+id/buttonDD"
             android:onClick="onClickFavoriteGame"
-            android:text="D&amp;D помошник"
+            android:text="@string/btn_DD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
+            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
+            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:textColor="@color/button_text_color"
+            android:background="@drawable/btn_menu_items"
             />
+        <!--android:backgroundTint="@color/button_color_background"-->
+
+
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="@dimen/main_menu_button_size_width"
-            android:layout_height="@dimen/main_menu_button_size_height"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/button_color_background"
-            android:textColor="@color/button_text_color"
+            android:id="@+id/buttonTools"
             android:onClick="onClickInstruments"
-            android:text="Инструментарий" />
+            android:text="@string/btn_Tools"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
+            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
+            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:textColor="@color/button_text_color"
+            android:background="@drawable/btn_menu_items"
+            />
+        <!--android:backgroundTint="@color/button_color_background"-->
+
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="@dimen/main_menu_button_size_width"
-            android:layout_height="@dimen/main_menu_button_size_height"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/button_color_background"
-            android:textColor="@color/button_text_color"
+            android:id="@+id/buttonTableGames"
             android:onClick="onClickTableGames"
-            android:text="Настольные игры" />
+            android:text="@string/btn_TableGames"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
+            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
+            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:textColor="@color/button_text_color"
+            android:background="@drawable/btn_menu_items"
+            />
+        <!--android:backgroundTint="@color/button_color_background"-->
+
 
         <Button
             android:id="@+id/btnSignOut"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="100dp"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="100dp"
             android:fontFamily="@font/marcellus_sc"
-            android:text="Выйти из своего акка"
-            android:background="@drawable/button_sign_in"
+            android:text="@string/btn_signOut"
+            android:background="@drawable/btn_app_form"
             android:textColor="@color/button_text_color"
             android:textSize="12dp" />
+        <!--android:background="@drawable/button_sign_in"-->
 
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,53 +7,61 @@
     android:background="@color/main_background_color"
     android:clickable="true">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        android:text="Заметки"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
+        <Button
+            android:id="@+id/buttonNotes"
+            android:text="@string/btn_Notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
+            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
+            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:textColor="@color/button_text_color"
+            android:background="@drawable/btn_menu_items"
+            />
+        <!--android:backgroundTint="@color/button_color_background"-->
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/buttonGameCounters"
+            android:onClick="onClickOpenGameCounters"
+            android:text="@string/btn_GameCounters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
+            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
+            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:textColor="@color/button_text_color"
+            android:background="@drawable/btn_menu_items"
+            tools:ignore="MissingConstraints"
+            />
+        <!--android:backgroundTint="@color/button_color_background"-->
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
+        <Button
+            android:id="@+id/buttonOpenDice"
+            android:text="@string/btn_OpenDice"
+            android:onClick="onClickOpenDice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
+            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
+            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:textColor="@color/button_text_color"
+            android:background="@drawable/btn_menu_items"
+            tools:ignore="MissingConstraints"
+            />
+        <!--android:backgroundTint="@color/button_color_background"-->
 
-        android:onClick="onClickOpenGameCounters"
-        android:text="Счетчики для игр"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="220dp"
-
-        android:backgroundTint="@color/button_color_background"
-        android:fontFamily="@font/swanky_and_moo_moo"
-
-        android:onClick="onClickOpenDice"
-        android:text="Симулятор кубика"
-        android:textColor="@color/button_text_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
