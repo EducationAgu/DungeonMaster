@@ -13,6 +13,7 @@ import com.dungeonmaster.R;
 import com.dungeonmaster.games.dnd.DnDHelper;
 import com.dungeonmaster.instruments.Tools;
 import com.dungeonmaster.tablegames.TableGames;
+import com.serverconnection.Server;
 
 public class MainMenu extends Activity {
 
@@ -20,6 +21,10 @@ public class MainMenu extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        doubleBackToExitPressedOnce = false;
+        if (!Server.isAvailable() || !Server.isUserLogged()){
+            findViewById(R.id.btnSignOut).setVisibility(View.GONE);
+        }
     }
 
     public void onClickTableGames(View view) {
@@ -35,6 +40,13 @@ public class MainMenu extends Activity {
     public void onClickFavoriteGame(View view) {
         Intent dndHelper = new Intent(this, DnDHelper.class);
         startActivity(dndHelper);
+    }
+
+    public void onClickLogout(View view) {
+        Server.logout(this);
+        Intent signIn = new Intent(this, SignIn.class);
+        startActivity(signIn);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
     private static boolean doubleBackToExitPressedOnce;

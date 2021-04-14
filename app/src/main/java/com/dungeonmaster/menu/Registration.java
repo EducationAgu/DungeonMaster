@@ -24,7 +24,12 @@ public class Registration extends Activity {
         email = findViewById(R.id.emailField);
         password = findViewById(R.id.passwordField);
         passwordConfirm = findViewById(R.id.passwordConfirmField);
+    }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, SignIn.class));
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     public void onClickRegistration(View view) {

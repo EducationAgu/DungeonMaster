@@ -5,6 +5,8 @@ import android.content.Intent;
 
 import com.dungeonmaster.LoadingScreen;
 import com.error.NoConnection;
+import com.error.NoLoginInfo;
+import com.error.UserUnauthorized;
 import com.serverconnection.Server;
 import com.serverconnection.model.User;
 
@@ -26,20 +28,21 @@ public class DataSynchronizer implements Runnable {
     @Override
     public void run() {
         Intent nextScreen = new Intent(loadingScreen, MainMenu.class);
+        int firstAnim = R.anim.slide_in_right;
+        int secondAnim = R.anim.slide_out_left;
         try {
             new Server(loadingScreen);
-        } catch (NoConnection e) {
-            nextScreen = new Intent(loadingScreen, MainMenu.class);
-            loadingScreen.startActivity(nextScreen);
-            loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            return;
-        } catch (IOException e) {
+        } catch (UserUnauthorized | NoLoginInfo unauthorized) {
+            nextScreen = new Intent(loadingScreen, SignIn.class);
+            firstAnim = R.anim.slide_in_left;
+            secondAnim = R.anim.slide_out_right;
+        /*} catch (NoLoginInfo noLoginInfo) {
             nextScreen = new Intent(loadingScreen, Registration.class);
-            loadingScreen.startActivity(nextScreen);
-            loadingScreen.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-            return;
+            firstAnim = R.anim.slide_in_left;
+            secondAnim = R.anim.slide_out_right;*/
+        } catch (NoConnection | IOException e) {
         }
         loadingScreen.startActivity(nextScreen);
-        loadingScreen.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        loadingScreen.overridePendingTransition(firstAnim, secondAnim);
     }
 }

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.AsyncTask;
 
 import com.error.NoConnection;
+import com.error.NoLoginInfo;
+import com.error.UserUnauthorized;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.serverconnection.model.Querry;
@@ -36,10 +38,11 @@ public class Server {
 
 //  Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес
 //  public static final String url = "http://192.168.0.103:8080";
-//  public static final String url = "http://10.255.9.19:8080";
-    public static boolean isAvailable = false;
+//    public static final String url = "http://10.255.9.19:8080";
+  public static final String url = "http://192.168.95.109:8080";
 
-    public static final String url = "http://192.168.128.109:8080";
+    private static boolean isUserLogged = false;
+    private static boolean isAvailable = false;
 
     private static String lastUrl = null;
     private static String loginHeader;
@@ -50,8 +53,9 @@ public class Server {
 
     private static HashMap<String, AsyncTask<Querry, Void, ResponseEntity<String>>> queries = new HashMap<>();;
 
-    public Server(Activity activity) throws NoConnection, IOException{
-       // logout(activity);
+    public Server(Activity activity) throws NoConnection, IOException, UserUnauthorized, NoLoginInfo {
+        isAvailable = false;
+        isUserLogged = false;
 
         gson = new GsonBuilder()
                 .setPrettyPrinting()
@@ -63,24 +67,27 @@ public class Server {
 
         ResponseEntity<String> response;
 
+        passRequest(HttpMethod.POST, URLs.HELLO, null);
+        response = getQueryResult(URLs.HELLO);
+
+        HttpStatus status = response.getStatusCode();
+        if (status == HttpStatus.SERVICE_UNAVAILABLE){
+            throw new NoConnection(response.getStatusCode() + "::" + response.getBody());
+        }
+        isAvailable = true;
+
         if (loginHeader == null) {
-            passRequest(HttpMethod.POST, URLs.HELLO, null);
-            response = getQueryResult(URLs.HELLO);
-            HttpStatus status = response.getStatusCode();
-            if (status == HttpStatus.SERVICE_UNAVAILABLE){
-                throw new NoConnection(response.getStatusCode() + "::" + response.getBody());
-            }
-            throw new IOException();
+            throw new NoLoginInfo();
         }
 
         passRequest(HttpMethod.POST, URLs.HELLO_LOGIN, null);
         response = getQueryResult(URLs.HELLO_LOGIN);
 
-
-        if (response.getStatusCode() != HttpStatus.OK) {
-            throw new NoConnection(response.getBody());
+        if (response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+            throw new UserUnauthorized();
         }
-        isAvailable = true;
+
+        isUserLogged = true;
     }
 
     /**
@@ -187,15 +194,51 @@ public class Server {
 
         FileOutputStream outputStream = activity.openFileOutput(loginFileName, MODE_PRIVATE);
         outputStream.write(JSONed.getBytes());
+        isUserLogged = true;
     }
 
     /**
      * Функция очищает все данные о пользователе
      *  @param activity активность в которой была вызвана функция
      */
-    public static void logout(Activity activity) throws IOException {
-        FileOutputStream outputStream = activity.openFileOutput(loginFileName, MODE_PRIVATE);
-        outputStream.write("".getBytes());
+    public static void logout(Activity activity) {
+        try{
+            FileOutputStream outputStream = activity.openFileOutput(loginFileName, MODE_PRIVATE);
+            outputStream.write("".getBytes());
+        } catch (IOException e) {
+        }
+        isUserLogged = false;
+    }
+
+    public static void login(User user, Activity activity) {
+        String loginCredentials = user.getLogin() + ":" + user.getPassword();
+        String loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
+        UserData userData;
+        try {
+            userData = readUserData(activity);
+        } catch (IOException e) {
+            userData = new UserData();
+        }
+        userData.encodedAuth = loginHeader;
+
+        String JSONed = gson.toJson(userData);
+        FileOutputStream outputStream;
+        try {
+            outputStream = activity.openFileOutput(loginFileName, MODE_PRIVATE);
+            outputStream.write(JSONed.getBytes());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        passRequest(HttpMethod.POST, URLs.HELLO_LOGIN, null);
+        ResponseEntity<String> result = getQueryResult(URLs.HELLO_LOGIN);
+        if (result.getStatusCode() == HttpStatus.SERVICE_UNAVAILABLE) {
+            isAvailable = false;
+        }
+
+        isUserLogged = true;
     }
 
     /**
@@ -216,6 +259,14 @@ public class Server {
 
     public static String getLastUrl() {
         return lastUrl;
+    }
+
+    public static boolean isUserLogged() {
+        return isUserLogged;
+    }
+
+    public static boolean isAvailable() {
+        return isAvailable;
     }
 
     static class ExecuteExchange extends AsyncTask<Querry, Void, ResponseEntity<String>> {

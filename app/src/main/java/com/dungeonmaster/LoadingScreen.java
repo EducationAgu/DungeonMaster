@@ -28,7 +28,6 @@ public class LoadingScreen extends Activity {
                 } else {
                     Toast.makeText(this, "Ошибка при попытке зарегистрироваться!",
                             Toast.LENGTH_SHORT).show();
-                    Server.isAvailable = false;
                 }
                 Intent nextScreen = new Intent(this, MainMenu.class);
                 startActivity(nextScreen);
@@ -36,7 +35,6 @@ public class LoadingScreen extends Activity {
                 return;
             }
         }
-
 
         // Запускую отдельный поток на загрузку данных с сервера.
         Thread synchronizer = new Thread(new DataSynchronizer(this));
