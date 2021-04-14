@@ -70,12 +70,13 @@
             android:id="@+id/btnSignOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="70dp"
             android:layout_marginRight="100dp"
-            android:layout_marginLeft="100dp"
-            android:fontFamily="@font/marcellus_sc"
-            android:text="@string/btn_signOut"
             android:background="@drawable/btn_app_form"
+            android:fontFamily="@font/marcellus_sc"
+            android:onClick="onClickLogout"
+            android:text="@string/btn_signOut"
             android:textColor="@color/button_text_color"
             android:textSize="12dp" />
         <!--android:background="@drawable/button_sign_in"-->

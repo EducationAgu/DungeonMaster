@@ -82,27 +82,29 @@
 
         <Button
             android:id="@+id/buttonSignIn"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="100dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_signIn"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="100dp"
             android:background="@drawable/btn_app_form"
             android:fontFamily="@font/marcellus_sc"
-            android:textColor="@color/button_text_color"/>
+            android:onClick="onClickLogin"
+            android:text="@string/btn_signIn"
+            android:textColor="@color/button_text_color" />
         <!--android:background="@drawable/button_sign_in"-->
 
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="100dp"
-            android:layout_marginLeft="100dp"
-            android:fontFamily="@font/marcellus_sc"
-            android:text="@string/registration"
             android:background="@drawable/btn_app_form"
+            android:fontFamily="@font/marcellus_sc"
+            android:onClick="onClickOpenRegistration"
+            android:text="@string/registration"
             android:textColor="@color/button_text_color"
             android:textSize="12dp" />
             <!--android:background="@drawable/button_sign_in"-->

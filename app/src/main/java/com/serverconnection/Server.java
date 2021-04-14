@@ -37,9 +37,9 @@ import static android.content.Context.MODE_PRIVATE;
 public class Server {
 
 //  Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес
-//  public static final String url = "http://192.168.0.103:8080";
+  public static final String url = "http://192.168.0.103:8080";
 //    public static final String url = "http://10.255.9.19:8080";
-  public static final String url = "http://192.168.95.109:8080";
+//  public static final String url = "http://192.168.95.109:8080";
 
     private static boolean isUserLogged = false;
     private static boolean isAvailable = false;
