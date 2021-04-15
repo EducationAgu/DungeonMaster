@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- легаси цвта-->
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -13,12 +16,18 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
 
-    <!-- Тут идут наши цвета, всё что выше -стандартное. Можно поменять тоже -->
+    <!-- легаси цвта-->
+
     <color name="main_background_color">#BAAAE368</color>   <!-- фон -->
     <color name="app_name_color">#FFFFFF</color>   <!-- цвет названия приложения -->
-    
+
+    <color name="windowAppForm">#FAFAFA</color>   <!-- цвет для форм регистрации и входа -->
+    <color name="nameWindowAppForm">#FF5722</color>   <!-- цвет для названий регистрации и входа -->
+
     <color name="base_text_color">#000000</color>   <!-- основной цвет, используемый для текста -->
-    <color name="for_input_text_color">#B1B1B1</color>   <!-- цвет, используемый в input полях -->
+    <color name="for_input_text_color">#B1B1B1</color>   <!-- цвет, используемый в input полях для текста -->
+    <color name="input">#EFEFEF</color>   <!-- цвет фона input -->
+    <color name="strokeInput">#FF9800</color>   <!-- цвет фона input -->
 
     <color name="button_text_color">#000000</color>         <!-- цвет текста кнопок -->
     <color name="button_color_background">#ECF4E2</color>   <!-- цвет фона кнопок -->

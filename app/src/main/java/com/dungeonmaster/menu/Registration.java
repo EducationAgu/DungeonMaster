@@ -20,7 +20,7 @@ public class Registration extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_window);
 
-        username = findViewById(R.id.usernameField);
+        username = findViewById(R.id.username);
         email = findViewById(R.id.emailField);
         password = findViewById(R.id.passwordField);
         passwordConfirm = findViewById(R.id.passwordConfirmField);
