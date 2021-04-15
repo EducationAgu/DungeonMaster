@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.dungeonmaster.LoadingScreen;
 import com.dungeonmaster.R;
 import com.serverconnection.Server;
 import com.serverconnection.URLs;
@@ -25,9 +26,11 @@ public class SignIn extends Activity {
         User user = new User();
         user.setLogin(((EditText)findViewById(R.id.emailField)).getText().toString());
         user.setPassword(((EditText)findViewById(R.id.passwordField)).getText().toString());
+
         Server.login(user, this);
-        Intent mainMenu = new Intent(this, MainMenu.class);
-        startActivity(mainMenu);
+        Intent loadingScreen = new Intent(this, LoadingScreen.class);
+        startActivity(loadingScreen);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     public void onClickOpenRegistration(View view){

@@ -37,8 +37,8 @@ import static android.content.Context.MODE_PRIVATE;
 public class Server {
 
 //  Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес
-  public static final String url = "http://192.168.0.103:8080";
-//    public static final String url = "http://10.255.9.19:8080";
+//  public static final String url = "http://192.168.0.103:8080";
+    public static final String url = "http://10.255.9.19:8080";
 //  public static final String url = "http://192.168.95.109:8080";
 
     private static boolean isUserLogged = false;
@@ -80,8 +80,8 @@ public class Server {
             throw new NoLoginInfo();
         }
 
-        passRequest(HttpMethod.POST, URLs.HELLO_LOGIN, null);
-        response = getQueryResult(URLs.HELLO_LOGIN);
+        passRequest(HttpMethod.POST, URLs.LOGIN, null);
+        response = getQueryResult(URLs.LOGIN);
 
         if (response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
             throw new UserUnauthorized();
@@ -179,10 +179,11 @@ public class Server {
      */
     public static void register(User user, Activity activity) throws IOException {
         String body = gson.toJson(user);
+        loginHeader = null;
         passRequest(HttpMethod.POST, URLs.REGISTRATION, body);
 
         String loginCredentials = user.getLogin() + ":" + user.getPassword();
-        String loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
+        loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
         UserData userData;
         try {
             userData = readUserData(activity);
@@ -212,7 +213,7 @@ public class Server {
 
     public static void login(User user, Activity activity) {
         String loginCredentials = user.getLogin() + ":" + user.getPassword();
-        String loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
+        loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
         UserData userData;
         try {
             userData = readUserData(activity);
@@ -232,13 +233,35 @@ public class Server {
             e.printStackTrace();
         }
 
-        passRequest(HttpMethod.POST, URLs.HELLO_LOGIN, null);
-        ResponseEntity<String> result = getQueryResult(URLs.HELLO_LOGIN);
-        if (result.getStatusCode() == HttpStatus.SERVICE_UNAVAILABLE) {
-            isAvailable = false;
-        }
+        passRequest(HttpMethod.POST, URLs.LOGIN, null);
 
-        isUserLogged = true;
+        new Thread(() -> {
+            try {
+                ResponseEntity<String> result = queries.get(URLs.LOGIN).get();
+                switch (result.getStatusCode()) {
+                    case SERVICE_UNAVAILABLE:
+                        isAvailable = false;
+                        isUserLogged = false;
+                        break;
+                    case UNAUTHORIZED:
+                        isUserLogged = false;
+                        break;
+                    case OK:
+                        isAvailable = true;
+                        isUserLogged = true;
+                        break;
+                }
+            } catch (ExecutionException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+//        ResponseEntity<String> result = getQueryResult(URLs.LOGIN);
+//        if (result.getStatusCode() == HttpStatus.SERVICE_UNAVAILABLE) {
+//            isAvailable = false;
+//        }
+//
+//        isUserLogged = true;
     }
 
     /**
