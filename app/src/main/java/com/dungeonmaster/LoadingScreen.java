@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.dungeonmaster.menu.DataSynchronizer;
 import com.dungeonmaster.menu.MainMenu;
 import com.dungeonmaster.menu.Registration;
+import com.dungeonmaster.menu.SignIn;
 import com.serverconnection.Server;
 import com.serverconnection.URLs;
 
@@ -26,6 +27,9 @@ public class LoadingScreen extends Activity {
             switch(lastUrl){
                 case URLs.REGISTRATION:
                     new WaitRegistration().execute(this);
+                    return;
+                case URLs.LOGIN:
+                    new WaitLogin().execute(this);
                     return;
                 default:
                     break;
@@ -48,13 +52,39 @@ public class LoadingScreen extends Activity {
 
             ResponseEntity<String> response = Server.getQueryResult(URLs.REGISTRATION);
             if (response.getStatusCode() != HttpStatus.CREATED) {
+                String body = response.getBody();
+                activity.runOnUiThread(() -> Toast.makeText(activity, "Ошибка при регистрации!\n" + body,
+                        Toast.LENGTH_LONG).show());
+                nextScreen = new Intent(activity, Registration.class);
+                animIn = R.anim.slide_in_left;
+                animOut = R.anim.slide_out_right;
+            }
+            activity.startActivity(nextScreen);
+            activity.overridePendingTransition(animIn, animOut);
+            return null;
+        }
 
-                activity.runOnUiThread(() -> Toast.makeText(activity, "Ошибка при попытке зарегистрироваться!",
-                        Toast.LENGTH_SHORT).show());
+    }
 
-                nextScreen = new Intent(activity, Registration.class); // экран в который идём если всё чотко
-                animIn = R.anim.slide_in_left; // анимация
-                animOut = R.anim.slide_out_right; // если всё чотко
+    class WaitLogin extends AsyncTask<Activity, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Activity... activities) {
+            Activity activity = activities[0];
+
+            Intent nextScreen = new Intent(activity, MainMenu.class); // экран в который идём если всё чотко
+            int animIn = R.anim.slide_in_right; // анимация
+            int animOut = R.anim.slide_out_left; // если всё чотко
+
+            ResponseEntity<String> response = Server.getQueryResult(URLs.LOGIN);
+            if (response.getStatusCode() != HttpStatus.OK) {
+                if (response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+                    activity.runOnUiThread(() -> Toast.makeText(activity, "Ошибка при попытке войти!\nНеверный логин/пароль!",
+                            Toast.LENGTH_SHORT).show());
+                    nextScreen = new Intent(activity, SignIn.class);
+                    animIn = R.anim.slide_in_left;
+                    animOut = R.anim.slide_out_right;
+                }
             }
             activity.startActivity(nextScreen);
             activity.overridePendingTransition(animIn, animOut);
