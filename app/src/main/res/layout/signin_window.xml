@@ -4,16 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardElevation="10dp">
+    app:cardElevation="10dp"
+    android:background="@color/windowAppForm">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/windowAppForm"
+
             android:orientation="vertical">
 
 
@@ -99,7 +101,7 @@
                 android:textColor="@color/button_text_color" />
             <!--android:background="@drawable/button_sign_in"-->
 
-            <Button
+            <!--<Button
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,8 +114,37 @@
                 android:onClick="onClickOpenRegistration"
                 android:text="@string/registration"
                 android:textColor="@color/button_text_color"
-                android:textSize="12dp" />
-                <!--android:background="@drawable/button_sign_in"-->
+                android:textSize="12dp" />-->
+
+            <!--android:background="@drawable/button_sign_in"-->
+
+            <TextView
+                android:id="@+id/btnRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/marcellus_sc"
+                android:textColor="@color/base_text_color"
+                android:textSize="12dp"
+                android:onClick="onClickOpenRegistration"
+                android:text="@string/registration"
+                android:linksClickable="false"
+                android:autoLink="all"/>
+
+            <TextView
+                android:id="@+id/textForgetPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/marcellus_sc"
+                android:text="@string/forget_password"
+                android:textColor="@color/base_text_color"
+                android:textSize="12dp"
+                android:linksClickable="false"
+                android:autoLink="all"/>
 
         </LinearLayout>
     </ScrollView>
