@@ -18,13 +18,15 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_margin="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="30dp"
+                android:layout_gravity="center"
                 android:id="@+id/imageForSignnIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/add_user" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/textSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,7 +35,7 @@
                 android:textSize="25dp"
                 android:textColor="@color/nameWindowAppForm"
                 android:textAlignment="center"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="30dp"/>-->
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
@@ -141,7 +143,8 @@
                 android:onClick="onClickRegistration"
                 android:text="@string/registration"
                 android:textColor="@color/button_text_color"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                android:layout_marginBottom="20dp"/>
             <!--android:background="@drawable/button_sign_in"-->
 
 
