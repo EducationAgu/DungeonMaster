@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background_color"
+    android:background="@color/windowAppForm"
     tools:context=".LoadingScreen">
 
     <LinearLayout
@@ -16,13 +16,14 @@
         >
 
         <ImageView
-            android:src="@drawable/var1"
+            android:src="@drawable/logo"
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            tools:ignore="MissingConstraints" />
+            />
 
+        <!--android:layout_margin="15dp"
+            tools:ignore="MissingConstraints"
         <TextView
 
             android:layout_width="match_parent"
@@ -35,7 +36,7 @@
             android:textSize="80dp"
 
 
-            />
+            />-->
     </LinearLayout>
 
 </RelativeLayout>
