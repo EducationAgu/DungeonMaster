@@ -9,7 +9,7 @@
     <string name="btn_signIn">Войти</string>
     <string name="btn_registration">Зарегистрироваться</string>
     <string name="btn_signOut">Выйти из аккаунта</string>
-
+    <string name="forget_password">Забыли пароль?</string>
 
     <string name="btn_DD">D&amp;D помошник</string>
     <string name="btn_Tools">Инструментарий</string>
