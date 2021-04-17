@@ -21,6 +21,8 @@
     <color name="main_background_color">#EFEFEF</color>   <!-- фон -->
     <color name="app_name_color">#CAA305</color>   <!-- цвет названия приложения -->
 
+    <color name="info_bar_color">#FDE78B</color>   <!-- цвет названия приложения -->
+
     <color name="windowAppForm">#FAFAFA</color>   <!-- цвет для форм регистрации и входа -->
     <color name="nameWindowAppForm">#8E7201</color>   <!-- цвет для названий регистрации и входа -->
 

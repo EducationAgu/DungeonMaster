@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="#DABC81"
+    tools:targetApi="lollipop">
+
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
-            <corners android:radius="20dp"></corners>
-            <stroke android:width="4dp"
-                android:color="@color/strokeInput"></stroke>
-            <solid android:color="@color/input"></solid>
+            <corners android:radius="5dp"></corners>
+            <stroke android:width="1dp"
+                android:color="#DCB883"></stroke>
+            <solid android:color="@color/purple_500"></solid>
+
         </shape>
     </item>
 
     <item android:state_focused="true">
         <shape android:shape="rectangle">
-            <corners android:radius="20dp"></corners>
-            <stroke android:width="4dp"
-                android:color="@color/strokeInput"></stroke>
-            <solid android:color="@color/input"></solid>
+            <corners android:radius="5dp"></corners>
+            <stroke android:width="1dp"
+                android:color="#DCB883"></stroke>
+            <solid android:color="@color/purple_500"></solid>
+
         </shape>
     </item>
 
     <item >
         <shape android:shape="rectangle">
-            <corners android:radius="20dp"></corners>
-            <stroke android:width="4dp"
-                android:color="@color/strokeInput"></stroke>
-            <solid android:color="@color/input"></solid>
-            <gradient android:angle="45" android:startColor="@color/input" android:endColor="@color/strokeInput"></gradient>
+            <corners android:radius="5dp"></corners>
+            <stroke android:width="1dp"
+                android:color="#DCB883"></stroke>
+            <solid android:color="@color/purple_500"></solid>
+
         </shape>
     </item>
-</selector>
+</ripple>

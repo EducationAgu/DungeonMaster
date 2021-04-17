@@ -16,14 +16,14 @@
         android:orientation="horizontal"
         android:weightSum="2"
         android:layout_marginBottom="4dp"
-        android:background="#FDE78B">
+        android:background="@color/info_bar_color">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="2dp"
-            android:layout_weight="0.5"
+            android:layout_marginLeft="7dp"
+            android:layout_weight="0.3"
             android:fontFamily="@font/button_and_text"
             android:padding="10dp"
             android:text="Авокадо"
@@ -34,8 +34,8 @@
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.5"
-            android:padding="10dp"
+            android:layout_weight="1.7"
+            android:padding="5dp"
             android:src="@drawable/setting"/>
 
 
@@ -106,14 +106,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:fontFamily="@font/button_and_text"
+            android:onClick="onClickLevelCounter"
             android:padding="@dimen/menu_btn_items_paddings"
             android:text="@string/btn_LevelCounter"
             android:textAlignment="center"
-            android:textSize="14sp"
-            android:fontFamily="@font/button_and_text"
             android:textColor="@color/button_text_color"
-            android:background="@color/purple_500"
-             />
+            android:textSize="14sp" />
 
     </LinearLayout>
 
