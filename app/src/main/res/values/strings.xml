@@ -2,14 +2,15 @@
 <resources>
     <string name="app_name">Dungeon<br></br>Master</string>
     <string name="signIn">Авторизация</string>
-    <string name="registration">Регистрация</string>
+    <string name="registration"><u>Регистрация</u></string>
+    <string name="btn_reg">Регистрация</string>
     <string name="email">Email</string>
     <string name="password">Пароль</string>
     <string name="username">Имя пользователя</string>
     <string name="btn_signIn">Войти</string>
     <string name="btn_registration">Зарегистрироваться</string>
     <string name="btn_signOut">Выйти из аккаунта</string>
-    <string name="forget_password">Забыли пароль?</string>
+    <string name="forget_password"><u>Забыли пароль?</u></string>
 
     <string name="btn_DD">D&amp;D помошник</string>
     <string name="btn_Tools">Инструментарий</string>
