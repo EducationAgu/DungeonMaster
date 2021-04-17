@@ -74,7 +74,6 @@
             android:layout_marginTop="70dp"
             android:layout_marginRight="100dp"
             android:background="@drawable/btn_app_form"
-            android:fontFamily="@font/marcellus_sc"
             android:onClick="onClickLogout"
             android:text="@string/btn_signOut"
             android:textColor="@color/button_text_color"

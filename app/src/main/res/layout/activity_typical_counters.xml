@@ -17,17 +17,17 @@
 
         <Button
             android:id="@+id/buttonManchken"
-            android:text="@string/btn_Manchken"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
             android:layout_marginTop="@dimen/menu_btn_items_marginTop"
             android:layout_marginRight="@dimen/menu_btn_items_marginRight"
-            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
-            android:padding="@dimen/menu_btn_items_paddings"
-            android:textColor="@color/button_text_color"
             android:background="@drawable/btn_menu_items"
-            tools:ignore="MissingConstraints"
-            />
+            android:onClick="onMunchkinClick"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:text="@string/btn_Manchken"
+            android:textColor="@color/button_text_color"
+            tools:ignore="MissingConstraints" />
         <!--android:backgroundTint="@color/button_color_background"-->
 
         <Button
