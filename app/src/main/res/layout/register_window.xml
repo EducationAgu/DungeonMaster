@@ -15,17 +15,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:orientation="vertical">
 
             <ImageView
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="30dp"
-                android:layout_gravity="center"
                 android:id="@+id/imageForSignnIn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/add_user" />
+                android:layout_height="96dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/scroll" />
 
             <!--<TextView
                 android:id="@+id/textSignIn"
@@ -45,7 +44,6 @@
                 android:hint="@string/username"
                 android:inputType="textPersonName"
                 android:text=""
-                android:fontFamily="@font/marcellus"
                 android:textColor="@color/base_text_color"
                 android:textColorHint="@color/for_input_text_color"
                 android:textSize="20dp"
@@ -69,7 +67,6 @@
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:text=""
-                android:fontFamily="@font/marcellus"
                 android:textColor="@color/base_text_color"
                 android:textColorHint="@color/for_input_text_color"
                 android:textSize="20dp"
@@ -91,7 +88,6 @@
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:text=""
-                android:fontFamily="@font/marcellus"
                 android:textColor="@color/base_text_color"
                 android:textColorHint="@color/for_input_text_color"
                 android:textSize="20dp"
@@ -115,7 +111,6 @@
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:text=""
-                android:fontFamily="@font/marcellus"
                 android:textColor="@color/base_text_color"
                 android:textColorHint="@color/for_input_text_color"
                 android:textSize="20dp"
@@ -137,14 +132,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginRight="100dp"
                 android:background="@drawable/btn_app_form"
-                android:fontFamily="@font/marcellus_sc"
                 android:onClick="onClickRegistration"
-                android:text="@string/registration"
+                android:text="@string/btn_reg"
                 android:textColor="@color/button_text_color"
-                android:textSize="12dp"
+                android:textSize="16dp"
                 android:layout_marginBottom="20dp"/>
             <!--android:background="@drawable/button_sign_in"-->
 

@@ -4,7 +4,7 @@
         <shape android:shape="rectangle">
             <corners android:radius="40dp"></corners>
             <stroke android:width="5dp"
-                android:color="@color/strokeInput"></stroke>
+                android:color="@color/for_input_text_color"></stroke>
             <solid android:color="@color/input"></solid>
         </shape>
     </item>
@@ -13,7 +13,7 @@
         <shape android:shape="rectangle">
             <corners android:radius="40dp"></corners>
             <stroke android:width="5dp"
-                android:color="@color/strokeInput"></stroke>
+                android:color="@color/for_input_text_color"></stroke>
             <solid android:color="@color/input"></solid>
         </shape>
     </item>
@@ -22,7 +22,7 @@
         <shape android:shape="rectangle">
             <corners android:radius="40dp"></corners>
             <stroke android:width="5dp"
-                android:color="@color/strokeInput"></stroke>
+                android:color="@color/for_input_text_color"></stroke>
             <solid android:color="@color/input"></solid>
         </shape>
     </item>

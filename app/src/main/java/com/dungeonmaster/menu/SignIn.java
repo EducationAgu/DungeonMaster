@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.dungeonmaster.LoadingScreen;
 import com.dungeonmaster.R;
@@ -16,16 +17,24 @@ import org.springframework.http.HttpMethod;
 
 public class SignIn extends Activity {
 
+    private EditText loginTextBox;
+    private EditText passwordTextBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signin_window);
+        loginTextBox = findViewById(R.id.emailField);
+        passwordTextBox = findViewById(R.id.passwordField);
     }
 
     public void onClickLogin(View view) {
         User user = new User();
-        user.setLogin(((EditText)findViewById(R.id.emailField)).getText().toString());
-        user.setPassword(((EditText)findViewById(R.id.passwordField)).getText().toString());
+
+        String login = loginTextBox.getText().toString();
+        user.setLogin(login);
+
+        user.setPassword(passwordTextBox.getText().toString());
 
         Server.login(user, this);
         Intent loadingScreen = new Intent(this, LoadingScreen.class);
