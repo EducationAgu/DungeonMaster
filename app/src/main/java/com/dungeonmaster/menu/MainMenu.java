@@ -3,9 +3,13 @@ package com.dungeonmaster.menu;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -15,7 +19,7 @@ import com.dungeonmaster.instruments.Tools;
 import com.dungeonmaster.tablegames.TableGames;
 import com.serverconnection.Server;
 
-public class MainMenu extends Activity {
+public class MainMenu extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

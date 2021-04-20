@@ -18,13 +18,14 @@
         android:theme="@style/Theme.DungeonTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".LoadingScreen">
-        </activity>
-        <activity android:name=".instruments.counters.typical.Munchkin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".instruments.counters.typical.Munchkin">
+
            </activity>
         <activity android:name=".instruments.counters.typical.MagicTheGathering" />
         <activity android:name=".instruments.counters.TypicalCounters" />

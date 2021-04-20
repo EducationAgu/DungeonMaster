@@ -6,8 +6,9 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.dungeonmaster.R;
+import com.dungeonmaster.menu.MenuBar;
 
-public class CreateCharacter extends Activity {
+public class CreateCharacter extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

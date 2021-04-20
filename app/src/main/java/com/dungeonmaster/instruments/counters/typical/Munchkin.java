@@ -36,7 +36,7 @@ public class Munchkin extends MenuBar {
 
     public void onClickOpenPopup(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
-        popupMenu.inflate(R.menu.popup_menu);
+        popupMenu.inflate(R.menu.menu_bar);
 
         popupMenu
                 .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {

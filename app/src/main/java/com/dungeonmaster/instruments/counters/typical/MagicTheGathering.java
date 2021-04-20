@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.dungeonmaster.R;
+import com.dungeonmaster.menu.MenuBar;
 
-public class MagicTheGathering extends Activity {
+public class MagicTheGathering extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
