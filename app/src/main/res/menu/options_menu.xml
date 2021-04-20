@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:layout_marginBottom="4dp"
+    android:background="@color/info_bar_color">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_weight="0.3"
+        android:fontFamily="@font/button_and_text"
+        android:padding="10dp"
+        android:text="Авокадо"
+        android:textColor="@color/button_text_color"
+        android:textSize="24dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.7"
+        android:onClick="onClickOpenPopup"
+        android:padding="5dp"
+        android:src="@drawable/setting" />
+
+</menu>
