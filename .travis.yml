@@ -10,6 +10,10 @@ android:
     - platform-tools
     - tools
     - extra-android-m2repository
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - sys-img-x86-android-26
+    - sys-img-armeabi-v7a-android-17
   licenses:
     - 'android-sdk-preview-license-52d11cd2'
     - 'android-sdk-license-.+'
@@ -17,9 +21,3 @@ android:
 branches:
   only:
     - pre_production
-
-install:
-  - chmod +x ./gradlew
-
-script:
-  - ./gradlew clean assembleDebug
