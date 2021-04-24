@@ -5,6 +5,7 @@ android:
   components:
     - build-tools-26.0.2
     - android-26
+    - sys-img-armeabi-v7a-android-26
     - extra
 before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a -c 100M
