@@ -8,8 +8,9 @@ import android.view.View;
 import com.dungeonmaster.R;
 import com.dungeonmaster.instruments.counters.GameCounters;
 import com.dungeonmaster.instruments.dice.CubeScene;
+import com.dungeonmaster.menu.MenuBar;
 
-public class Tools extends Activity {
+public class Tools extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

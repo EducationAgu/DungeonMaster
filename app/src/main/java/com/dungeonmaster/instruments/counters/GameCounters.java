@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.dungeonmaster.R;
+import com.dungeonmaster.menu.MenuBar;
 
-public class GameCounters extends Activity {
+public class GameCounters extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

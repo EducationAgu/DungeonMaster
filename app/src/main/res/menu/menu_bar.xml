@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:id="@+id/menugroup1" >
+
+        <item
+            android:id="@+id/menu1"
+            android:icon="@mipmap/ex2"
+            android:title="Exit"
+            app:showAsAction="withText" />
+        <item
+            android:id="@+id/menu2"
+            android:title="Popup menu item 2"/>
+        <item
+            android:id="@+id/menu3"
+            android:title="Popup menu item 3">
+            <menu>
+                <item
+                    android:id="@+id/submenu"
+                    android:title="Подменю"/>
+            </menu>
+        </item>
+</group>
+
+    </menu>

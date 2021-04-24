@@ -8,8 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.dungeonmaster.R;
+import com.dungeonmaster.menu.MenuBar;
 
-public class DnDHelper extends Activity {
+public class DnDHelper extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
