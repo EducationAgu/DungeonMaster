@@ -7,9 +7,9 @@
 
         <item
             android:id="@+id/menu1"
-            android:icon="@mipmap/ex"
+            android:icon="@mipmap/ex2"
             android:title="Exit"
-            app:showAsAction="never" />
+            app:showAsAction="withText" />
         <item
             android:id="@+id/menu2"
             android:title="Popup menu item 2"/>

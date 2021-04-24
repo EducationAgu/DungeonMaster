@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Dungeon<br></br>Master</string>
+    <string name="app_name">Dungeon Master</string>
     <string name="signIn">Авторизация</string>
     <string name="registration"><u>Регистрация</u></string>
     <string name="btn_reg">Регистрация</string>
