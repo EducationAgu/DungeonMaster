@@ -13,7 +13,7 @@ android:
 
 branches:
   only:
-    - master
+    - pre_production
 
 install:
   - chmod +x ./gradlew
