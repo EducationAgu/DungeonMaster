@@ -1,69 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background_color"
-    android:clickable="true">
+    android:clickable="true"
+    android:orientation="vertical"
+    android:weightSum="2">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
-        android:text="Снаряжение"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="2dp">
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/buttonEquipment"
+            android:text="@string/btn_Equipment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:fontFamily="@font/button_and_text"
+            android:textAlignment="center"
+            android:textColor="@color/button_text_color"
+            android:textSize="14sp"
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
 
-        android:text="Способности"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
+            />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
-        android:text="Характеристика"
+        <Button
+            android:id="@+id/buttonAbilities"
+            android:text="@string/btn_Abilities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/button_text_color"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:fontFamily="@font/button_and_text"
+            android:layout_marginLeft="2dp"
+            android:background="@color/purple_500"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="192dp"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
-        android:text="Данные персонажа"
+            />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp">
+
+
+
+        <Button
+            android:id="@+id/buttonCharacteristic"
+            android:text="@string/btn_Characteristic"
+            android:layout_marginRight="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:fontFamily="@font/button_and_text"
+            android:onClick="onClickCounter"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:textAlignment="center"
+            android:textColor="@color/button_text_color"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/buttonCharacterData"
+            android:text="@string/btn_CharacterData"
+            android:layout_marginLeft="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:fontFamily="@font/button_and_text"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:textAlignment="center"
+            android:textColor="@color/button_text_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

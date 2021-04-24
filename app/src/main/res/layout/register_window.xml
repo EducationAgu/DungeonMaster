@@ -5,98 +5,150 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:cardElevation="10dp">
+    app:cardElevation="10dp"
+    android:background="@color/windowAppForm">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/usernameField"
-            android:hint="Имя пользователя"
-            android:inputType="textPersonName"
-            android:text=""
-            android:textColor="@color/base_text_color"
-            android:textColorHint="@color/for_input_text_color"
-            android:textSize="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="5dp">
 
-            app:met_floatingLabel="highlight"
+            <ImageView
+                android:id="@+id/imageForSignnIn"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/scroll" />
+
+            <!--<TextView
+                android:id="@+id/textSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registration"
+                android:fontFamily="@font/marcellus_sc"
+                android:textSize="25dp"
+                android:textColor="@color/nameWindowAppForm"
+                android:textAlignment="center"
+                android:layout_marginTop="30dp"/>-->
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:hint="@string/username"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="@color/base_text_color"
+                android:textColorHint="@color/for_input_text_color"
+                android:textSize="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/filds"
+                android:padding="15dp"
+
+                />
+
+            <!--app:met_floatingLabel="highlight"
+                app:met_baseColor="@color/for_input_text_color"
+                app:met_primaryColor="@color/ripple_effect"
+                app:met_singleLineEllipsis="true"-->
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emailField"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:text=""
+                android:textColor="@color/base_text_color"
+                android:textColorHint="@color/for_input_text_color"
+                android:textSize="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/filds"
+                android:padding="15dp"/>
+
+            <!--app:met_floatingLabel="highlight"
             app:met_baseColor="@color/for_input_text_color"
             app:met_primaryColor="@color/ripple_effect"
-            app:met_singleLineEllipsis="true"
-            />
+            app:met_singleLineEllipsis="true"-->
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/emailField"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:text=""
-            android:textColor="@color/base_text_color"
-            android:textColorHint="@color/for_input_text_color"
-            android:textSize="20dp"
-            android:layout_marginTop="15dp"
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/passwordField"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:text=""
+                android:textColor="@color/base_text_color"
+                android:textColorHint="@color/for_input_text_color"
+                android:textSize="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/filds"
+                android:padding="15dp"
 
-            app:met_floatingLabel="highlight"
-            app:met_baseColor="@color/for_input_text_color"
-            app:met_primaryColor="@color/ripple_effect"
-            app:met_singleLineEllipsis="true"
-            />
+                />
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/passwordField"
-            android:hint="Пароль"
-            android:inputType="textPassword"
-            android:text=""
-            android:textColor="@color/base_text_color"
-            android:textColorHint="@color/for_input_text_color"
-            android:textSize="20dp"
-            android:layout_marginTop="15dp"
+            <!--app:met_floatingLabel="highlight"
+                app:met_baseColor="@color/for_input_text_color"
+                app:met_primaryColor="@color/ripple_effect"
+                app:met_singleLineEllipsis="true"-->
 
-            app:met_floatingLabel="highlight"
-            app:met_baseColor="@color/for_input_text_color"
-            app:met_primaryColor="@color/ripple_effect"
-            app:met_singleLineEllipsis="true"
-            />
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/passwordConfirmField"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:text=""
+                android:textColor="@color/base_text_color"
+                android:textColorHint="@color/for_input_text_color"
+                android:textSize="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/filds"
+                android:padding="15dp"
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/passwordConfirmField"
-            android:hint="Подтвердить пароль"
-            android:inputType="textPassword"
-            android:text=""
-            android:textColor="@color/base_text_color"
-            android:textColorHint="@color/for_input_text_color"
-            android:textSize="20dp"
-            android:layout_marginTop="15dp"
+                />
 
-            app:met_floatingLabel="highlight"
-            app:met_baseColor="@color/for_input_text_color"
-            app:met_primaryColor="@color/ripple_effect"
-            app:met_singleLineEllipsis="true"
-            />
+            <!--app:met_floatingLabel="highlight"
+                app:met_baseColor="@color/for_input_text_color"
+                app:met_primaryColor="@color/ripple_effect"
+                app:met_singleLineEllipsis="true"-->
 
-        <Button
-            android:id="@+id/buttonRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/button_sign_in"
-            android:fontFamily="@font/pt_serif"
-            android:onClick="onClickRegistration"
-            android:text="Зарегистрироваться"
-            android:textColor="@color/button_text_color" />
+            <Button
+                android:id="@+id/buttonRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="100dp"
+                android:background="@drawable/btn_app_form"
+                android:onClick="onClickRegistration"
+                android:text="@string/btn_reg"
+                android:textColor="@color/button_text_color"
+                android:textSize="16dp"
+                android:layout_marginBottom="20dp"/>
+            <!--android:background="@drawable/button_sign_in"-->
 
 
-    </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
 
 </androidx.cardview.widget.CardView>

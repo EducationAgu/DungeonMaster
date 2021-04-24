@@ -39,7 +39,9 @@ public class DataSynchronizer implements Runnable {
             firstAnim = R.anim.slide_in_left;
             secondAnim = R.anim.slide_out_right;
         } catch (NoConnection | IOException e) {
-            Logger.log(e.getMessage());
+            nextScreen = new Intent(loadingScreen, MainMenu.class);
+            firstAnim = R.anim.slide_in_right;
+            secondAnim = R.anim.slide_out_left;
         }
 
         loadingScreen.startActivity(nextScreen);

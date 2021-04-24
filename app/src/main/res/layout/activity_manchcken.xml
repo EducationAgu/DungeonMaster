@@ -1,54 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background_color"
-    android:clickable="true">
+    android:clickable="true"
+    android:orientation="vertical"
+    android:weightSum="2">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="2dp"
+        >
 
-        android:text="Счетчик смывки"
+        <Button
+            android:id="@+id/buttonWashingCounter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:fontFamily="@font/button_and_text"
+            android:text="@string/btn_WashingCounter"
+            android:textAlignment="center"
+            android:textColor="@color/button_text_color"
+            android:textSize="14sp"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="@dimen/main_menu_button_margin_top_small"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
-        android:text="Счетчик экипировки"
+            />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="@dimen/main_menu_button_size_width"
-        android:layout_height="@dimen/main_menu_button_size_height"
-        android:layout_marginTop="220dp"
-        android:backgroundTint="@color/button_color_background"
-        android:textColor="@color/button_text_color"
-        android:text="Счетчик уровня"
+        <Button
+            android:id="@+id/buttonEquipmentCounter"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+            android:text="@string/btn_EquipmentCounter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/button_text_color"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:fontFamily="@font/button_and_text"
+            android:layout_marginLeft="2dp"
+            android:background="@color/purple_500"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp">
+
+
+        <Button
+            android:id="@+id/buttonLevelCounter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:fontFamily="@font/button_and_text"
+            android:onClick="onClickCounter"
+            android:padding="@dimen/menu_btn_items_paddings"
+            android:text="@string/btn_LevelCounter"
+            android:textAlignment="center"
+            android:textColor="@color/button_text_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
