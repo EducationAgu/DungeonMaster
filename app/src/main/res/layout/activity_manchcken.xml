@@ -39,29 +39,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="1"
                 android:layout_marginBottom="10dp">
 
                 <TextView
                     android:id="@+id/textViewAddPlayer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="@string/add_player"
-                    android:layout_weight="0.9"
                     android:textAllCaps="true"
                     android:textSize="20dp"
-                    android:padding="10dp"
                     android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="30dp"
+
+
 
                     />
                 <Button
                     android:id="@+id/btnAddPlayerInc"
                     android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.15"
+                    android:layout_height="35dp"
                     android:background="#4CAF50"
-                    android:layout_marginRight="10dp"
                     android:text="+"
+                    android:gravity="center"
+                    android:layout_marginRight="25dp"
                     android:textSize="15dp"
                     android:textColor="@color/black"
 
@@ -70,11 +71,11 @@
                 <Button
                     android:id="@+id/btnAddPlayerDec"
                     android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.15"
+                    android:layout_height="35dp"
                     android:text="-"
+                    android:gravity="center"
                     android:textSize="15dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="25dp"
                     android:textColor="@color/black"
                     android:background="@color/strokeInput" />
 
@@ -82,6 +83,7 @@
             </LinearLayout>
 
            <LinearLayout
+               android:id="@+id/linearLayoutPlayer"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:background="@color/info_bar_color"
@@ -186,7 +188,7 @@
                        android:layout_height="25dp"
                        android:layout_marginRight="40dp"
 
-                       android:background="@color/strokeInput"
+                       android:background="#4CAF50"
                        android:text="+"
                        android:textColor="@color/black"
                        android:textSize="15dp">
@@ -248,7 +250,7 @@
                        android:text="+"
                        android:textSize="15dp"
                        android:textColor="@color/black"
-                       android:background="@color/strokeInput"
+                       android:background="#4CAF50"
                        android:layout_marginRight="40dp"
                        >
 
