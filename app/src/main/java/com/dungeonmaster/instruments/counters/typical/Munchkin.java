@@ -23,7 +23,6 @@ public class Munchkin extends Activity {
         setContentView(R.layout.activity_manchcken);
 
         layoutList = findViewById(R.id.munchkinLayout);
-
     }
 
     public void onClickAddPlayer(View view) {
@@ -35,7 +34,7 @@ public class Munchkin extends Activity {
     *
     * TODO вроде как лишнее, подумать и убрать
     *
-    * */
+    *
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return super.onCreateOptionsMenu(menu);
@@ -84,5 +83,5 @@ public class Munchkin extends Activity {
             }
         });
         popupMenu.show();
-    }
+    }*/
 }
