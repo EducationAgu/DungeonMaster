@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.dungeonmaster.R;
 import com.serverconnection.Server;
@@ -18,6 +19,8 @@ public class MenuBar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_actionbar);
+       // setSupportActionBar(toolbar);
     }
 
     @Override

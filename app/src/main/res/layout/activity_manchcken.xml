@@ -4,89 +4,317 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background_color"
+    android:background="@color/windowAppForm"
     android:clickable="true"
-    android:orientation="vertical"
-    android:weightSum="2">
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:weightSum="2"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="2dp"
         >
 
-        <Button
-            android:id="@+id/buttonWashingCounter"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="2dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500"
-            android:fontFamily="@font/button_and_text"
-            android:text="@string/btn_WashingCounter"
-            android:textAlignment="center"
-            android:textColor="@color/button_text_color"
-            android:textSize="14sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewManchcken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_Manchken"
+                android:textSize="32dp"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/munckin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/textViewAddPlayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_player"
+                    android:layout_weight="0.9"
+                    android:textAllCaps="true"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:gravity="center"
+
+                    />
+                <Button
+                    android:id="@+id/btnAddPlayerInc"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="0.15"
+                    android:background="#4CAF50"
+                    android:layout_marginRight="10dp"
+                    android:text="+"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+
+                    />
+
+                <Button
+                    android:id="@+id/btnAddPlayerDec"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="0.15"
+                    android:text="-"
+                    android:textSize="15dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/black"
+                    android:background="@color/strokeInput" />
 
 
-            />
+            </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/info_bar_color"
+               android:orientation="vertical">
 
 
-        <Button
-            android:id="@+id/buttonEquipmentCounter"
 
-            android:text="@string/btn_EquipmentCounter"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textColor="@color/button_text_color"
-            android:textAlignment="center"
-            android:textSize="14sp"
-            android:fontFamily="@font/button_and_text"
-            android:layout_marginLeft="2dp"
-            android:background="@color/purple_500"
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:weightSum="2"
+                   android:layout_marginBottom="12dp"
+                   >
+
+                   <TextView
+                       android:id="@+id/namePlayer"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:padding="5dp"
+                       android:layout_weight="1"
+                       android:gravity="center"
+                       android:textAllCaps="true"
+                       android:text="@string/name_player"
+                       android:textSize="20dp">
+
+                   </TextView>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:weightSum="2"
+                       android:padding="5dp">
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="match_parent"
+                           android:gravity="center"
+                           android:textAllCaps="true"
+                           android:layout_weight="1"
+                           android:text="@string/power_player"
+                           android:textSize="20dp">
+
+                       </TextView>
+
+                       <TextView
+                           android:id="@+id/textViewpower"
+                           android:layout_width="wrap_content"
+                           android:layout_height="match_parent"
+                           android:gravity="center"
+                           android:layout_weight="1"
+                           android:text="1"
+                           android:textSize="20dp">
+
+                       </TextView>
+
+                   </LinearLayout>
+
+                   <!--<TextView
+                       android:id="@+id/textViewMore"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:text="@string/more"
+                       android:layout_gravity="center"
+                       android:layout_marginTop="5dp"
+                       android:layout_marginBottom="5dp"
+                       android:layout_weight="1"
+                       android:padding="5dp"
+                       android:textSize="12dp"
+                       >
+
+                   </TextView>-->
+                   <Button
+                       android:id="@+id/btnMore"
+                       android:layout_width="32sp"
+                       android:layout_height="32sp"
+                       android:layout_gravity="center"
+                       android:layout_marginTop="5dp"
+                       android:background="@drawable/pointer"
+                       android:layout_marginBottom="5dp"
+                       android:layout_marginRight="15dp"
+                       android:layout_weight="1">
+
+                   </Button>
+
+               </LinearLayout>
 
 
-            />
+
+               <LinearLayout
+                   android:id="@+id/linearLayoutLevel"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:paddingBottom="10dp">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:textAllCaps="true"
+                       android:gravity="center"
+                       android:layout_marginLeft="10dp"
+                       android:layout_marginRight="90dp"
+                       android:text="@string/level_player"
+                       android:textSize="15dp">
+
+                   </TextView>
+
+                   <Button
+                       android:id="@+id/btnLevelInc"
+                       android:layout_width="25dp"
+                       android:layout_height="25dp"
+                       android:layout_marginRight="40dp"
+
+                       android:background="@color/strokeInput"
+                       android:text="+"
+                       android:textColor="@color/black"
+                       android:textSize="15dp">
+
+                   </Button>
+
+                   <TextView
+                       android:id="@+id/textViewLevel"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:gravity="center"
+                       android:text="1"
+                       android:textSize="20dp"
+                       android:layout_marginRight="45dp">
+
+                   </TextView>
 
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:weightSum="1"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="8dp">
+                   <Button
+                       android:id="@+id/btnLevelDec"
+                       android:layout_width="25dp"
+                       android:layout_height="25dp"
+
+                       android:text="-"
+                       android:textSize="15dp"
+                       android:textColor="@color/black"
+                       android:background="@color/strokeInput"
+                       >
+
+                   </Button>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:id="@+id/linearLayoutEquipment"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+
+                   android:paddingBottom="10dp">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:gravity="center"
+                       android:layout_marginLeft="10dp"
+                       android:textAllCaps="true"
+                       android:layout_marginRight="50dp"
+                       android:text="@string/equipment_player"
+                       android:textSize="15dp">
+
+                   </TextView>
+
+                   <Button
+                       android:id="@+id/btnEquipmentInc"
+                       android:layout_width="25dp"
+                       android:layout_height="25dp"
+                       android:text="+"
+                       android:textSize="15dp"
+                       android:textColor="@color/black"
+                       android:background="@color/strokeInput"
+                       android:layout_marginRight="40dp"
+                       >
+
+                   </Button>
+
+                   <TextView
+                       android:id="@+id/textViewEquipment"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_marginRight="40dp"
+                       android:gravity="center"
+                       android:text="0"
+                       android:textSize="20dp">
+
+                   </TextView>
 
 
-        <Button
-            android:id="@+id/buttonLevelCounter"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500"
-            android:fontFamily="@font/button_and_text"
-            android:onClick="onClickCounter"
-            android:padding="@dimen/menu_btn_items_paddings"
-            android:text="@string/btn_LevelCounter"
-            android:textAlignment="center"
-            android:textColor="@color/button_text_color"
-            android:textSize="14sp" />
 
-    </LinearLayout>
+                   <Button
+                       android:id="@+id/btnEquipmentDec"
+                       android:layout_width="25dp"
+                       android:layout_height="25dp"
+
+                       android:text="-"
+                       android:textSize="15dp"
+                       android:textColor="@color/black"
+                       android:background="@color/strokeInput"
+                       >
+
+                   </Button>
+
+               </LinearLayout>
+
+
+
+
+           </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:textSize="16dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="20dp"/>
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
 
 
 </LinearLayout>

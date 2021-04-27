@@ -27,7 +27,7 @@ public class MainMenu extends MenuBar {
         setContentView(R.layout.activity_main_menu);
         doubleBackToExitPressedOnce = false;
         if (!Server.isAvailable() || !Server.isUserLogged()){
-            findViewById(R.id.menu1).setVisibility(View.GONE);
+//            findViewById(R.id.menu1).setVisibility(View.GONE);
         }
     }
 

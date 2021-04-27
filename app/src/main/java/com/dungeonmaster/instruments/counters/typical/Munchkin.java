@@ -12,7 +12,7 @@ import androidx.appcompat.widget.PopupMenu;
 import com.dungeonmaster.R;
 import com.dungeonmaster.menu.MenuBar;
 
-public class Munchkin extends MenuBar {
+public class Munchkin extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
