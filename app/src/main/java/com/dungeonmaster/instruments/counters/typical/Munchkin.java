@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.PopupMenu;
@@ -14,16 +15,27 @@ import com.dungeonmaster.menu.MenuBar;
 
 public class Munchkin extends Activity {
 
+    LinearLayout layoutList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manchcken);
+
+        layoutList = findViewById(R.id.munchkinLayout);
+
     }
 
-    public void onClickCounter(View view) {
-        System.out.println(1);
+    public void onClickAddPlayer(View view) {
+        View userLayout = getLayoutInflater().inflate(R.layout.munchkin_player, null, false);
+        layoutList.addView(userLayout);
     }
 
+    /*
+    *
+    * TODO вроде как лишнее, подумать и убрать
+    *
+    * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return super.onCreateOptionsMenu(menu);

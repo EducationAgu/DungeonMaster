@@ -54,18 +54,19 @@
                     android:gravity="center"
 
                     />
+
                 <Button
                     android:id="@+id/btnAddPlayerInc"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="0.15"
                     android:background="#4CAF50"
-                    android:layout_marginRight="10dp"
+                    android:onClick="onClickAddPlayer"
                     android:text="+"
-                    android:textSize="15dp"
                     android:textColor="@color/black"
 
-                    />
+                    android:textSize="15dp" />
 
                 <Button
                     android:id="@+id/btnAddPlayerDec"
@@ -81,83 +82,85 @@
 
             </LinearLayout>
 
-           <LinearLayout
+            <LinearLayout
+                android:id="@+id/munchkinLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/info_bar_color"
+                android:orientation="vertical">
+
+                <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:background="@color/info_bar_color"
                android:orientation="vertical">
 
+            <!--             <LinearLayout
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:orientation="horizontal"
+                                     android:weightSum="2">
 
+                                     <TextView
+                                         android:id="@+id/namePlayer"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:padding="5dp"
+                                         android:layout_weight="1"
+                                         android:layout_gravity="center"
+                                         android:gravity="center"
+                                         android:textAllCaps="true"
+                                         android:text="@string/name_player"
+                                         android:textSize="20dp">
 
-               <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:orientation="horizontal"
-                   android:weightSum="2"
+                                     </TextView>
 
-                   >
+                                     <LinearLayout
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:layout_gravity="center"
+                                         android:layout_weight="1"
+                                         android:weightSum="2"
+                                         android:padding="5dp">
 
-                   <TextView
-                       android:id="@+id/namePlayer"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:padding="5dp"
-                       android:layout_weight="1"
-                       android:layout_gravity="center"
-                       android:gravity="center"
-                       android:textAllCaps="true"
-                       android:text="@string/name_player"
-                       android:textSize="20dp">
+                                         <TextView
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="match_parent"
+                                             android:gravity="center"
+                                             android:textAllCaps="true"
+                                             android:layout_weight="1"
+                                             android:text="@string/power_player"
+                                             android:textSize="20dp">
 
-                   </TextView>
+                                         </TextView>
 
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:layout_gravity="center"
-                       android:layout_weight="1"
-                       android:weightSum="2"
-                       android:padding="5dp">
+                                         <TextView
+                                             android:id="@+id/textViewpower"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="match_parent"
+                                             android:gravity="center"
+                                             android:layout_weight="1"
+                                             android:text="1"
+                                             android:textSize="20dp">
 
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:layout_height="match_parent"
-                           android:gravity="center"
-                           android:textAllCaps="true"
-                           android:layout_weight="1"
-                           android:text="@string/power_player"
-                           android:textSize="20dp">
+                                         </TextView>
 
-                       </TextView>
+                                     </LinearLayout>
 
-                       <TextView
-                           android:id="@+id/textViewpower"
-                           android:layout_width="wrap_content"
-                           android:layout_height="match_parent"
-                           android:gravity="center"
-                           android:layout_weight="1"
-                           android:text="1"
-                           android:textSize="20dp">
+                                     <Button
+                                         android:id="@+id/btnMore"
+                                         android:layout_width="32sp"
+                                         android:layout_height="32sp"
+                                         android:layout_gravity="center"
+                                         android:layout_marginTop="5dp"
+                                         android:background="@drawable/pointer"
+                                         android:layout_marginBottom="5dp"
+                                         android:layout_marginRight="15dp"
+                                         android:layout_weight="1">
 
-                       </TextView>
+                                     </Button>
 
-                   </LinearLayout>
-
-                   <Button
-                       android:id="@+id/btnMore"
-                       android:layout_width="32sp"
-                       android:layout_height="32sp"
-                       android:layout_gravity="center"
-                       android:layout_marginTop="5dp"
-                       android:background="@drawable/pointer"
-                       android:layout_marginBottom="5dp"
-                       android:layout_marginRight="15dp"
-                       android:layout_weight="1">
-
-                   </Button>
-
-               </LinearLayout>
-
+                                 </LinearLayout>
 
 
                <LinearLayout
@@ -281,11 +284,13 @@
                    </Button>
 
                </LinearLayout>
-
+                    -->
 
 
 
            </LinearLayout>
+
+            </LinearLayout>
 
             <Button
                 android:layout_width="match_parent"
