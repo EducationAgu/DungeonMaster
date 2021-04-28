@@ -3,101 +3,51 @@ package com.dungeonmaster.instruments.counters.typical;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ExpandableListView;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.diegodobelo.expandingview.ExpandingItem;
+import com.diegodobelo.expandingview.ExpandingList;
 import com.dungeonmaster.R;
-import com.menu.ExpandableListAdapter;
+import com.dungeonmaster.instruments.counters.typical.munchkin.Player;
+import com.menu.MunchkinExpandableListAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class Munchkin extends Activity {
 
-    ExpandableListView expandableListView;
-    ExpandableListAdapter expListAdapter;
-    ArrayList<View> listDataHeader;
-    ArrayList<ArrayList<View>> listDataChild;
+    ExpandingList expandingList;
+    MunchkinExpandableListAdapter expListAdapter;
+
+    ArrayList<Player> playersList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manchcken);
+        expandingList = findViewById(R.id.listOfMunchkinPlayers);
 
-        expandableListView = findViewById(R.id.listOfMunchkinPlayers);
         createStartGroup();
-        expListAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
-        expandableListView.setAdapter(expListAdapter);
     }
 
     private void createStartGroup() {
-        listDataChild = new ArrayList<>();
-        listDataHeader = new ArrayList<>();
+        playersList = new ArrayList<>();
         for(int i = 0; i < 3; i++) {
-            listDataHeader.add(findViewById(R.id.munchkinPlayersHeader));
-            ArrayList<View> child = new ArrayList<>();
-            child.add(findViewById(R.id.munchkinPlayersHeader));
-            listDataChild.add(child);
+            onClickAddPlayer(null);
         }
     }
 
     public void onClickAddPlayer(View view) {
-        View userLayout = getLayoutInflater().inflate(R.layout.munchkin_player_header, null, false);
-        expandableListView.addView(userLayout);
+        ExpandingItem item = expandingList.createNewItem(R.layout.munchkin_list_item);
+        item.createSubItems(1);
+// кнопка открытия/закрытия
+        Button button = item.findViewById(R.id.munchkinBtnMore);
+        button.setOnClickListener(v -> item.toggleExpanded());
+        expListAdapter = new MunchkinExpandableListAdapter(this, playersList);
+// создаю нового игрока
+        Player player = new Player("Игрок " + playersList.size());
+        playersList.add(player);
+
+
     }
-
-    /*
-    *
-    * TODO вроде как лишнее, подумать и убрать
-    *
-    *
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void onClickOpenPopup(View view) {
-        PopupMenu popupMenu = new PopupMenu(this, view);
-        popupMenu.inflate(R.menu.menu_bar);
-
-        popupMenu
-                .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.menu1:
-                                Toast.makeText(getApplicationContext(),
-                                        "Вы выбрали PopupMenu 1",
-                                        Toast.LENGTH_SHORT).show();
-                                return true;
-                            case R.id.menu2:
-                                Toast.makeText(getApplicationContext(),
-                                        "Вы выбрали PopupMenu 2",
-                                        Toast.LENGTH_SHORT).show();
-                                return true;
-                            case R.id.menu3:
-                                Toast.makeText(getApplicationContext(),
-                                        "Вы выбрали PopupMenu 3",
-                                        Toast.LENGTH_SHORT).show();
-                                return true;
-                            default:
-                                return false;
-                        }
-                    }
-                });
-
-        popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
-            @Override
-            public void onDismiss(PopupMenu menu) {
-                Toast.makeText(getApplicationContext(), "onDismiss",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-        popupMenu.show();
-    }*/
 }

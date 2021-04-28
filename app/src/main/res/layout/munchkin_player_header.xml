@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/munchkinPlayersHeader"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,7 +15,7 @@
         android:weightSum="2">
 
         <TextView
-            android:id="@+id/namePlayer"
+            android:id="@+id/munchkinNamePlayer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -47,7 +48,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/textViewpower"
+                android:id="@+id/munchkinPlayerPower"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -60,7 +61,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnMore"
+            android:id="@+id/munchkinBtnMore"
             android:layout_width="32sp"
             android:layout_height="32sp"
             android:layout_gravity="center"
@@ -71,6 +72,7 @@
             android:layout_weight="1">
 
         </Button>
+
     </LinearLayout>
 
 </LinearLayout>
