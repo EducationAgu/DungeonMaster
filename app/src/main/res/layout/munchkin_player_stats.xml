@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/munchkinPlayersStats"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/info_bar_color"
     android:orientation="vertical">
     <LinearLayout
-        android:id="@+id/linearLayoutLevel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -26,7 +25,7 @@
         </TextView>
 
         <Button
-            android:id="@+id/btnLevelInc"
+            android:id="@+id/munchkinBtnLevelInc"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginRight="40dp"
@@ -50,7 +49,7 @@
         </TextView>
 
         <Button
-            android:id="@+id/btnLevelDec"
+            android:id="@+id/munchkinBtnLevelDec"
             android:layout_width="25dp"
             android:layout_height="25dp"
 
@@ -85,7 +84,7 @@
         </TextView>
 
         <Button
-            android:id="@+id/btnEquipmentInc"
+            android:id="@+id/munchkinBtnEquipmentInc"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:text="+"
@@ -109,7 +108,7 @@
         </TextView>
 
         <Button
-            android:id="@+id/btnEquipmentDec"
+            android:id="@+id/munchkinBtnEquipmentDec"
             android:layout_width="25dp"
             android:layout_height="25dp"
 
@@ -132,4 +131,4 @@
         android:textSize="15dp">
 
     </Button>
-</LinearLayout>
+</RelativeLayout>

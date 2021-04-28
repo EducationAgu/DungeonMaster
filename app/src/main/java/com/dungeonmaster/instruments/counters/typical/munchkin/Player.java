@@ -19,12 +19,27 @@ public class Player {
         this.name = name;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void incLevel() {
+        if (level < 100) {
+            level++;
+        }
     }
 
-    public void setEquipment(int equipment) {
-        this.equipment = equipment;
+    public void decLevel() {
+        if (level > 0) {
+            level--;
+        }
+    }
+
+    public void incEquipment() {
+        if (equipment < 100) {
+            equipment++;
+        }
+    }
+    public void decEquipment() {
+        if (equipment > 0) {
+            equipment--;
+        }
     }
 
     public String getName() {

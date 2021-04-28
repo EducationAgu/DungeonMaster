@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.diegodobelo.expandingview.ExpandingItem;
 import com.diegodobelo.expandingview.ExpandingList;
@@ -45,9 +45,42 @@ public class Munchkin extends Activity {
         button.setOnClickListener(v -> item.toggleExpanded());
         expListAdapter = new MunchkinExpandableListAdapter(this, playersList);
 // создаю нового игрока
-        Player player = new Player("Игрок " + playersList.size());
+        Player player = new Player("Player " + playersList.size());
         playersList.add(player);
+        TextView playerName = item.findViewById(R.id.munchkinNamePlayer);
+        playerName.setText(String.valueOf(player.getName()));
 
+// данные по игроку
+        TextView level = item.findViewById(R.id.munchkinPlayerLevel);
+        level.setText(String.valueOf(player.getLevel()));
 
+        TextView equipment = item.findViewById(R.id.munchkinPlayerEquipment);
+        equipment.setText(String.valueOf(player.getEquipment()));
+
+        TextView power = item.findViewById(R.id.munchkinPlayerPower);
+        power.setText(String.valueOf(player.getPowerAmount()));
+// Привязка данных игрока к кнопкам +/-
+        Button increaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentInc);
+        increaseEquipment.setOnClickListener(v -> {
+            player.incEquipment();
+            equipment.setText(String.valueOf(player.getEquipment()));
+        });
+
+        Button decreaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentDec);
+        decreaseEquipment.setOnClickListener(v -> {
+            player.decEquipment();
+            equipment.setText(String.valueOf(player.getEquipment()));
+        });
+
+        Button increaseLevel = item.findViewById(R.id.munchkinBtnLevelInc);
+        increaseLevel.setOnClickListener(v -> {
+            player.incLevel();
+            level.setText(String.valueOf(player.getLevel()));
+        });
+        Button decreaseLevel = item.findViewById(R.id.munchkinBtnLevelDec);
+        decreaseLevel.setOnClickListener(v -> {
+            player.decLevel();
+            level.setText(String.valueOf(player.getLevel()));
+        });
     }
 }
