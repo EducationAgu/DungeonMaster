@@ -2,32 +2,48 @@ package com.dungeonmaster.instruments.counters.typical;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.Toast;
-
-import androidx.appcompat.widget.PopupMenu;
+import android.widget.ExpandableListView;
 
 import com.dungeonmaster.R;
-import com.dungeonmaster.menu.MenuBar;
+import com.menu.ExpandableListAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Munchkin extends Activity {
 
-    LinearLayout layoutList;
+    ExpandableListView expandableListView;
+    ExpandableListAdapter expListAdapter;
+    ArrayList<View> listDataHeader;
+    ArrayList<ArrayList<View>> listDataChild;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manchcken);
 
-        layoutList = findViewById(R.id.munchkinLayout);
+        expandableListView = findViewById(R.id.listOfMunchkinPlayers);
+        createStartGroup();
+        expListAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
+        expandableListView.setAdapter(expListAdapter);
+    }
+
+    private void createStartGroup() {
+        listDataChild = new ArrayList<>();
+        listDataHeader = new ArrayList<>();
+        for(int i = 0; i < 3; i++) {
+            listDataHeader.add(findViewById(R.id.munchkinPlayersHeader));
+            ArrayList<View> child = new ArrayList<>();
+            child.add(findViewById(R.id.munchkinPlayersHeader));
+            listDataChild.add(child);
+        }
     }
 
     public void onClickAddPlayer(View view) {
-        View userLayout = getLayoutInflater().inflate(R.layout.munchkin_player, null, false);
-        layoutList.addView(userLayout);
+        View userLayout = getLayoutInflater().inflate(R.layout.munchkin_player_header, null, false);
+        expandableListView.addView(userLayout);
     }
 
     /*
