@@ -11,4 +11,5 @@
     app:start_collapsed="true"
     app:animation_duration="250">
 
+
 </com.diegodobelo.expandingview.ExpandingItem>
