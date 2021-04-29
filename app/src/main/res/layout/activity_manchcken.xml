@@ -76,7 +76,6 @@
                 android:layout_height="wrap_content">
             </com.diegodobelo.expandingview.ExpandingList>
 
-
         </LinearLayout>
     </ScrollView>
 

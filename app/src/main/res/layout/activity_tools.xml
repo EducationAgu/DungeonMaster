@@ -37,7 +37,6 @@
 
             />
 
-
         <Button
             android:id="@+id/buttonGameCounters"
             android:onClick="onClickOpenGameCounters"
@@ -45,16 +44,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="@drawable/counterdforgames2"
+            android:textColor="@color/button_text_color"
             android:textAlignment="center"
             android:textSize="14sp"
             android:fontFamily="@font/button_and_text"
             android:layout_marginLeft="2dp"
-            android:background="@color/purple_500"
-
-
+            android:background="@drawable/counterdforgames2"
             />
-
 
     </LinearLayout>
 
