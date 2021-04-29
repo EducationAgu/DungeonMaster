@@ -10,7 +10,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         >
 
         <LinearLayout
@@ -56,7 +56,7 @@
 
                 <Button
                     android:id="@+id/btnAddPlayer"
-                    android:layout_width="220dp"
+                    android:layout_width="210dp"
                     android:layout_height="match_parent"
                     android:text="@string/add_player"
                     android:layout_margin="10px"
@@ -74,12 +74,6 @@
                 android:id="@+id/listOfMunchkinPlayers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                </ScrollView>
-
             </com.diegodobelo.expandingview.ExpandingList>
 
 
