@@ -41,8 +41,9 @@ public class Munchkin extends Activity {
         ExpandingItem item = expandingList.createNewItem(R.layout.munchkin_list_item);
         item.createSubItems(1);
 // кнопка открытия/закрытия
-        Button button = item.findViewById(R.id.munchkinBtnMore);
-        button.setOnClickListener(v -> item.toggleExpanded());
+        //Button button = item.findViewById(R.id.munchkinBtnMore);
+        TextView textView = item.findViewById(R.id.munchkinTextViewPlayerPower);
+        textView.setOnClickListener(v -> item.toggleExpanded());
         expListAdapter = new MunchkinExpandableListAdapter(this, playersList);
 // создаю нового игрока
         Player player = new Player("Player " + playersList.size());

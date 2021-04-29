@@ -42,43 +42,31 @@
                 android:weightSum="1"
                 android:layout_marginBottom="10dp">
 
-                <TextView
-                    android:id="@+id/textViewAddPlayer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/reset"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:textSize="16dp"
+                    android:layout_margin="10px"
+                   />
+
+                <Button
+                    android:id="@+id/btnAddPlayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="@string/add_player"
-                    android:layout_weight="0.9"
-                    android:textAllCaps="true"
-                    android:textSize="20dp"
-                    android:padding="10dp"
-                    android:gravity="center"
+                    android:layout_margin="10px"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+                    android:onClick="onClickAddPlayer"
 
                     />
-
-                <Button
-                    android:id="@+id/btnAddPlayerInc"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.15"
-                    android:background="#4CAF50"
-                    android:onClick="onClickAddPlayer"
-                    android:text="+"
-                    android:textColor="@color/black"
-
-                    android:textSize="15dp" />
-
-                <Button
-                    android:id="@+id/btnAddPlayerDec"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.15"
-                    android:text="-"
-                    android:textSize="15dp"
-                    android:layout_marginRight="10dp"
-                    android:textColor="@color/black"
-                    android:background="@color/strokeInput" />
-
 
             </LinearLayout>
 
@@ -88,17 +76,8 @@
                 android:layout_height="wrap_content">
 
             </com.diegodobelo.expandingview.ExpandingList>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/reset"
-                android:background="@drawable/btn_app_form"
-                android:textColor="@color/button_text_color"
-                android:textSize="16dp"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="100dp"
-                android:layout_marginBottom="20dp"/>
+
+
         </LinearLayout>
     </ScrollView>
 
