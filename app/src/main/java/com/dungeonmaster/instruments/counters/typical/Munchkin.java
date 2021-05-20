@@ -83,5 +83,14 @@ public class Munchkin extends Activity {
             player.decLevel();
             level.setText(String.valueOf(player.getLevel()));
         });
+        Button deleteSelf = item.findViewById(R.id.btnDeleteMunchkinPlayer);
+        deleteSelf.setOnClickListener(v -> {
+            playersList.remove(player);
+            expandingList.removeItem(item);
+        });
+    }
+
+    public void onClickDeletePlayer(View view) {
+
     }
 }
