@@ -2,75 +2,86 @@ package com.dungeonmaster.instruments.counters.typical;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.TextView;
 
-import androidx.appcompat.widget.PopupMenu;
-
+import com.diegodobelo.expandingview.ExpandingItem;
+import com.diegodobelo.expandingview.ExpandingList;
 import com.dungeonmaster.R;
-import com.dungeonmaster.menu.MenuBar;
+import com.dungeonmaster.instruments.counters.typical.munchkin.Player;
+import com.menu.MunchkinExpandableListAdapter;
 
-public class Munchkin extends MenuBar {
+import java.util.ArrayList;
+
+public class Munchkin extends Activity {
+
+    ExpandingList expandingList;
+    MunchkinExpandableListAdapter expListAdapter;
+
+    ArrayList<Player> playersList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manchcken);
+        expandingList = findViewById(R.id.listOfMunchkinPlayers);
+
+        createStartGroup();
     }
 
-    public void onClickCounter(View view) {
-        System.out.println(1);
+    private void createStartGroup() {
+        playersList = new ArrayList<>();
+        for(int i = 0; i < 3; i++) {
+            onClickAddPlayer(null);
+        }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
+    public void onClickAddPlayer(View view) {
+        ExpandingItem item = expandingList.createNewItem(R.layout.munchkin_list_item);
+        item.createSubItems(1);
+// кнопка открытия/закрытия
+        //Button button = item.findViewById(R.id.munchkinBtnMore);
+        TextView textView = item.findViewById(R.id.munchkinTextViewPlayerPower);
+        textView.setOnClickListener(v -> item.toggleExpanded());
+        expListAdapter = new MunchkinExpandableListAdapter(this, playersList);
+// создаю нового игрока
+        Player player = new Player("Player " + playersList.size());
+        playersList.add(player);
+        TextView playerName = item.findViewById(R.id.munchkinNamePlayer);
+        playerName.setText(String.valueOf(player.getName()));
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
+// данные по игроку
+        TextView level = item.findViewById(R.id.munchkinPlayerLevel);
+        level.setText(String.valueOf(player.getLevel()));
 
-    public void onClickOpenPopup(View view) {
-        PopupMenu popupMenu = new PopupMenu(this, view);
-        popupMenu.inflate(R.menu.menu_bar);
+        TextView equipment = item.findViewById(R.id.munchkinPlayerEquipment);
+        equipment.setText(String.valueOf(player.getEquipment()));
 
-        popupMenu
-                .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.menu1:
-                                Toast.makeText(getApplicationContext(),
-                                        "Вы выбрали PopupMenu 1",
-                                        Toast.LENGTH_SHORT).show();
-                                return true;
-                            case R.id.menu2:
-                                Toast.makeText(getApplicationContext(),
-                                        "Вы выбрали PopupMenu 2",
-                                        Toast.LENGTH_SHORT).show();
-                                return true;
-                            case R.id.menu3:
-                                Toast.makeText(getApplicationContext(),
-                                        "Вы выбрали PopupMenu 3",
-                                        Toast.LENGTH_SHORT).show();
-                                return true;
-                            default:
-                                return false;
-                        }
-                    }
-                });
-
-        popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
-            @Override
-            public void onDismiss(PopupMenu menu) {
-                Toast.makeText(getApplicationContext(), "onDismiss",
-                        Toast.LENGTH_SHORT).show();
-            }
+        TextView power = item.findViewById(R.id.munchkinPlayerPower);
+        power.setText(String.valueOf(player.getPowerAmount()));
+// Привязка данных игрока к кнопкам +/-
+        Button increaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentInc);
+        increaseEquipment.setOnClickListener(v -> {
+            player.incEquipment();
+            equipment.setText(String.valueOf(player.getEquipment()));
         });
-        popupMenu.show();
+
+        Button decreaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentDec);
+        decreaseEquipment.setOnClickListener(v -> {
+            player.decEquipment();
+            equipment.setText(String.valueOf(player.getEquipment()));
+        });
+
+        Button increaseLevel = item.findViewById(R.id.munchkinBtnLevelInc);
+        increaseLevel.setOnClickListener(v -> {
+            player.incLevel();
+            level.setText(String.valueOf(player.getLevel()));
+        });
+        Button decreaseLevel = item.findViewById(R.id.munchkinBtnLevelDec);
+        decreaseLevel.setOnClickListener(v -> {
+            player.decLevel();
+            level.setText(String.valueOf(player.getLevel()));
+        });
     }
 }

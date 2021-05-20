@@ -12,6 +12,16 @@
     <string name="btn_signOut">Выйти из аккаунта</string>
     <string name="forget_password"><u>Забыли пароль?</u></string>
 
+
+    <string name="reset">Сброс</string>
+    <string name="add_player">Добавить игрока</string>
+    <string name="name_player">Игрок</string>
+    <string name="power_player">Сила</string>
+    <string name="level_player">Уровень</string>
+    <string name="equipment_player">Снаряжение</string>
+    <string name="more"><u>больше</u></string>
+
+
     <string name="btn_DD">D&amp;D помошник</string>
     <string name="btn_Tools">Инструментарий</string>
     <string name="btn_TableGames">Настольные игры</string>

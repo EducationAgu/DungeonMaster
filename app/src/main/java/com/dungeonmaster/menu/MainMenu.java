@@ -1,17 +1,9 @@
 package com.dungeonmaster.menu;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.dungeonmaster.R;
 import com.dungeonmaster.games.dnd.DnDHelper;
@@ -27,7 +19,7 @@ public class MainMenu extends MenuBar {
         setContentView(R.layout.activity_main_menu);
         doubleBackToExitPressedOnce = false;
         if (!Server.isAvailable() || !Server.isUserLogged()){
-            findViewById(R.id.menu1).setVisibility(View.GONE);
+//            findViewById(R.id.menu1).setVisibility(View.GONE);
         }
     }
 

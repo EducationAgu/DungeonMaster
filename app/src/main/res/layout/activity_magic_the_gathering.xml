@@ -82,7 +82,6 @@
             android:layout_weight="1"
             android:background="@color/purple_500"
             android:fontFamily="@font/button_and_text"
-            android:onClick="onClickCounter"
             android:padding="@dimen/menu_btn_items_paddings"
             android:textAlignment="center"
             android:textColor="@color/button_text_color"
