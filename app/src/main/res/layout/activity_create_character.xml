@@ -70,13 +70,11 @@
         android:layout_marginBottom="8dp">
 
 
-
         <Button
             android:id="@+id/buttonCharacteristic"
-            android:text="@string/btn_Characteristic"
-            android:layout_marginRight="2dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="@color/purple_500"
             android:fontFamily="@font/button_and_text"
@@ -87,7 +85,6 @@
 
         <Button
             android:id="@+id/buttonCharacterData"
-            android:text="@string/btn_CharacterData"
             android:layout_marginLeft="2dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -95,6 +92,7 @@
             android:background="@color/purple_500"
             android:fontFamily="@font/button_and_text"
             android:padding="@dimen/menu_btn_items_paddings"
+            android:text="@string/btn_Characteristic"
             android:textAlignment="center"
             android:textColor="@color/button_text_color"
             android:textSize="14sp" />

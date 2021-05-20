@@ -28,13 +28,11 @@
             android:layout_height="match_parent"
             android:layout_marginRight="2dp"
             android:layout_weight="1"
-            android:background="@drawable/notes"
             android:fontFamily="@font/button_and_text"
             android:textAlignment="center"
             android:textColor="@color/button_text_color"
             android:textSize="14sp"
-
-
+            android:background="@color/purple_500"
             />
 
         <Button
@@ -45,11 +43,11 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@color/button_text_color"
+            android:background="@color/purple_500"
             android:textAlignment="center"
             android:textSize="14sp"
             android:fontFamily="@font/button_and_text"
             android:layout_marginLeft="2dp"
-            android:background="@drawable/counterdforgames2"
             />
 
     </LinearLayout>
@@ -74,11 +72,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/cub"
             android:fontFamily="@font/button_and_text"
             android:padding="@dimen/menu_btn_items_paddings"
             android:textAlignment="center"
             android:textColor="@color/button_text_color"
+            android:background="@color/purple_500"
             android:textSize="14sp" />
 
     </LinearLayout>
