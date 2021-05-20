@@ -40,6 +40,7 @@ public class Player {
         if (equipment > 0) {
             equipment--;
         }
+
     }
 
     public String getName() {
