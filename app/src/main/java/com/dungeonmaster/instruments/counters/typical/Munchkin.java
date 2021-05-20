@@ -89,8 +89,4 @@ public class Munchkin extends Activity {
             expandingList.removeItem(item);
         });
     }
-
-    public void onClickDeletePlayer(View view) {
-
-    }
 }
