@@ -1,16 +1,14 @@
 package com.dungeonmaster.menu;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
+import com.dungeonmaster.ApplicationVariables;
 import com.dungeonmaster.R;
 import com.serverconnection.Server;
 
@@ -19,8 +17,18 @@ public class MenuBar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_actionbar);
-       // setSupportActionBar(toolbar);
+        TextView username = findViewById(R.id.application_username);
+        String usernameStr = getApplicationVariables().getUsername();
+        if (usernameStr != null) {
+            username.setText(usernameStr);
+        }
+//        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_actionbar);
+//        setSupportActionBar(toolbar);
+    }
+
+
+    public ApplicationVariables getApplicationVariables(){
+        return ((ApplicationVariables) getApplicationContext());
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.dungeonmaster;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ public class LoadingScreen extends Activity {
                     break;
             }
         }
+
         // Запускую отдельный поток на загрузку данных с сервера.
         Thread synchronizer = new Thread(new DataSynchronizer(this));
         synchronizer.start();
@@ -59,6 +61,8 @@ public class LoadingScreen extends Activity {
                 animIn = R.anim.slide_in_left;
                 animOut = R.anim.slide_out_right;
             }
+            String username = response.getBody();
+            ((ApplicationVariables) getApplicationContext()).setUsername(username);
             activity.startActivity(nextScreen);
             activity.overridePendingTransition(animIn, animOut);
             return null;
@@ -86,6 +90,8 @@ public class LoadingScreen extends Activity {
                     animOut = R.anim.slide_out_right;
                 }
             }
+            String name = response.getBody();
+            ((ApplicationVariables) getApplicationContext()).setUsername(name);
             activity.startActivity(nextScreen);
             activity.overridePendingTransition(animIn, animOut);
             return null;
