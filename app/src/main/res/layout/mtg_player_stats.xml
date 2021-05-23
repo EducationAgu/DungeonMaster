@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mtgPlayersStats"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/info_bar_color"
+    android:orientation="vertical"
+    android:layout_marginBottom="20dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_margin="20px"
+        android:layout_alignParentTop="true">
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnDeleteMtgPlayer"
+        android:layout_below="@+id/linearLayoutEquipment"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Удалить игрока"
+        android:layout_margin="40px"
+        android:textSize="16dp"
+        android:padding="5dp"
+
+        android:background="@drawable/btn_app_form"
+        android:textColor="@color/button_text_color">
+
+    </Button>
+
+</RelativeLayout>
