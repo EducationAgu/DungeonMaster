@@ -66,15 +66,6 @@ public class Munchkin extends Activity {
             player.incEquipment();
             equipment.setText(String.valueOf(player.getEquipment()));
         });
-        TextView power = item.findViewById(R.id.munchkinPlayerPower);
-        power.setText(String.valueOf(player.getPowerAmount()));
-// Привязка данных игрока к кнопкам +/-
-        Button increaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentInc);
-        increaseEquipment.setOnClickListener(v -> {
-            player.incEquipment();
-            equipment.setText(String.valueOf(player.getEquipment()));
-            power.setText(String.valueOf(player.getPowerAmount()));
-        });
 
         Button decreaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentDec);
         decreaseEquipment.setOnClickListener(v -> {
