@@ -21,7 +21,7 @@
 
     <Button
         android:id="@+id/btnDeleteMtgPlayer"
-        android:layout_below="@+id/linearLayoutEquipment"
+        android:layout_below="@+id/linearLayoutLevel"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
