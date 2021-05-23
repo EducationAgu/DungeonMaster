@@ -66,22 +66,39 @@ public class Munchkin extends Activity {
             player.incEquipment();
             equipment.setText(String.valueOf(player.getEquipment()));
         });
+        TextView power = item.findViewById(R.id.munchkinPlayerPower);
+        power.setText(String.valueOf(player.getPowerAmount()));
+// Привязка данных игрока к кнопкам +/-
+        Button increaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentInc);
+        increaseEquipment.setOnClickListener(v -> {
+            player.incEquipment();
+            equipment.setText(String.valueOf(player.getEquipment()));
+            power.setText(String.valueOf(player.getPowerAmount()));
+        });
 
         Button decreaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentDec);
         decreaseEquipment.setOnClickListener(v -> {
             player.decEquipment();
             equipment.setText(String.valueOf(player.getEquipment()));
+            power.setText(String.valueOf(player.getPowerAmount()));
         });
 
         Button increaseLevel = item.findViewById(R.id.munchkinBtnLevelInc);
         increaseLevel.setOnClickListener(v -> {
             player.incLevel();
             level.setText(String.valueOf(player.getLevel()));
+            power.setText(String.valueOf(player.getPowerAmount()));
         });
         Button decreaseLevel = item.findViewById(R.id.munchkinBtnLevelDec);
         decreaseLevel.setOnClickListener(v -> {
             player.decLevel();
             level.setText(String.valueOf(player.getLevel()));
+            power.setText(String.valueOf(player.getPowerAmount()));
+        });
+        Button deleteSelf = item.findViewById(R.id.btnDeleteMunchkinPlayer);
+        deleteSelf.setOnClickListener(v -> {
+            playersList.remove(player);
+            expandingList.removeItem(item);
         });
     }
 }

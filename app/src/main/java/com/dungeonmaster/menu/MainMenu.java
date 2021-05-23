@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+
 import com.dungeonmaster.R;
 import com.dungeonmaster.games.dnd.DnDHelper;
 import com.dungeonmaster.instruments.Tools;
@@ -36,13 +37,6 @@ public class MainMenu extends MenuBar {
     public void onClickFavoriteGame(View view) {
         Intent dndHelper = new Intent(this, DnDHelper.class);
         startActivity(dndHelper);
-    }
-
-    public void onClickLogout(View view) {
-        Server.logout(this);
-        Intent signIn = new Intent(this, SignIn.class);
-        startActivity(signIn);
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
     private static boolean doubleBackToExitPressedOnce;

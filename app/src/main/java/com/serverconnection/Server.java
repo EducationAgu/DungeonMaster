@@ -3,6 +3,7 @@ package com.serverconnection;
 import android.app.Activity;
 import android.os.AsyncTask;
 
+import com.dungeonmaster.ApplicationVariables;
 import com.error.NoConnection;
 import com.error.NoLoginInfo;
 import com.error.UserUnauthorized;
@@ -38,19 +39,42 @@ public class Server {
 
 //  Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес
     public static final String url =
-    "http://192.168.48.109:8080";
+    "http://192.168.0.104:8080";
+    // Флаг - зашёл ли пользователь
     private static boolean isUserLogged = false;
+    // Флаг - доступен ли сервер
     private static boolean isAvailable = false;
 
+    // последний использованный запрос
     private static String lastUrl = null;
+    // захеширванный заголовок "логин:пароль" для организации доступа к бэку
     private static String loginHeader;
 
+    // файл с данными пользователя
     private final static String loginFileName = "loginData.lgn";
 
+    // объект который гонит объект в json представление, чтобы потом отправить на бэк
+    // Если хотим отправить что-то на бэк, сначала сообщение нужно преобразовать в json формат через
+    // методы этого объекта
     private static Gson gson;
 
+    // Маппа всех запросов.
+    // Логика такая, после совершения запроса, он уходит в отдельный поток, чтобы не грузить
+    // поток с интерфейсом приложения. Получить результат запрос можно вызвав у Server функцию
+    // getQueryResult. За раз можно совершить только один запрос на один адресс
+    // (т.е если кинуть запрос на регистрацию с одними данными, а затем ещё раз кинуть с другими,
+    // не проверив чо там пришло в пером - данные по первому запросу затрутся)
     private static HashMap<String, AsyncTask<Querry, Void, ResponseEntity<String>>> queries = new HashMap<>();;
-
+/*
+*   Соединение с бэком. Создаётся при старте приложения.
+*   Сначала просто пытаемся подцепится к бэку,
+*   Если он не активен - выбрасываеться ошибка NoConnection
+*   если он активен - смотрим есть ли данные по логину в
+*   приложении.
+*   Если есть - пытаемся залогинится - при неудаче выбрасываем @UserUnauthorized,
+*   Если нет, то выкидываем ошибку @NoLoginInfo
+*
+* */
     public Server(Activity activity) throws NoConnection, IOException, UserUnauthorized, NoLoginInfo {
         isAvailable = false;
         isUserLogged = false;
@@ -78,12 +102,16 @@ public class Server {
             throw new NoLoginInfo();
         }
 
-        passRequest(HttpMethod.POST, URLs.LOGIN, null);
+        passRequest(HttpMethod.GET, URLs.LOGIN, null);
         response = getQueryResult(URLs.LOGIN);
 
         if (response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+            logout(activity);
             throw new UserUnauthorized();
         }
+
+        String name = response.getBody();
+        ((ApplicationVariables) activity.getApplicationContext()).setUsername(name);
 
         isUserLogged = true;
     }
@@ -128,7 +156,7 @@ public class Server {
     }
 
     /**
-     * Передаёт запрос на сервер
+     * Приводит @body к json формату и передаёт запрос на сервер
      * @param method тип запроса Post|Get|Delete|Patch
      * @param urlEnd адрес на который отправляется запрос. e.g. "/home", "/User/register"
      * @param body объект который необходимо передать на сервер. Может быть пустым. e.g UserData для регистрации
@@ -230,36 +258,7 @@ public class Server {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        passRequest(HttpMethod.POST, URLs.LOGIN, null);
-
-        new Thread(() -> {
-            try {
-                ResponseEntity<String> result = queries.get(URLs.LOGIN).get();
-                switch (result.getStatusCode()) {
-                    case SERVICE_UNAVAILABLE:
-                        isAvailable = false;
-                        isUserLogged = false;
-                        break;
-                    case UNAUTHORIZED:
-                        isUserLogged = false;
-                        break;
-                    case OK:
-                        isAvailable = true;
-                        isUserLogged = true;
-                        break;
-                }
-            } catch (ExecutionException | InterruptedException e) {
-                e.printStackTrace();
-            }
-        }).start();
-
-//        ResponseEntity<String> result = getQueryResult(URLs.LOGIN);
-//        if (result.getStatusCode() == HttpStatus.SERVICE_UNAVAILABLE) {
-//            isAvailable = false;
-//        }
-//
-//        isUserLogged = true;
+        passRequest(HttpMethod.POST, URLs.LOGIN, user);
     }
 
     /**
@@ -278,14 +277,17 @@ public class Server {
         }
     }
 
+    /*
+    * возвращает последний url по которому был совершён запрос
+    * */
     public static String getLastUrl() {
         return lastUrl;
     }
-
+/*Возвращает true/false "залогинен ли пользователь?"*/
     public static boolean isUserLogged() {
         return isUserLogged;
     }
-
+/*Проверка доступа к серверу/бэку*/
     public static boolean isAvailable() {
         return isAvailable;
     }
