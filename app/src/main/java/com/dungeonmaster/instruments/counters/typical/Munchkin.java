@@ -15,7 +15,7 @@ import com.menu.MunchkinExpandableListAdapter;
 import java.util.ArrayList;
 
 public class Munchkin extends Activity {
-    public static int counter = 1;
+
     ExpandingList expandingList;
     MunchkinExpandableListAdapter expListAdapter;
 
@@ -46,7 +46,7 @@ public class Munchkin extends Activity {
         textView.setOnClickListener(v -> item.toggleExpanded());
         expListAdapter = new MunchkinExpandableListAdapter(this, playersList);
 // создаю нового игрока
-        Player player = new Player("Player " + counter++);
+        Player player = new Player("Player " + playersList.size());
         playersList.add(player);
         TextView playerName = item.findViewById(R.id.munchkinNamePlayer);
         playerName.setText(String.valueOf(player.getName()));
@@ -65,7 +65,6 @@ public class Munchkin extends Activity {
         increaseEquipment.setOnClickListener(v -> {
             player.incEquipment();
             equipment.setText(String.valueOf(player.getEquipment()));
-            power.setText(String.valueOf(player.getPowerAmount()));
         });
 
         Button decreaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentDec);

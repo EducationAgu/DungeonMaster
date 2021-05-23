@@ -32,6 +32,7 @@
 
     <string name="btn_Manchken">Манчкин</string>
     <string name="btn_MagicTheGathering">Magic The Gathering</string>
+    <string name="counter_Infect">Infect</string>
 
     <string name="btn_MyGames">Мои игры</string>
     <string name="btn_ExistingGames">Существующие игры</string>
