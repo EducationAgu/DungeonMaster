@@ -39,7 +39,7 @@ public class Server {
 
 //  Адаптер беспроводной локальной сети Беспроводная сеть: IPv4-адрес
     public static final String url =
-    "http://192.168.0.104:8080";
+    "http://37.139.35.47:8080";
     // Флаг - зашёл ли пользователь
     private static boolean isUserLogged = false;
     // Флаг - доступен ли сервер
