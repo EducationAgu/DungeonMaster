@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,10 +19,10 @@ public class MenuBar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView username = findViewById(R.id.application_username);
+        setContentView(R.layout.options_menu);
         String usernameStr = getApplicationVariables().getUsername();
         if (usernameStr != null) {
-            username.setText(usernameStr);
+            setTitle(usernameStr);
         }
 //        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_actionbar);
 //        setSupportActionBar(toolbar);

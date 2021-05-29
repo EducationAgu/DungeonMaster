@@ -39,7 +39,8 @@ public class SignIn extends Activity {
 
         String login = loginTextBox.getText().toString();
         String password = passwordTextBox.getText().toString();
-        if (userDataChecker.isValidEmail(login) && userDataChecker.isValidPassword(password)) {
+        // userDataChecker.isValidEmail(login) &&
+        if (userDataChecker.isValidPassword(password)) {
             user.setLogin(login);
             user.setPassword(password);
 
