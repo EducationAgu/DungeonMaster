@@ -38,21 +38,20 @@ public class CubeScene extends Activity {
         super.onStop();
     }
 
+    public boolean isTouching;
     public boolean onTouchEvent(MotionEvent me) {
 
         if (me.getAction() == MotionEvent.ACTION_DOWN) {
             xpos = me.getX();
             ypos = me.getY();
+
+            isTouching = true;
             return true;
         }
 
-//        if (me.getAction() == MotionEvent.ACTION_UP) {
-//            xpos = -1;
-//            ypos = -1;
-//            touchTurn = 0;
-//            touchTurnUp = 0;
-//            return true;
-//        }
+        if (me.getAction() == MotionEvent.ACTION_UP) {
+            isTouching = false;
+        }
 
         if (me.getAction() == MotionEvent.ACTION_MOVE) {
             float xd = me.getX() - xpos;
