@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.dungeonmaster.R;
+import com.dungeonmaster.instruments.Tools;
 import com.dungeonmaster.instruments.counters.typical.MagicTheGathering;
 import com.dungeonmaster.instruments.counters.typical.Munchkin;
-import com.dungeonmaster.menu.MenuBar;
+import com.menu.MenuBar;
 
 public class TypicalCounters extends MenuBar {
 
@@ -25,5 +26,10 @@ public class TypicalCounters extends MenuBar {
     public void onClickMagicTheGathering(View view) {
         Intent munchkin = new Intent(this, MagicTheGathering.class);
         startActivity(munchkin);
+    }
+
+    @Override
+    public void onBackPressed() {
+        setNextScreen(Tools.class, TO_LEFT);
     }
 }

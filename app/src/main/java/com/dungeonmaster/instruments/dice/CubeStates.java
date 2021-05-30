@@ -52,8 +52,6 @@ public class CubeStates {
     }
 
     public float[] toss() {
-        int i = random.nextInt(49)/10;
-        System.out.println(i);
-        return cube[i-1];
+        return cube[Math.floorDiv(random.nextInt(59),10)];
     }
 }

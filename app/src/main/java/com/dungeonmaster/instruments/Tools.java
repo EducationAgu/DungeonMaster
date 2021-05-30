@@ -8,9 +8,10 @@ import android.view.View;
 import com.dungeonmaster.R;
 import com.dungeonmaster.instruments.counters.GameCounters;
 import com.dungeonmaster.instruments.dice.CubeScene;
-import com.dungeonmaster.menu.MenuBar;
+import com.dungeonmaster.menu.MainMenu;
+import com.menu.MenuBar;
 
-public class Tools extends Activity {
+public class Tools extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +33,10 @@ public class Tools extends Activity {
     public void onClickOpenNotes(View view) {
         // Intent cubeScene = new Intent(this, Notes.class);
         // startActivity(cubeScene);
+    }
+
+    @Override
+    public void onBackPressed() {
+        setNextScreen(MainMenu.class, TO_LEFT);
     }
 }

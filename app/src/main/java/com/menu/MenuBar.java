@@ -1,4 +1,4 @@
-package com.dungeonmaster.menu;
+package com.menu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +12,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.dungeonmaster.ApplicationVariables;
 import com.dungeonmaster.R;
+import com.dungeonmaster.menu.SignIn;
 import com.serverconnection.Server;
 
-public class MenuBar extends AppCompatActivity {
+public class MenuBar extends MainMenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

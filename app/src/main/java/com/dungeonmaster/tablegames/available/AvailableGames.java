@@ -1,12 +1,9 @@
 package com.dungeonmaster.tablegames.available;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.dungeonmaster.R;
-import com.dungeonmaster.menu.MenuBar;
+import com.menu.MenuBar;
 
 public class AvailableGames extends MenuBar {
 

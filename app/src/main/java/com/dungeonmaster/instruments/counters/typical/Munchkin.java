@@ -1,6 +1,7 @@
 package com.dungeonmaster.instruments.counters.typical;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import com.diegodobelo.expandingview.ExpandingItem;
 import com.diegodobelo.expandingview.ExpandingList;
 import com.dungeonmaster.R;
+import com.dungeonmaster.instruments.Tools;
+import com.dungeonmaster.instruments.counters.TypicalCounters;
 import com.dungeonmaster.instruments.counters.typical.munchkin.Player;
 import com.menu.MunchkinExpandableListAdapter;
 
@@ -91,5 +94,11 @@ public class Munchkin extends Activity {
             playersList.remove(player);
             expandingList.removeItem(item);
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, TypicalCounters.class));
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }
