@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayoutNamePlayers"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/NamePlayer"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:background="@color/white"
+        android:text="@string/name_player">
+
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/buttonDopMenu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:src="@drawable/pointer">
+
+    </ImageButton>
+
+</LinearLayout>

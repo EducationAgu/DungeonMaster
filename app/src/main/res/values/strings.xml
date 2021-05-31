@@ -14,12 +14,22 @@
 
 
     <string name="reset">Сброс</string>
+    <string name="start">Старт</string>
+    <string name="dopmenu">Дополнительное меню</string>
     <string name="add_player">Добавить игрока</string>
     <string name="name_player">Игрок</string>
     <string name="power_player">Сила</string>
     <string name="level_player">Уровень</string>
     <string name="equipment_player">Снаряжение</string>
     <string name="more"><u>больше</u></string>
+    <string name="storm_counter">Сыграно карт</string>
+
+    <string name="sc_white">белый</string>
+    <string name="sc_black">черный</string>
+    <string name="sc_blue">синий</string>
+    <string name="sc_green">зеленый</string>
+    <string name="sc_colorless">бесцветный</string>
+    <string name="sc_red">красный</string>
 
 
     <string name="btn_DD">D&amp;D помошник</string>
@@ -33,6 +43,7 @@
     <string name="btn_Manchken">Манчкин</string>
     <string name="btn_MagicTheGathering">Magic The Gathering</string>
     <string name="counter_Infect">Infect</string>
+    <string name="counter_health">Здоровье</string>
 
     <string name="btn_MyGames">Мои игры</string>
     <string name="btn_ExistingGames">Существующие игры</string>
