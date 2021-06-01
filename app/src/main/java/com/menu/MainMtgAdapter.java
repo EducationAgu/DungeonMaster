@@ -37,8 +37,13 @@ public class MainMtgAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.mtg_main_dopmenu, null);
+            convertView = inflater.inflate(R.layout.mtg_main_players, null);
         }
+
+        Player player = (Player) getChild(groupPosition, childPosition);
+
+        TextView health = convertView.findViewById(R.id.TextViewSCHealth);
+        health.setText(String.valueOf(player.getHealth()));
 
         return convertView;
     }

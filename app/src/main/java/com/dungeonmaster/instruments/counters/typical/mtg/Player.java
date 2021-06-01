@@ -3,14 +3,14 @@ package com.dungeonmaster.instruments.counters.typical.mtg;
 public class Player {
     private String name;
     private int health;
-    private int inflect;
+    private int infect;
     private int cardsPlayed;
     private int white;
     private int black;
     private int blue;
     private int green;
     private int red;
-    private int noColor;
+    private int colorless;
 
     public Player(String name){
         this.name = name;
@@ -32,12 +32,12 @@ public class Player {
         this.health = health;
     }
 
-    public int getInflect() {
-        return inflect;
+    public int getInfect() {
+        return infect;
     }
 
-    public void setInflect(int inflect) {
-        this.inflect = inflect;
+    public void setInfect(int infect) {
+        this.infect = infect;
     }
 
     public int getCardsPlayed() {
@@ -88,21 +88,92 @@ public class Player {
         this.red = red;
     }
 
-    public int getNoColor() {
-        return noColor;
+    public int getColorless() {
+        return colorless;
     }
 
-    public void setNoColor(int noColor) {
-        this.noColor = noColor;
+    public void setColorless(int noColor) {
+        this.colorless = noColor;
     }
 
     public void incHealth() {
         health++;
     }
-
     public void decHealth() {
-        if (health>0) {
+        if (health > 0) {
             health--;
+        }
+    }
+
+    public void incInfect() {
+        infect++;
+    }
+    public void decInfect() {
+        if (infect > 0){
+            infect--;
+        }
+    }
+
+    public void incCardsPlayed() {
+        cardsPlayed++;
+    }
+    public void decCardsPlayed() {
+        if (cardsPlayed > 0){
+            cardsPlayed--;
+        }
+    }
+
+    public void incWhite() {
+        white++;
+    }
+    public void decWhite() {
+        if (white > 0){
+            white--;
+        }
+    }
+
+    public void incBlack() {
+        black++;
+    }
+    public void decBlack() {
+        if (black > 0){
+            black--;
+        }
+    }
+
+    public void incBlue() {
+        blue++;
+    }
+    public void decBlue() {
+        if (blue > 0){
+            blue--;
+        }
+    }
+
+    public void incGreen() {
+        green++;
+    }
+    public void decGreen() {
+        if (green > 0){
+            green--;
+        }
+    }
+
+    public void incRed() {
+        red++;
+    }
+    public void decRed() {
+        if (red > 0){
+            red--;
+        }
+    }
+
+    public void incColorless() {
+        colorless++;
+    }
+    public void decColorless() {
+        if (colorless > 0){
+            colorless--;
         }
     }
 }
