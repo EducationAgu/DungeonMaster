@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="10dp"
+    android:background="@color/windowAppForm">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/equipmentName"
+                android:hint="@string/equipmentName"
+                android:inputType="none"
+                android:fontFamily="@font/button_and_text"
+                android:textColor="@color/base_text_color"
+                android:textColorHint="@color/for_input_text_color"
+                android:textSize="20dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/filds"
+                android:padding="15dp"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/equipmentInfo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/filds"
+                android:fontFamily="@font/button_and_text"
+                android:hint="@string/equipmentInfo"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:padding="15dp"
+                android:gravity="top|left"
+                android:scrollbars="vertical"
+                android:text=""
+                android:textColor="@color/base_text_color"
+                android:textColorHint="@color/for_input_text_color"
+                android:textSize="20dp" />
+
+            <Switch
+                android:id="@+id/equipmentPutOn"
+                style="@style/Widget.AppCompat.CompoundButton.Switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/filds"
+                android:fontFamily="@font/button_and_text"
+                android:padding="15dp"
+                android:switchTextAppearance="@style/TextAppearance.AppCompat.Widget.Switch"
+                android:text="Надето на персонаже"
+                android:textColor="@color/base_text_color"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/buttonAddEquipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_app_form"
+                android:fontFamily="@font/button_and_text"
+                android:text="@string/btn_Add"
+                android:textColor="@color/button_text_color"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>
