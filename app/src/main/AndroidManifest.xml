@@ -28,6 +28,22 @@
         <activity android:name=".instruments.counters.typical.Munchkin">
 
            </activity>
+        <activity android:name=".games.dnd.character.CharacterData">
+
+        </activity>
+
+        <activity android:name=".games.dnd.character.Characteristics">
+        </activity>
+
+        <activity android:name=".games.dnd.character.throwers.DeathSavingThrows">
+
+        </activity>
+        <activity android:name=".games.dnd.character.Equipment">
+
+        </activity>
+        <activity android:name=".games.dnd.character.Abilities">
+
+        </activity>
         <activity android:name=".instruments.counters.typical.MagicTheGathering" />
         <activity android:name=".instruments.counters.TypicalCounters" />
         <activity android:name=".instruments.counters.GameCounters" />

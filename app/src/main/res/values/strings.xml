@@ -57,7 +57,72 @@
     <string name="btn_Characteristic">Характеристика</string>
     <string name="btn_CharacterData">Данные персонажа</string>
 
+    <string name="equipmentName">Название снаряжения</string>
+    <string name="equipmentInfo">Информация о предмете</string>
+    
+    <string name="playerName">Имя игрока</string>
+    <string name="characterName">Имя персонажа</string>
+    <string name="characterClass">Класс</string>
+    <string name="race">Раса</string>
+    <string name="prehistory">Предыстория</string>
+    <string name="level">Уровень</string>
+    <string name="experiencePoints">Очки опыта</string>
+    <string name="ideology">Мировоззрение</string>
+    <string name="traits">Черты характера</string>
+    <string name="ideals">Идеалы</string>
+    <string name="affections">Привязанности</string>
+    <string name="weaknesses">Слабости</string>
+    
+    <string name="attacksNSpells">Атаки и заклинания</string>
+    <string name="skillsNAbilities">Умения и способности</string>
+    <string name="OtherPossessionsNSkills">Прочие владения и навыки</string>
 
+    <string name="currentHealth">Текущее здоровье</string>
+    <string name="temporaryHealth">Временное здоровье</string>
+    <string name="armorClass">Класс доспехов</string>
+    <string name="initiative">Инициатива</string>
+    <string name="speed">Скорость</string>
+    <string name="inspiration">Вдохновение</string>
+    <string name="masteryBonus">Бонус мастерства</string>
+    <string name="passiveWisdom">Пассивная мудрость</string>
+    <string name="movesBone">Кость ходов</string>
+    <string name="btn_savingThrows">Спасброски</string>
+    <string name="btn_skills">Навыки</string>
+    <string name="btn_deathSavingThrows">Спасброски от смерти</string>
+    
+    <string name="power">Сила</string>
+    <string name="agility">Ловкость</string>
+    <string name="bodyType">Телосложение</string>
+    <string name="intelligence">Интеллект</string>
+    <string name="wisdom">Мудрость</string>
+    <string name="charisma">Харизма</string>
+    
+    <string name="acrobatics">Акробатика</string>
+    <string name="analysis">Анализ</string>
+    <string name="athletics">Атлетика</string>
+    <string name="mindfulness">Внимательность</string>
+    <string name="survival">Выживание</string>
+    <string name="performance">Выступление</string>
+    <string name="intimidation">Запугивание</string>
+    <string name="history">История</string>
+    <string name="handSleight">Ловкость рук</string>
+    <string name="magic">Магия</string>
+    <string name="medicine">Медицина</string>
+    <string name="cheating">Обман</string>
+    <string name="nature">Природа</string>
+    <string name="insight">Проницательность</string>
+    <string name="religion">Религия</string>
+    <string name="stealth">Скрытность</string>
+    <string name="conviction">Убеждение</string>
+    <string name="animalCare">Уход за животными</string>
+
+    <string name="successes">Успехи</string>
+    <string name="failures">Провалы</string>
+
+    <string name="btn_Next">Далее</string>
+    <string name="btn_Prev">Назад</string>
+    <string name="btn_Add">Добавить</string>
+    <string name="btn_Save">Сохранить</string>
 
     <string name="title_activity_main_menu">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
