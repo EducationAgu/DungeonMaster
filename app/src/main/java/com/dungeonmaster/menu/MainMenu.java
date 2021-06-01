@@ -1,21 +1,19 @@
 package com.dungeonmaster.menu;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.dungeonmaster.R;
 import com.dungeonmaster.games.dnd.DnDHelper;
 import com.dungeonmaster.instruments.Tools;
 import com.dungeonmaster.tablegames.TableGames;
+import com.menu.MenuBar;
 import com.serverconnection.Server;
 
-public class MainMenu extends Activity {
+public class MainMenu extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,30 +21,20 @@ public class MainMenu extends Activity {
         setContentView(R.layout.activity_main_menu);
         doubleBackToExitPressedOnce = false;
         if (!Server.isAvailable() || !Server.isUserLogged()){
-            findViewById(R.id.btnSignOut).setVisibility(View.GONE);
+//            findViewById(R.id.menu1).setVisibility(View.GONE);
         }
     }
 
     public void onClickTableGames(View view) {
-        Intent tableGames = new Intent(this, TableGames.class);
-        startActivity(tableGames);
+        setNextScreen(TableGames.class, TO_RIGHT);
     }
 
     public void onClickInstruments(View view) {
-        Intent tools = new Intent(this, Tools.class);
-        startActivity(tools);
+        setNextScreen(Tools.class, TO_RIGHT);
     }
 
     public void onClickFavoriteGame(View view) {
-        Intent dndHelper = new Intent(this, DnDHelper.class);
-        startActivity(dndHelper);
-    }
-
-    public void onClickLogout(View view) {
-        Server.logout(this);
-        Intent signIn = new Intent(this, SignIn.class);
-        startActivity(signIn);
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        setNextScreen(DnDHelper.class, TO_RIGHT);
     }
 
     private static boolean doubleBackToExitPressedOnce;

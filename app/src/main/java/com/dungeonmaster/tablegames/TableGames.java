@@ -1,16 +1,14 @@
 package com.dungeonmaster.tablegames;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.dungeonmaster.R;
+import com.menu.MenuBar;
 import com.dungeonmaster.tablegames.available.AvailableGames;
 
-public class TableGames extends Activity {
+public class TableGames extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

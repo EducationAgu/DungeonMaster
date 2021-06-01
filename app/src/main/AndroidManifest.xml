@@ -10,9 +10,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".ApplicationVariables"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Авокадинко"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DungeonTheme"
@@ -25,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".instruments.counters.typical.Munchkin">
+
            </activity>
         <activity android:name=".instruments.counters.typical.MagicTheGathering" />
         <activity android:name=".instruments.counters.TypicalCounters" />

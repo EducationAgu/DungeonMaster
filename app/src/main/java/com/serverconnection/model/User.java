@@ -1,30 +1,25 @@
 package com.serverconnection.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 public class User {
 
-    private String username;
-
+    private String login;
     private String password;
-
     private String email;
 
     public User() {}
 
     public User(String login, String password, String email) {
-        this.username = login;
+        this.login = login;
         this.password = password;
         this.email = email;
     }
 
     public String getLogin() {
-        return username;
+        return login;
     }
 
     public void setLogin(String login) {
-        this.username = login;
+        this.login = login;
     }
 
     public String getPassword() {

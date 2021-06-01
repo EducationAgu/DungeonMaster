@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background_color"
-    android:clickable="true">
+    android:clickable="true"
+    android:orientation="vertical"
+    >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="vertical">
 
         <Button
             android:id="@+id/buttonManchken"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
-            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
-            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
-            android:background="@drawable/btn_menu_items"
             android:onClick="onMunchkinClick"
-            android:padding="@dimen/menu_btn_items_paddings"
             android:text="@string/btn_Manchken"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/man"
+            android:fontFamily="@font/button_and_text"
+            android:textAlignment="center"
             android:textColor="@color/button_text_color"
-            tools:ignore="MissingConstraints" />
-        <!--android:backgroundTint="@color/button_color_background"-->
+            android:textSize="14sp"
+
+
+
+            />
+
 
         <Button
             android:id="@+id/buttonMagicTheGathering"
-            android:text="@string/btn_MagicTheGathering"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
-            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
-            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
-            android:padding="@dimen/menu_btn_items_paddings"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/mtg"
+            android:fontFamily="@font/button_and_text"
+            android:onClick="onClickMagicTheGathering"
+            android:text="@string/btn_MagicTheGathering"
+            android:textAlignment="center"
             android:textColor="@color/button_text_color"
-            android:background="@drawable/btn_menu_items"
-            tools:ignore="MissingConstraints"
-            />
-        <!--android:backgroundTint="@color/button_color_background"-->
+            android:textSize="14sp" />
 
 
 
-    </LinearLayout>
+</LinearLayout>
 
-</RelativeLayout>

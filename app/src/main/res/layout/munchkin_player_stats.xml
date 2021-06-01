@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/munchkinPlayersStats"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/info_bar_color"
+    android:orientation="vertical"
+    android:layout_marginBottom="20dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_margin="20px"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:text="@string/level_player"
+            android:textSize="15dp">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/munchkinBtnLevelInc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:textSize="16dp"
+            android:background="@drawable/btn_app_form"
+            android:textColor="@color/button_text_color"
+            android:text="+">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/munchkinPlayerLevel"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="20dp"
+            android:layout_weight="0.5">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/munchkinBtnLevelDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:textSize="16dp"
+            android:background="@drawable/btn_app_form"
+            android:textColor="@color/button_text_color"
+            android:text="-">
+
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEquipment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_margin="20px"
+        android:layout_below="@+id/linearLayoutLevel">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:text="@string/equipment_player"
+            android:textSize="15dp">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/munchkinBtnEquipmentInc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:textSize="16dp"
+            android:background="@drawable/btn_app_form"
+            android:textColor="@color/button_text_color"
+            android:text="+">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/munchkinPlayerEquipment"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="20dp"
+            android:layout_weight="0.5">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/munchkinBtnEquipmentDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:textSize="16dp"
+            android:background="@drawable/btn_app_form"
+            android:textColor="@color/button_text_color"
+            android:text="-">
+        </Button>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnDeleteMunchkinPlayer"
+        android:layout_below="@+id/linearLayoutEquipment"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Удалить игрока"
+        android:layout_margin="40px"
+        android:textSize="16dp"
+        android:padding="5dp"
+
+        android:background="@drawable/btn_app_form"
+        android:textColor="@color/button_text_color">
+
+    </Button>
+
+</RelativeLayout>

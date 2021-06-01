@@ -4,118 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background_color"
+    android:background="@color/windowAppForm"
     android:clickable="true"
-    android:orientation="vertical"
-    android:weightSum="2">
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_marginBottom="4dp"
-        android:background="@color/info_bar_color">
+        >
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
-            android:layout_weight="0.3"
-            android:fontFamily="@font/button_and_text"
-            android:padding="10dp"
-            android:text="Авокадо"
-            android:textColor="@color/button_text_color"
-            android:textSize="24dp" />
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.7"
-            android:padding="5dp"
-            android:src="@drawable/setting"/>
+            <TextView
+                android:id="@+id/textViewManchcken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_Manchken"
+                android:textSize="32dp"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/munckin" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
 
+                android:layout_marginBottom="10dp">
 
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/reset"
+                    android:padding="5dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:textSize="16dp"
+                    android:layout_margin="10px"
+                   />
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:weightSum="2"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp">
+                <Button
+                    android:id="@+id/btnAddPlayer"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/add_player"
+                    android:layout_margin="10px"
+                    android:padding="5dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:textSize="16dp"
+                    android:onClick="onClickAddPlayer"
 
-        <Button
-            android:id="@+id/buttonWashingCounter"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="2dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500"
-            android:fontFamily="@font/button_and_text"
-            android:text="@string/btn_WashingCounter"
-            android:textAlignment="center"
-            android:textColor="@color/button_text_color"
-            android:textSize="14sp"
+                    />
 
+            </LinearLayout>
 
-            />
+            <com.diegodobelo.expandingview.ExpandingList
+                android:id="@+id/listOfMunchkinPlayers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.diegodobelo.expandingview.ExpandingList>
 
-
-        <Button
-            android:id="@+id/buttonEquipmentCounter"
-
-            android:text="@string/btn_EquipmentCounter"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textColor="@color/button_text_color"
-            android:textAlignment="center"
-            android:textSize="14sp"
-            android:fontFamily="@font/button_and_text"
-            android:layout_marginLeft="2dp"
-            android:background="@color/purple_500"
-
-
-            />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:weightSum="1"
-
-        android:layout_margin="4dp">
-
-
-        <Button
-            android:id="@+id/buttonLevelCounter"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500"
-            android:fontFamily="@font/button_and_text"
-            android:onClick="onClickLevelCounter"
-            android:padding="@dimen/menu_btn_items_paddings"
-            android:text="@string/btn_LevelCounter"
-            android:textAlignment="center"
-            android:textColor="@color/button_text_color"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

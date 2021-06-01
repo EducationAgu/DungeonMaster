@@ -38,21 +38,20 @@ public class CubeScene extends Activity {
         super.onStop();
     }
 
+    public boolean isTouching;
     public boolean onTouchEvent(MotionEvent me) {
-
-        mGLView.renderer.isStarted = me.getAction() == MotionEvent.ACTION_DOWN || mGLView.renderer.isStarted;
 
         if (me.getAction() == MotionEvent.ACTION_DOWN) {
             xpos = me.getX();
             ypos = me.getY();
-        }else
+
+            isTouching = true;
+            return true;
+        }
 
         if (me.getAction() == MotionEvent.ACTION_UP) {
-            xpos = -1;
-            ypos = -1;
-            touchTurn = 0;
-            touchTurnUp = 0;
-        } else
+            isTouching = false;
+        }
 
         if (me.getAction() == MotionEvent.ACTION_MOVE) {
             float xd = me.getX() - xpos;
@@ -63,9 +62,8 @@ public class CubeScene extends Activity {
 
             touchTurn = xd / -100f;
             touchTurnUp = yd / -100f;
+            return true;
         }
-        mGLView.renderer.xA = touchTurn;
-        mGLView.renderer.yA = touchTurnUp;
 
         try {
             Thread.sleep(15);

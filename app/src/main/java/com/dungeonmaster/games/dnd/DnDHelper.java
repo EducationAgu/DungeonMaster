@@ -1,15 +1,14 @@
 package com.dungeonmaster.games.dnd;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.dungeonmaster.R;
+import com.dungeonmaster.menu.MainMenu;
+import com.menu.MenuBar;
 
-public class DnDHelper extends Activity {
+public class DnDHelper extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +17,15 @@ public class DnDHelper extends Activity {
     }
 
     public void onClickCreateCharacter(View view) {
-        Intent tools = new Intent(this, CreateCharacter.class);
-        startActivity(tools);
+        setNextScreen(CreateCharacter.class, TO_RIGHT);
     }
 
     public void  onClickChooseCharacter(View view) {
 //        Intent tools = new Intent(this, ChooseCharacter.class);
 //        startActivity(tools);
+    }
+    @Override
+    public void onBackPressed() {
+        setNextScreen(MainMenu.class, TO_LEFT);
     }
 }

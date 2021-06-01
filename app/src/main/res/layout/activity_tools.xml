@@ -1,67 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background_color"
-    android:clickable="true">
+    android:clickable="true"
+    android:orientation="vertical"
+    android:weightSum="2">
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="2dp">
 
         <Button
             android:id="@+id/buttonNotes"
             android:text="@string/btn_Notes"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
-            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
-            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
-            android:padding="@dimen/menu_btn_items_paddings"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:background="@color/purple_500"
+            android:layout_weight="1"
+            android:fontFamily="@font/button_and_text"
+            android:textAlignment="center"
             android:textColor="@color/button_text_color"
-            android:background="@drawable/btn_menu_items"
+            android:textSize="14sp"
+
+
             />
-        <!--android:backgroundTint="@color/button_color_background"-->
 
         <Button
             android:id="@+id/buttonGameCounters"
             android:onClick="onClickOpenGameCounters"
             android:text="@string/btn_GameCounters"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
-            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
-            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
-            android:padding="@dimen/menu_btn_items_paddings"
+            android:background="@color/purple_500"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:textColor="@color/button_text_color"
-            android:background="@drawable/btn_menu_items"
-            tools:ignore="MissingConstraints"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:fontFamily="@font/button_and_text"
+            android:layout_marginLeft="2dp"
             />
-        <!--android:backgroundTint="@color/button_color_background"-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp">
+
 
         <Button
             android:id="@+id/buttonOpenDice"
             android:text="@string/btn_OpenDice"
             android:onClick="onClickOpenDice"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/menu_btn_items_marginTop"
-            android:layout_marginRight="@dimen/menu_btn_items_marginRight"
-            android:layout_marginLeft="@dimen/menu_btn_items_marginLeft"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:fontFamily="@font/button_and_text"
             android:padding="@dimen/menu_btn_items_paddings"
+            android:textAlignment="center"
             android:textColor="@color/button_text_color"
-            android:background="@drawable/btn_menu_items"
-            tools:ignore="MissingConstraints"
-            />
-        <!--android:backgroundTint="@color/button_color_background"-->
-
+            android:textSize="14sp" />
 
     </LinearLayout>
 
-</RelativeLayout>
+
+</LinearLayout>
