@@ -7,7 +7,7 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        level = 0;
+        level = 1;
         equipment = 0;
     }
 
@@ -20,13 +20,13 @@ public class Player {
     }
 
     public void incLevel() {
-        if (level < 100) {
+        if (level < 10) {
             level++;
         }
     }
 
     public void decLevel() {
-        if (level > 0) {
+        if (level > 1) {
             level--;
         }
     }
