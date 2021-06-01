@@ -86,6 +86,7 @@
         <Button
             android:id="@+id/buttonCharacterData"
             android:layout_marginLeft="2dp"
+            android:onClick="onClickOpenCharacterData"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

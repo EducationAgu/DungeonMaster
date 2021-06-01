@@ -28,6 +28,9 @@
         <activity android:name=".instruments.counters.typical.Munchkin">
 
            </activity>
+        <activity android:name=".games.dnd.character.CharacterData">
+
+        </activity>
         <activity android:name=".instruments.counters.typical.MagicTheGathering" />
         <activity android:name=".instruments.counters.TypicalCounters" />
         <activity android:name=".instruments.counters.GameCounters" />
