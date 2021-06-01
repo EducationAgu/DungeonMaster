@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="10dp"
+    android:background="@color/windowAppForm">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/powerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/power"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/powerBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/power"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/powerBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/agilityText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/agility"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/agilityBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/agility"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/agilityBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bodyTypeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/bodyType"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/bodyTypeBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/bodyType"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/bodyTypeBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/intelligenceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/intelligence"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/intelligenceBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/intelligence"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/intelligenceBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/wisdomText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/wisdom"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/wisdomBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/wisdom"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/wisdomBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/charismaText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/charisma"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/charismaBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/charisma"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/charismaBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonAddSavingThrows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_app_form"
+                android:fontFamily="@font/button_and_text"
+                android:text="@string/btn_Add"
+                android:textColor="@color/button_text_color"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>

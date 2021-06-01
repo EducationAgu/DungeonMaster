@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="10dp"
+    android:background="@color/windowAppForm">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/armorClass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/filds"
+                android:fontFamily="@font/button_and_text"
+                android:hint="@string/armorClass"
+                android:inputType="none"
+                android:padding="15dp"
+                android:text=""
+                android:textColor="@color/base_text_color"
+                android:textColorHint="@color/for_input_text_color"
+                android:textSize="20dp" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/movesBone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/filds"
+                android:fontFamily="@font/button_and_text"
+                android:hint="@string/movesBone"
+                android:inputType="none"
+                android:padding="15dp"
+                android:text=""
+                android:textColor="@color/base_text_color"
+                android:textColorHint="@color/for_input_text_color"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/buttonSavingThrows"
+                android:text="@string/btn_savingThrows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="40dp"
+                android:padding="@dimen/menu_btn_items_paddings"
+                android:textColor="@color/button_text_color"
+                android:background="@drawable/btn_menu_items"
+                tools:ignore="MissingConstraints"
+                android:textSize="16dp"/>
+
+            <Button
+                android:id="@+id/buttonSkills"
+                android:text="@string/btn_skills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:padding="@dimen/menu_btn_items_paddings"
+                android:textColor="@color/button_text_color"
+                android:background="@drawable/btn_menu_items"
+                tools:ignore="MissingConstraints"
+                android:textSize="16dp"/>
+
+            <Button
+                android:id="@+id/buttonDeathSavingThrows"
+                android:text="@string/btn_deathSavingThrows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:textColor="@color/button_text_color"
+                android:background="@drawable/btn_menu_items"
+                tools:ignore="MissingConstraints"
+                android:textSize="16dp"/>
+
+            <Button
+                android:id="@+id/buttonCharacteristicPrev"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:background="@drawable/btn_app_form"
+                android:fontFamily="@font/button_and_text"
+                android:text="@string/btn_Prev"
+                android:textColor="@color/button_text_color"
+                android:textSize="16dp"/>
+
+            <Button
+                android:id="@+id/buttonAddCharacteristic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_app_form"
+                android:fontFamily="@font/button_and_text"
+                android:text="@string/btn_Save"
+                android:textColor="@color/button_text_color"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>

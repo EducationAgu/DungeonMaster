@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="10dp"
+    android:background="@color/windowAppForm">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/acrobaticsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/acrobatics"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/acrobaticsBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/acrobatics"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/acrobaticsBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/analysisText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/analysis"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/analysisBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/analysis"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/analysisBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/athleticsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/athletics"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/athleticsBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/athletics"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/athleticsBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/mindfulnessText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/mindfulness"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/mindfulnessBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/mindfulness"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/mindfulnessBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/survivalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/survival"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/survivalBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/survival"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/survivalBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/performanceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/performance"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+
+                <Button
+                    android:id="@+id/performanceBtnInc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/performance"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/performanceBtnDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonSkillsNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_app_form"
+                android:fontFamily="@font/button_and_text"
+                android:text="@string/btn_Next"
+                android:textColor="@color/button_text_color"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>
