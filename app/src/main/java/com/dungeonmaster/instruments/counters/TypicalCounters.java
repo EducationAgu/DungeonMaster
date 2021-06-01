@@ -19,13 +19,11 @@ public class TypicalCounters extends MenuBar {
     }
 
     public void onMunchkinClick(View view) {
-        Intent munchkin = new Intent(this, Munchkin.class);
-        startActivity(munchkin);
+        setNextScreen(Munchkin.class, TO_RIGHT);
     }
 
     public void onClickMagicTheGathering(View view) {
-        Intent munchkin = new Intent(this, MagicTheGathering.class);
-        startActivity(munchkin);
+        setNextScreen(MagicTheGathering.class, TO_RIGHT);
     }
 
     @Override

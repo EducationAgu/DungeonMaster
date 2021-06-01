@@ -1,6 +1,5 @@
 package com.dungeonmaster.instruments;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,13 +19,11 @@ public class Tools extends MenuBar {
     }
 
     public void onClickOpenDice(View view) {
-        Intent cubeScene = new Intent(this, CubeScene.class);
-        startActivity(cubeScene);
+        setNextScreen(CubeScene.class, TO_RIGHT);
     }
 
     public void onClickOpenGameCounters(View view) {
-        Intent gameCounters = new Intent(this, GameCounters.class);
-        startActivity(gameCounters);
+        setNextScreen(GameCounters.class, TO_RIGHT);
     }
 
     // TODO: нарисовать экран заметок

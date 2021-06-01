@@ -65,14 +65,14 @@
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:textSize="16dp"
-                    android:onClick="onClickAddPlayer"
+                    android:onClick="onClickAddMunchkinPlayer"
 
                     />
 
             </LinearLayout>
 
             <com.diegodobelo.expandingview.ExpandingList
-                android:id="@+id/listOfMunchkinPlayers"
+                android:id="@+id/munchkinPlayersList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </com.diegodobelo.expandingview.ExpandingList>

@@ -15,9 +15,6 @@
         android:padding="10dp"
         android:background="@color/main_background_color"
         >
-
-
-
         <TextView
             android:id="@+id/TSCHealth"
             android:layout_width="110dp"
@@ -155,5 +152,516 @@
 
 
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/DopMenu"
+        android:background="@color/windowAppForm"
+        android:orientation="vertical">
 
+        <RelativeLayout
+            android:id="@+id/RLCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/main_background_color"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/TSC"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="@string/storm_counter">
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewSC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_toRightOf="@+id/mtgSCInc"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="22dp"
+                android:text="0">
+            </TextView>
+
+            <Button
+                android:id="@+id/mtgSCInc"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TSC"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="+">
+
+            </Button>
+
+            <Button
+                android:id="@+id/mtgSCDec"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TextViewSC"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="-">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonSCReset"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:text="@string/reset"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color">
+            </Button>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RLCartW"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/white"
+            android:layout_below="@id/RLCart">
+
+            <TextView
+                android:id="@+id/TSCW"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="@string/sc_white">
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewSCW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_toRightOf="@+id/mtgSCIncW"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="22dp"
+                android:text="0">
+            </TextView>
+
+            <Button
+                android:id="@+id/mtgSCIncW"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TSCW"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="+">
+
+            </Button>
+
+            <Button
+                android:id="@+id/mtgSCDecW"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TextViewSCW"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="-">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonSCResetW"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:text="@string/reset"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color">
+            </Button>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RLCartBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#838383"
+            android:layout_below="@id/RLCartW">
+
+            <TextView
+                android:id="@+id/TSCBlack"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="@string/sc_black">
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewSCBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_toRightOf="@+id/mtgSCIncBlack"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="22dp"
+                android:text="0">
+            </TextView>
+
+            <Button
+                android:id="@+id/mtgSCIncBlack"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TSCBlack"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="+">
+
+            </Button>
+
+            <Button
+                android:id="@+id/mtgSCDecBlack"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TextViewSCBlack"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="-">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonSCResetBlack"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:text="@string/reset"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color">
+            </Button>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RLCartBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#96D3D8"
+            android:layout_below="@id/RLCartBlack">
+
+            <TextView
+                android:id="@+id/TSCBlue"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="@string/sc_blue">
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewSCBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_toRightOf="@+id/mtgSCIncBlue"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="22dp"
+                android:text="0">
+            </TextView>
+
+            <Button
+                android:id="@+id/mtgSCIncBlue"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TSCBlue"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="+">
+
+            </Button>
+
+            <Button
+                android:id="@+id/mtgSCDecBlue"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TextViewSCBlue"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="-">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonSCResetBlue"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:text="@string/reset"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color">
+            </Button>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RLCartGreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#81DD85"
+            android:layout_below="@id/RLCartBlue">
+
+            <TextView
+                android:id="@+id/TSCGreen"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="@string/sc_green">
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewSCGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_toRightOf="@+id/mtgSCIncGreen"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="22dp"
+                android:text="0">
+            </TextView>
+
+            <Button
+                android:id="@+id/mtgSCIncGreen"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TSCGreen"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="+">
+
+            </Button>
+
+            <Button
+                android:id="@+id/mtgSCDecGreen"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TextViewSCGreen"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="-">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonSCResetGreen"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:text="@string/reset"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color">
+            </Button>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RLCartRed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#EC6258"
+            android:layout_below="@id/RLCartGreen">
+
+            <TextView
+                android:id="@+id/TSCRed"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="@string/sc_red">
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewSCRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_toRightOf="@+id/mtgSCIncRed"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="22dp"
+                android:text="0">
+            </TextView>
+
+            <Button
+                android:id="@+id/mtgSCIncRed"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TSCRed"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="+">
+
+            </Button>
+
+            <Button
+                android:id="@+id/mtgSCDecRed"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TextViewSCRed"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="-">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonSCResetRed"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:text="@string/reset"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color">
+            </Button>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RLCartColorless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#E9EDE4"
+            android:layout_below="@id/RLCartRed">
+
+            <TextView
+                android:id="@+id/TSCColorless"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:text="@string/sc_colorless">
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewSCColorless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_toRightOf="@+id/mtgSCIncColorless"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="22dp"
+                android:text="0">
+            </TextView>
+
+            <Button
+                android:id="@+id/mtgSCIncColorless"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TSCColorless"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="+">
+
+            </Button>
+
+            <Button
+                android:id="@+id/mtgSCDecColorless"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/TextViewSCColorless"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color"
+                android:text="-">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonSCResetColorless"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:text="@string/reset"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/btn_app_form"
+                android:textColor="@color/button_text_color">
+            </Button>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 </LinearLayout>

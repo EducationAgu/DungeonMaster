@@ -10,7 +10,6 @@ import android.widget.TextView;
 import com.diegodobelo.expandingview.ExpandingItem;
 import com.diegodobelo.expandingview.ExpandingList;
 import com.dungeonmaster.R;
-import com.dungeonmaster.instruments.Tools;
 import com.dungeonmaster.instruments.counters.TypicalCounters;
 import com.dungeonmaster.instruments.counters.typical.munchkin.Player;
 import com.menu.MunchkinExpandableListAdapter;
@@ -28,7 +27,7 @@ public class Munchkin extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manchcken);
-        expandingList = findViewById(R.id.listOfMunchkinPlayers);
+        expandingList = findViewById(R.id.munchkinPlayersList);
 
         createStartGroup();
     }
@@ -36,15 +35,14 @@ public class Munchkin extends Activity {
     private void createStartGroup() {
         playersList = new ArrayList<>();
         for(int i = 0; i < 3; i++) {
-            onClickAddPlayer(null);
+            onClickAddMunchkinPlayer(null);
         }
     }
 
-    public void onClickAddPlayer(View view) {
+    public void onClickAddMunchkinPlayer(View view) {
         ExpandingItem item = expandingList.createNewItem(R.layout.munchkin_list_item);
         item.createSubItems(1);
-// кнопка открытия/закрытия
-        //Button button = item.findViewById(R.id.munchkinBtnMore);
+
         TextView textView = item.findViewById(R.id.munchkinTextViewPlayerPower);
         textView.setOnClickListener(v -> item.toggleExpanded());
         expListAdapter = new MunchkinExpandableListAdapter(this, playersList);

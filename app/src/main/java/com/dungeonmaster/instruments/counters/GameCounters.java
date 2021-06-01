@@ -23,8 +23,7 @@ public class GameCounters extends MenuBar {
     }
 
     public void onClickOpenTypicalCounters(View view) {
-        Intent universalCounter = new Intent(this, TypicalCounters.class);
-        startActivity(universalCounter);
+        setNextScreen(TypicalCounters.class, TO_RIGHT);
     }
 
     @Override
