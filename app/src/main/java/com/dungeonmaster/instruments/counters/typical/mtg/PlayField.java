@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.diegodobelo.expandingview.ExpandingItem;
 import com.diegodobelo.expandingview.ExpandingList;
@@ -301,5 +302,6 @@ public class PlayField extends Activity {
         Server.passRequest(HttpMethod.POST, URLs.SAVE_PROGRESS, gp);
         Server.getQueryResult(URLs.SAVE_PROGRESS);
 
+        Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_LONG).show();
     }
 }

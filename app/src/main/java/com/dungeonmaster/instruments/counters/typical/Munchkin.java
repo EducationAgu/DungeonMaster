@@ -17,34 +17,55 @@ import com.diegodobelo.expandingview.ExpandingList;
 import com.dungeonmaster.R;
 import com.dungeonmaster.instruments.counters.TypicalCounters;
 import com.dungeonmaster.instruments.counters.typical.munchkin.Player;
+import com.dungeonmaster.menu.MainMenu;
+import com.google.gson.Gson;
 import com.menu.MunchkinExpandableListAdapter;
+import com.serverconnection.Server;
+import com.serverconnection.URLs;
+import com.serverconnection.model.GameProgress;
+
+import org.springframework.http.HttpMethod;
 
 import java.util.ArrayList;
 
 public class Munchkin extends Activity {
 
+    public static final String GAME_NAME = "MUNCHKIN";
+
     ExpandingList expandingList;
     MunchkinExpandableListAdapter expListAdapter;
 
     ArrayList<Player> playersList;
-
+    private Long id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manchcken);
         expandingList = findViewById(R.id.munchkinPlayersList);
 
+        id = getIntent().getLongExtra("id", 0);
         createStartGroup();
     }
 
     private void createStartGroup() {
-        playersList = new ArrayList<>();
-        for(int i = 0; i < 3; i++) {
-            onClickAddMunchkinPlayer(null);
+        String payload = getIntent().getStringExtra("AllTheData");
+        Player[] playersLists;
+        if (payload != null) {
+            playersLists = (new Gson()).fromJson(payload, Player[].class);
+            playersList = new ArrayList<>();
+            for(int i = 0; i < playersLists.length; i++) {
+                addPlayer(playersLists[i]);
+            }
+        }
+        else {
+            playersList = new ArrayList<>();
+            for(int i = 0; i < 3; i++) {
+                addPlayer(null);
+            }
         }
     }
 
-    public void onClickAddMunchkinPlayer(View view) {
+    public void addPlayer(Player playerIn) {
         ExpandingItem item = expandingList.createNewItem(R.layout.munchkin_list_item);
         item.createSubItems(1);
 
@@ -52,7 +73,12 @@ public class Munchkin extends Activity {
         textView.setOnClickListener(v -> item.toggleExpanded());
         expListAdapter = new MunchkinExpandableListAdapter(this, playersList);
 // создаю нового игрока
-        Player player = new Player("Player " + playersList.size());
+        Player player;
+        if (playerIn == null){
+            player = new Player("Player " + playersList.size());
+        } else {
+            player = playerIn;
+        }
         playersList.add(player);
 
         TextView playerName = item.findViewById(R.id.munchkinNamePlayer);
@@ -74,6 +100,7 @@ public class Munchkin extends Activity {
                     Toast.makeText(this, "Имя должно быть менее 10 символов",  Toast.LENGTH_LONG).show();
                 } else {
                     playerName.setText(newName);
+                    player.setName(newName);
                 }
             });
 
@@ -130,9 +157,31 @@ public class Munchkin extends Activity {
         });
     }
 
+    public void onClickAddMunchkinPlayer(View view) {
+        addPlayer(null);
+    }
+
     @Override
     public void onBackPressed() {
         startActivity(new Intent(this, TypicalCounters.class));
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+
+    public void onClickSaveMunchkinGame(View view){
+        Gson gson = new Gson();
+        String payload = gson.toJson(playersList.toArray());
+        GameProgress gp = new GameProgress();
+        gp.setGameName(GAME_NAME);
+        gp.setPayload(payload);
+        if (id != 0) {
+            gp.setId(id);
+        }
+        Server.passRequest(HttpMethod.POST, URLs.SAVE_PROGRESS, gp);
+        Server.getQueryResult(URLs.SAVE_PROGRESS);
+
+        Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_LONG).show();
+
+        startActivity(new Intent(this, MainMenu.class));
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

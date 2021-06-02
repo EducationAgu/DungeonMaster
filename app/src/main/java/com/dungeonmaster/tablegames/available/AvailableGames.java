@@ -7,11 +7,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
 import com.dungeonmaster.R;
 import com.dungeonmaster.instruments.counters.typical.MagicTheGathering;
+import com.dungeonmaster.instruments.counters.typical.Munchkin;
 import com.dungeonmaster.instruments.counters.typical.mtg.PlayField;
 import com.google.gson.Gson;
 import com.menu.MenuBar;
@@ -66,7 +68,7 @@ public class AvailableGames extends MenuBar {
 
                 deleteButton.setLayoutParams(innerLll);
                 deleteButton.setBackground(ContextCompat.getDrawable(this, R.drawable.btn_borderless));
-//
+
                 innerLayout.addView(btn);
                 innerLayout.addView(deleteButton);
 
@@ -77,17 +79,22 @@ public class AvailableGames extends MenuBar {
                 String payload = gps[i].getPayload();
 
                 btn.setOnClickListener(v -> {
+                   Intent intent = new Intent(this, this.getClass());
                    switch (name){
                        case PlayField.GAME_NAME:
-                          Intent intent = new Intent(this, PlayField.class);
-                          intent.putExtra("AllTheData",  payload);
-                           intent.putExtra("id",  id);
-
-                          startActivity(intent);
-                          overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                       break;
+                            intent = new Intent(this, PlayField.class);
+                            break;
+                       case Munchkin.GAME_NAME:
+                           intent = new Intent(this, Munchkin.class);
+                           break;
+                       default:
+                           Toast.makeText(this,"Ошибка сохранения!", Toast.LENGTH_LONG);
+                           break;
                    }
-
+                    intent.putExtra("AllTheData",  payload);
+                    intent.putExtra("id",  id);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 });
                 deleteButton.setOnClickListener(v -> {
                     Server.passRequest(HttpMethod.GET, URLs.DROP_PROGRESS+"/"+id, "");

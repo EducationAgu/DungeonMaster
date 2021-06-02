@@ -1,5 +1,6 @@
 package com.serverconnection.model;
 
+import com.dungeonmaster.instruments.counters.typical.Munchkin;
 import com.dungeonmaster.instruments.counters.typical.mtg.PlayField;
 
 
@@ -19,6 +20,8 @@ public class GameProgress {
         switch (gameName) {
             case PlayField.GAME_NAME:
                 return "Magic The Gathering";
+            case Munchkin.GAME_NAME:
+                return "Munchkin";
         }
         return "";
     }
