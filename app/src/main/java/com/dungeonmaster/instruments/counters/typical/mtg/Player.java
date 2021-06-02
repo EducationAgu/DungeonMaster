@@ -176,4 +176,16 @@ public class Player {
             colorless--;
         }
     }
+
+    public void reset() {
+       health = 0;
+       infect = 0;
+       cardsPlayed = 0;
+       white = 0;
+       black = 0;
+       blue = 0;
+       green = 0;
+       red = 0;
+       colorless = 0;
+    }
 }

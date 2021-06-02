@@ -14,7 +14,7 @@
 
 
     <string name="reset">Сброс</string>
-    <string name="start">Старт</string>
+    <string name="save">Сохранить</string>
     <string name="dopmenu">Дополнительное меню</string>
     <string name="add_player">Добавить игрока</string>
     <string name="name_player">Игрок</string>

@@ -122,7 +122,7 @@ public class Server {
      * @return - возвращает объект  - данные пользователя
      * @IOExcepton - если не был найден файл/если не смогли записать новый пустой файл
      */
-    private static UserData readUserData(Activity activity) throws IOException {
+    public static UserData readUserData(Activity activity) throws IOException {
 
         FileInputStream fis;
         try {
@@ -174,6 +174,9 @@ public class Server {
      * @param body объект-строка который необходимо передать на сервер.
      */
     public static void passRequest(HttpMethod method, String urlEnd, String body) throws NoConnection  {
+        if (body == null) {
+            body = "";
+        }
         RestTemplate restTemplate = new RestTemplateWithTimeOut(5000);
         restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
 
@@ -237,16 +240,15 @@ public class Server {
         isUserLogged = false;
     }
 
-    public static void login(User user, Activity activity) {
-        String loginCredentials = user.getLogin() + ":" + user.getPassword();
-        loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
+    public static void saveUserData(UserData userDataIn, Activity activity) {
         UserData userData;
         try {
             userData = readUserData(activity);
         } catch (IOException e) {
             userData = new UserData();
         }
-        userData.encodedAuth = loginHeader;
+        userData.encodedAuth = userDataIn.encodedAuth;
+        userData.savedGameProgressIds = userDataIn.savedGameProgressIds;
 
         String JSONed = gson.toJson(userData);
         FileOutputStream outputStream;
@@ -258,6 +260,21 @@ public class Server {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void login(User user, Activity activity) {
+        String loginCredentials = user.getLogin() + ":" + user.getPassword();
+        loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
+        UserData userData;
+        try {
+            userData = readUserData(activity);
+        } catch (IOException e) {
+            userData = new UserData();
+        }
+        userData.encodedAuth = loginHeader;
+
+        saveUserData(userData, activity);
+
         passRequest(HttpMethod.POST, URLs.LOGIN, user);
     }
 
