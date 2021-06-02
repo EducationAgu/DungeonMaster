@@ -56,7 +56,7 @@
         <activity android:name=".instruments.Tools" />
         <activity android:name=".tablegames.TableGames" />
         <activity android:name=".menu.MainMenu"/>
-        <activity android:name=".menu.Registration"/>
+        <activity android:name=".instruments.notes.NotesActivity"/>
         <activity android:name=".menu.SignIn"/>
         <activity android:name=".instruments.dice.CubeScene">
             <intent-filter>

@@ -9,7 +9,7 @@
 
 
     <EditText
-        android:id="@+id/Title"
+        android:id="@+id/NoteTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Название"
@@ -25,10 +25,10 @@
     </EditText>
 
     <EditText
-        android:id="@+id/Disc"
+        android:id="@+id/NoteDisc"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_below="@+id/Title"
+        android:layout_below="@+id/NoteTitle"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="10dp"
@@ -44,7 +44,7 @@
     </EditText>
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnSaveNote"
         android:layout_width="200dp"
         android:layout_height="35dp"
         android:background="@drawable/btn_app_form"
@@ -54,7 +54,7 @@
         android:textSize="14dp"
         android:textAlignment="center"
         android:textColor="@color/button_text_color"
-        android:layout_below="@+id/Disc">
+        android:layout_below="@+id/NoteDisc">
 
     </Button>
 
