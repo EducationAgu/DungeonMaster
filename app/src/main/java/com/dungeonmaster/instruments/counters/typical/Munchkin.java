@@ -69,8 +69,6 @@ public class Munchkin extends Activity {
 
             builder.setPositiveButton("OK", (dialog, which) -> playerName.setText(input.getText().toString()));
 
-            builder.setNegativeButton("Отмена", (dialog, which) -> dialog.cancel());
-
             AlertDialog alertDialog = builder.create();
 
             alertDialog.show();
@@ -80,7 +78,7 @@ public class Munchkin extends Activity {
 
             btnOk.setBackgroundColor(getColor(R.color.main_background));
             btnCancel.setBackgroundColor(getColor(R.color.main_background));
-
+            btnCancel.setPadding(0,0,0,0);
             btnOk.setTextColor(getColor(R.color.button_text_color));
             btnCancel.setTextColor(getColor(R.color.button_text_color));
         });
