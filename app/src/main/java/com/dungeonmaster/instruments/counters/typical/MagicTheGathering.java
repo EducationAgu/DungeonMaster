@@ -2,6 +2,7 @@ package com.dungeonmaster.instruments.counters.typical;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
@@ -43,15 +44,16 @@ public class MagicTheGathering extends Activity {
         for(int i = 0; i < 2; i++) {
             onClickAddMtgPlayer(null);
         }
+        int count = expandingList.getItemsCount();
+        for(int i = 0; i < count; i++) {
+            expandingList.getItemByIndex(i).toggleExpanded();
+        }
     }
 
     public void onClickAddMtgPlayer(View view) {
         ExpandingItem item = expandingList.createNewItem(R.layout.mtg_list_item);
         item.createSubItems(1);
 // кнопка открытия/закрытия
-        //Button button = item.findViewById(R.id.munchkinBtnMore);
-        TextView textView = item.findViewById(R.id.mtgNamePlayer);
-        textView.setOnClickListener(v -> item.toggleExpanded());
         expListAdapter = new MtgPlayersListAdapter(this, playersList);
 // создаю нового игрока
         Player player = new Player("Player " + playersList.size());
@@ -59,21 +61,29 @@ public class MagicTheGathering extends Activity {
 
         TextView playerName = item.findViewById(R.id.mtgNamePlayer);
         playerName.setText(String.valueOf(player.getName()));
-
-        playerName.setOnClickListener(v -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Имя игрока");
-
-            final EditText input = new EditText(this);
-            input.setInputType(InputType.TYPE_CLASS_TEXT);
-
-            input.setText(playerName.getText());
-            builder.setView(input);
-
-            builder.setPositiveButton("OK", (dialog, which) -> playerName.setText(input.getText().toString()));
-            builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
-            builder.show();
-        });
+        playerName.setOnClickListener(v -> item.toggleExpanded());
+//        playerName.setOnClickListener(v -> {
+//
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            builder.setTitle("Имя игрока");
+//
+//            final EditText input = new EditText(this);
+//            input.setInputType(InputType.TYPE_CLASS_TEXT);
+//
+//            input.setText(playerName.getText());
+//            builder.setView(input);
+//
+//            builder.setPositiveButton("OK", (dialog, which) -> playerName.setText(input.getText().toString()));
+//
+//            AlertDialog alertDialog = builder.create();
+//
+//            alertDialog.show();
+//
+//            Button btnOk = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+//
+//            btnOk.setBackgroundColor(getColor(R.color.main_background));
+//            btnOk.setTextColor(getColor(R.color.button_text_color));
+//        });
 
         Button deleteSelf = item.findViewById(R.id.btnDeleteMtgPlayer);
         deleteSelf.setOnClickListener(v -> {

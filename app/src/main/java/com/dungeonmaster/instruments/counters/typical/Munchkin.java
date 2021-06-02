@@ -74,13 +74,9 @@ public class Munchkin extends Activity {
             alertDialog.show();
 
             Button btnOk = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
-            Button btnCancel = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
 
             btnOk.setBackgroundColor(getColor(R.color.main_background));
-            btnCancel.setBackgroundColor(getColor(R.color.main_background));
-            btnCancel.setPadding(0,0,0,0);
             btnOk.setTextColor(getColor(R.color.button_text_color));
-            btnCancel.setTextColor(getColor(R.color.button_text_color));
         });
 
 // данные по игроку
