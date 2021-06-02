@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/RLNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/TextViewNotes"
+            android:text="@string/btn_Notes"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+        </TextView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/btn_app_form"
+            android:text="@string/add_notes"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/TextViewNotes">
+
+        </Button>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/ScroolViewNotes"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/RLNotes"
+        android:layout_height="match_parent">
+
+        <com.diegodobelo.expandingview.ExpandingList
+            android:id="@+id/listOfNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.diegodobelo.expandingview.ExpandingList>
+
+    </ScrollView>
+
+
+</RelativeLayout>
