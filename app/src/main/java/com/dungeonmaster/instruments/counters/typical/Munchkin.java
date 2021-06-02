@@ -66,6 +66,7 @@ public class Munchkin extends Activity {
         increaseEquipment.setOnClickListener(v -> {
             player.incEquipment();
             equipment.setText(String.valueOf(player.getEquipment()));
+            power.setText(String.valueOf(player.getPowerAmount()));
         });
 
         Button decreaseEquipment = item.findViewById(R.id.munchkinBtnEquipmentDec);
