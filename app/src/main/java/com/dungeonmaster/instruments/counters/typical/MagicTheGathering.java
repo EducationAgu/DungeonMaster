@@ -83,6 +83,7 @@ public class MagicTheGathering extends Activity {
                     Toast.makeText(this, "Имя должно быть менее 10 символов",  Toast.LENGTH_LONG).show();
                 } else {
                     playerName.setText(newName);
+                    player.setName(newName);
                 }
             });
 
