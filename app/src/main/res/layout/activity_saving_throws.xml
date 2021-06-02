@@ -4,44 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardElevation="10dp"
     android:background="@color/windowAppForm">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/powerText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="100dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/button_and_text"
                 android:padding="10dp"
                 android:text="@string/power"
                 android:textColor="@color/button_text_color"
                 android:textSize="18dp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp">
+              >
 
 
                 <Button
                     android:id="@+id/powerBtnInc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/power"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="-"/>
@@ -51,47 +50,52 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
                     android:text="1"
                     android:textSize="20dp"
-                    android:layout_weight="0.5"/>
+                   />
 
                 <Button
                     android:id="@+id/powerBtnDec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:textAlignment="center"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/power"
                     android:textSize="16dp"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="+"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/agilityText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/button_and_text"
                 android:padding="10dp"
                 android:text="@string/agility"
                 android:textColor="@color/button_text_color"
                 android:textSize="18dp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp">
+>
 
 
                 <Button
                     android:id="@+id/agilityBtnInc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/agility"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="-"/>
@@ -101,47 +105,52 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
                     android:text="1"
                     android:textSize="20dp"
-                    android:layout_weight="0.5"/>
+                   />
 
                 <Button
                     android:id="@+id/agilityBtnDec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/agility"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="+"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/bodyTypeText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/button_and_text"
                 android:padding="10dp"
                 android:text="@string/bodyType"
                 android:textColor="@color/button_text_color"
                 android:textSize="18dp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp">
+>
 
 
                 <Button
                     android:id="@+id/bodyTypeBtnInc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/bodyType"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="-"/>
@@ -151,47 +160,51 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
                     android:text="1"
                     android:textSize="20dp"
-                    android:layout_weight="0.5"/>
+                   />
 
                 <Button
                     android:id="@+id/bodyTypeBtnDec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/bodyType"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="+"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/intelligenceText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/button_and_text"
                 android:padding="10dp"
                 android:text="@string/intelligence"
                 android:textColor="@color/button_text_color"
                 android:textSize="18dp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp">
+                android:layout_height="wrap_content">
 
 
                 <Button
                     android:id="@+id/intelligenceBtnInc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/intelligence"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="-"/>
@@ -201,47 +214,52 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
                     android:text="1"
                     android:textSize="20dp"
-                    android:layout_weight="0.5"/>
+                   />
 
                 <Button
                     android:id="@+id/intelligenceBtnDec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/intelligence"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="+"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/wisdomText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/button_and_text"
                 android:padding="10dp"
                 android:text="@string/wisdom"
                 android:textColor="@color/button_text_color"
                 android:textSize="18dp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp">
+               >
 
 
                 <Button
                     android:id="@+id/wisdomBtnInc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/wisdom"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="-"/>
@@ -251,47 +269,53 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
                     android:text="1"
                     android:textSize="20dp"
-                    android:layout_weight="0.5"/>
+                    />
 
                 <Button
                     android:id="@+id/wisdomBtnDec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/wisdom"
+
+                    android:textAlignment="center"
                     android:textSize="16dp"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="+"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/charismaText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/button_and_text"
                 android:padding="10dp"
                 android:text="@string/charisma"
                 android:textColor="@color/button_text_color"
                 android:textSize="18dp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp">
+               >
 
 
                 <Button
                     android:id="@+id/charismaBtnInc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/charisma"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="-"/>
@@ -301,36 +325,40 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
                     android:text="1"
                     android:textSize="20dp"
-                    android:layout_weight="0.5"/>
+                    />
 
                 <Button
                     android:id="@+id/charismaBtnDec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/charisma"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:background="@drawable/btn_app_form"
                     android:textColor="@color/button_text_color"
                     android:text="+"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <Button
                 android:id="@+id/buttonAddSavingThrows"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="70dp"
-                android:layout_marginLeft="100dp"
-                android:layout_marginRight="100dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/btn_app_form"
                 android:fontFamily="@font/button_and_text"
                 android:text="@string/btn_Add"
                 android:textColor="@color/button_text_color"
-                android:textSize="16dp"/>
+                android:textSize="14dp"/>
 
         </LinearLayout>
     </ScrollView>
