@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/TVTile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:layout_marginTop="16dp"
+                android:layout_alignParentTop="true"
+                android:text="Название">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/TVCountPlayers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:paddingLeft="10dp"
+                android:textSize="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/TVTile"
+                android:text="Количество игроков">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/CountPlayers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:textAlignment="textStart"
+                android:layout_marginLeft="20dp"
+                android:background="#D6E9EC"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textSize="16dp"
+                android:layout_below="@+id/TVCountPlayers"
+                android:text="0">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/TVComplect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:paddingLeft="10dp"
+                android:textSize="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/CountPlayers"
+                android:text="Комплектация">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Complect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:textAlignment="textStart"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#D6E9EC"
+                android:textSize="16dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:layout_below="@+id/TVComplect"
+                android:text="0">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/TVDiscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:paddingLeft="10dp"
+                android:textSize="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/Complect"
+                android:text="Описание">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Discription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:scrollbars="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16dp"
+                android:background="#D6E9EC"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:layout_below="@+id/TVDiscription"
+                android:text="0">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/TVRules"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:paddingLeft="10dp"
+                android:textSize="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/Discription"
+                android:text="Правила">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Rules"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:scrollbars="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:textSize="16dp"
+                android:background="#D6E9EC"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:layout_below="@+id/TVRules"
+                android:text="0">
+
+            </TextView>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>

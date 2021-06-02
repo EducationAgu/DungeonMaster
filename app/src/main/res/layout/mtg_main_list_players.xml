@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/linearLayoutNamePlayers"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#CAEEF3"
+    android:weightSum="1"
     android:orientation="horizontal">
 
     <TextView
         android:id="@+id/NamePlayer"
-        android:layout_width="300dp"
+
         android:layout_height="40dp"
+        android:layout_width="match_parent"
         android:textAlignment="center"
         android:gravity="center"
         android:textSize="18dp"
-
+        android:layout_toLeftOf="@+id/buttonDopMenu"
         android:text="@string/name_player">
 
     </TextView>
 
     <ImageButton
         android:id="@+id/buttonDopMenu"
-        android:layout_width="match_parent"
+        android:layout_width="40dp"
+        android:layout_alignParentRight="true"
         android:layout_height="40dp"
+        android:layout_marginRight="16dp"
         android:src="@drawable/pointer">
 
     </ImageButton>
 
-</LinearLayout>
+</RelativeLayout>
