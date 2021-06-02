@@ -37,6 +37,7 @@ public class AvailableGames extends MenuBar {
             gps = gson.fromJson(body, GameProgress[].class);
             for(int i = 0; i < gps.length; i++){
                 LinearLayout ll = findViewById(R.id.savesList);
+
                 Button btn = new Button(this);
                 LinearLayout.LayoutParams innerLl =  new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
@@ -45,6 +46,8 @@ public class AvailableGames extends MenuBar {
                 btn.setLayoutParams(innerLl);
                 btn.setBackground(ContextCompat.getDrawable(this, R.drawable.btn_app_form));
                 btn.setText(gps[i].getShowName() + " " + gps[i].getDateLastChange());
+
+
                 ll.addView(btn);
 
                 String name = gps[i].getGameName();
@@ -67,5 +70,4 @@ public class AvailableGames extends MenuBar {
             }
         }
     }
-
 }
