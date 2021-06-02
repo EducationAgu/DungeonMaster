@@ -24,7 +24,7 @@
         android:layout_below="@+id/linearLayoutLevel"
         android:layout_centerHorizontal="true"
         android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
         android:text="Удалить игрока"

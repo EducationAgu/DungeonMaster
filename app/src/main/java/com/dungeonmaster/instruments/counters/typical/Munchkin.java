@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.diegodobelo.expandingview.ExpandingItem;
 import com.diegodobelo.expandingview.ExpandingList;
@@ -67,7 +68,14 @@ public class Munchkin extends Activity {
             input.setText(playerName.getText());
             builder.setView(input);
 
-            builder.setPositiveButton("OK", (dialog, which) -> playerName.setText(input.getText().toString()));
+            builder.setPositiveButton("OK", (dialog, which) -> {
+                String newName = input.getText().toString();
+                if (newName.length() > 10) {
+                    Toast.makeText(this, "Имя должно быть менее 10 символов",  Toast.LENGTH_LONG).show();
+                } else {
+                    playerName.setText(newName);
+                }
+            });
 
             AlertDialog alertDialog = builder.create();
 

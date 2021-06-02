@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.diegodobelo.expandingview.ExpandingItem;
 import com.diegodobelo.expandingview.ExpandingList;
@@ -44,46 +45,56 @@ public class MagicTheGathering extends Activity {
         for(int i = 0; i < 2; i++) {
             onClickAddMtgPlayer(null);
         }
-        int count = expandingList.getItemsCount();
-        for(int i = 0; i < count; i++) {
-            expandingList.getItemByIndex(i).toggleExpanded();
-        }
     }
 
     public void onClickAddMtgPlayer(View view) {
+
         ExpandingItem item = expandingList.createNewItem(R.layout.mtg_list_item);
         item.createSubItems(1);
-// кнопка открытия/закрытия
-        expListAdapter = new MtgPlayersListAdapter(this, playersList);
+
 // создаю нового игрока
         Player player = new Player("Player " + playersList.size());
         playersList.add(player);
 
+        TextView leftView = item.findViewById(R.id.mtgRightDummy);
+        leftView.setOnClickListener(v -> item.toggleExpanded());
+
+        TextView rightView = item.findViewById(R.id.mtgLeftDummy);
+        rightView.setOnClickListener(v -> item.toggleExpanded());
+
+        expListAdapter = new MtgPlayersListAdapter(this, playersList);
         TextView playerName = item.findViewById(R.id.mtgNamePlayer);
         playerName.setText(String.valueOf(player.getName()));
-        playerName.setOnClickListener(v -> item.toggleExpanded());
-//        playerName.setOnClickListener(v -> {
-//
-//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//            builder.setTitle("Имя игрока");
-//
-//            final EditText input = new EditText(this);
-//            input.setInputType(InputType.TYPE_CLASS_TEXT);
-//
-//            input.setText(playerName.getText());
-//            builder.setView(input);
-//
-//            builder.setPositiveButton("OK", (dialog, which) -> playerName.setText(input.getText().toString()));
-//
-//            AlertDialog alertDialog = builder.create();
-//
-//            alertDialog.show();
-//
-//            Button btnOk = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
-//
-//            btnOk.setBackgroundColor(getColor(R.color.main_background));
-//            btnOk.setTextColor(getColor(R.color.button_text_color));
-//        });
+
+        playerName.setOnClickListener(v -> {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Имя игрока");
+
+            final EditText input = new EditText(this);
+            input.setInputType(InputType.TYPE_CLASS_TEXT);
+
+            input.setText(playerName.getText());
+            builder.setView(input);
+
+            builder.setPositiveButton("OK", (dialog, which) -> {
+                String newName = input.getText().toString();
+                if (newName.length() > 10) {
+                    Toast.makeText(this, "Имя должно быть менее 10 символов",  Toast.LENGTH_LONG).show();
+                } else {
+                    playerName.setText(newName);
+                }
+            });
+
+            AlertDialog alertDialog = builder.create();
+
+            alertDialog.show();
+
+            Button btnOk = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+
+            btnOk.setBackgroundColor(getColor(R.color.main_background));
+            btnOk.setTextColor(getColor(R.color.button_text_color));
+        });
 
         Button deleteSelf = item.findViewById(R.id.btnDeleteMtgPlayer);
         deleteSelf.setOnClickListener(v -> {
@@ -102,7 +113,7 @@ public class MagicTheGathering extends Activity {
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
-    public void onClickStartGame(View view){
+    public void onClickStartMTG(View view){
         Intent intent = new Intent(this, PlayField.class);
         Gson gson = new Gson();
         intent.putExtra("AllTheData", gson.toJson(playersList.toArray()));
