@@ -1,10 +1,13 @@
 package com.dungeonmaster.instruments.counters.typical;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.diegodobelo.expandingview.ExpandingItem;
@@ -57,6 +60,20 @@ public class MagicTheGathering extends Activity {
         TextView playerName = item.findViewById(R.id.mtgNamePlayer);
         playerName.setText(String.valueOf(player.getName()));
 
+        playerName.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Имя игрока");
+
+            final EditText input = new EditText(this);
+            input.setInputType(InputType.TYPE_CLASS_TEXT);
+
+            input.setText(playerName.getText());
+            builder.setView(input);
+
+            builder.setPositiveButton("OK", (dialog, which) -> playerName.setText(input.getText().toString()));
+            builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
+            builder.show();
+        });
 
         Button deleteSelf = item.findViewById(R.id.btnDeleteMtgPlayer);
         deleteSelf.setOnClickListener(v -> {
