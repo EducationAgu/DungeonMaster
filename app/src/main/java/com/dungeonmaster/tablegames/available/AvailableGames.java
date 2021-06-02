@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.core.content.ContextCompat;
 
@@ -37,18 +39,38 @@ public class AvailableGames extends MenuBar {
             gps = gson.fromJson(body, GameProgress[].class);
             for(int i = 0; i < gps.length; i++){
                 LinearLayout ll = findViewById(R.id.savesList);
+                LinearLayout innerLayout = new LinearLayout(this);
+                innerLayout.setOrientation(LinearLayout.HORIZONTAL);
+                innerLayout.setBackground(getDrawable(R.drawable.btn_app_form));
 
                 Button btn = new Button(this);
                 LinearLayout.LayoutParams innerLl =  new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT);
+
                 innerLl.setMargins(0, 10,0,0);
+                innerLl.weight = 3;
+
                 btn.setLayoutParams(innerLl);
-                btn.setBackground(ContextCompat.getDrawable(this, R.drawable.btn_app_form));
+                btn.setBackground(ContextCompat.getDrawable(this, R.drawable.btn_borderless));
                 btn.setText(gps[i].getShowName() + " " + gps[i].getDateLastChange());
 
+                ImageButton deleteButton = new ImageButton(this);
+                deleteButton.setImageDrawable(getDrawable(R.drawable.remove_notes));
 
-                ll.addView(btn);
+                LinearLayout.LayoutParams innerLll =  new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT);
+                innerLll.setMargins(2, 10,0,0);
+                innerLll.weight = 1;
+
+                deleteButton.setLayoutParams(innerLll);
+                deleteButton.setBackground(ContextCompat.getDrawable(this, R.drawable.btn_borderless));
+//
+                innerLayout.addView(btn);
+                innerLayout.addView(deleteButton);
+
+                ll.addView(innerLayout);
 
                 String name = gps[i].getGameName();
                 Long id = gps[i].getId();
@@ -66,6 +88,10 @@ public class AvailableGames extends MenuBar {
                        break;
                    }
 
+                });
+                deleteButton.setOnClickListener(v -> {
+                    Server.passRequest(HttpMethod.GET, URLs.DROP_PROGRESS+"/"+id, "");
+                    ll.removeView(innerLayout);
                 });
             }
         }
