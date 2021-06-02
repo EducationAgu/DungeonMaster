@@ -16,9 +16,9 @@
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="4dp"
             android:layout_weight="1"
             android:background="@color/main_background"
@@ -43,10 +43,10 @@
             android:textAlignment="center"
             android:textSize="14sp"
             android:fontFamily="@font/button_and_text"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="4dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/main_background"
 
 

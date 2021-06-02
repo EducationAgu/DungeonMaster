@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/windowAppForm">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/acrobaticsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/acrobatics"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/acrobaticsBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/acrobatics"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/acrobatics"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"
+                    />
+
+                <Button
+                    android:id="@+id/acrobaticsBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/acrobatics"
+                    android:textAlignment="center"
+                    android:layout_weight="0.5"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/analysisText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/analysis"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/analysisBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/analysis"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/analysis"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/analysisBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/analysis"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/athleticsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/athletics"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/athleticsBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/athletics"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/athletics"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/athleticsBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/athletics"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/mindfulnessText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/mindfulness"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/mindfulnessBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/mindfulness"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/mindfulness"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/mindfulnessBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/mindfulness"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/survivalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/survival"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/survivalBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/survival"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/survival"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/survivalBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/survival"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/performanceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/performance"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/performanceBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/performance"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/performance"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/performanceBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/performance"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/intimidationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/intimidation"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/intimidationBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/intimidation"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/intimidation"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/intimidationBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/intimidation"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/historyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/history"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/historyBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/history"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/history"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/historyBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@id/history"
+
+                    android:background="@drawable/btn_app_form"
+                    android:text="+"
+                    android:textAlignment="center"
+                    android:textColor="@color/button_text_color"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/handSleightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/handSleight"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/handSleightBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/handSleight"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/handSleight"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/handSleightBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/handSleight"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/magicText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/magic"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/magicBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/magic"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/magic"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/magicBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/magic"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/medicineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/medicine"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/medicineBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/medicine"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/medicine"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/medicineBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/medicine"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/cheatingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/cheating"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/cheatingBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/cheating"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/cheating"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/cheatingBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/cheating"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+
+
+
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/natureText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/nature"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/natureBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/nature"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/nature"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/natureBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/nature"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/insightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/insight"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/insightBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/insight"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/insight"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/insightBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/insight"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/religionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/religion"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/religionBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/religion"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/religion"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/religionBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/religion"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/stealthText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/stealth"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/stealthBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/stealth"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/stealth"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/stealthBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/stealth"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/convictionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/conviction"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/convictionBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/conviction"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/conviction"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/convictionBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/conviction"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/animalCareText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/button_and_text"
+                android:padding="10dp"
+                android:text="@string/animalCare"
+                android:textColor="@color/button_text_color"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/animalCareBtnInc"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toLeftOf="@+id/animalCare"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="-"/>
+
+                <TextView
+                    android:id="@+id/animalCare"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"/>
+
+                <Button
+                    android:id="@+id/animalCareBtnDec"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/animalCare"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_app_form"
+                    android:textColor="@color/button_text_color"
+                    android:text="+"/>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/buttonAddSkills"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:textAlignment="center"
+                android:background="@drawable/btn_app_form"
+                android:fontFamily="@font/button_and_text"
+                android:text="@string/btn_Add"
+                android:textColor="@color/button_text_color"
+                android:textSize="14dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>
