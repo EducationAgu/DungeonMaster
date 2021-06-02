@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#CAECF1"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Название"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:padding="10dp"
+        android:inputType="textPersonName"
+        android:layout_alignParentTop="true"
+        android:background="@android:drawable/editbox_background">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/Disc"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/Title"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:scrollbars="vertical"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Описание"
+        android:inputType="textPersonName"
+        android:padding="10dp">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/btn_app_form"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="Сохранить"
+        android:layout_below="@+id/Disc">
+
+    </Button>
+
+</RelativeLayout>
