@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.dungeonmaster.R;
-import com.dungeonmaster.instruments.counters.GameCounters;
+import com.dungeonmaster.instruments.counters.TypicalCounters;
 import com.dungeonmaster.instruments.dice.CubeScene;
 import com.dungeonmaster.menu.MainMenu;
 import com.menu.MenuBar;
@@ -23,7 +23,7 @@ public class Tools extends MenuBar {
     }
 
     public void onClickOpenGameCounters(View view) {
-        setNextScreen(GameCounters.class, TO_RIGHT);
+        setNextScreen(TypicalCounters.class, TO_RIGHT);
     }
 
     // TODO: нарисовать экран заметок

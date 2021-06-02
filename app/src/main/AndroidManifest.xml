@@ -50,7 +50,6 @@
 
         </activity>
         <activity android:name=".instruments.counters.TypicalCounters" />
-        <activity android:name=".instruments.counters.GameCounters" />
         <activity android:name=".tablegames.available.AvailableGames" />
         <activity android:name=".games.dnd.CreateCharacter" />
         <activity android:name=".games.dnd.DnDHelper" />

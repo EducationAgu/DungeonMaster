@@ -10,4 +10,8 @@ public class URLs {
     public static final String SAVE_PROGRESS = "/tableGame/saveGameProgress";
     public static final String SAVES_LIST = "/tableGame/listOfSaves";
     public static final String DROP_PROGRESS = "/tableGame/dropSave";
+
+    public static final String TABLE_GAMES_SHORT_LIST = "/tableGame/game/shortlist";
+    public static final String TABLE_GAMES_LIST = "/tableGame/game/list";
+    public static final String GET_GAME_RULES = "/tableGame/game";
 }
