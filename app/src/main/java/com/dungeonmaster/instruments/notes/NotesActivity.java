@@ -83,6 +83,9 @@ public class NotesActivity extends MenuBar {
         edit.setOnClickListener(v -> {
             editableTittle.setEnabled(!editableTittle.isEnabled());
             editableDesc.setEnabled(!editableDesc.isEnabled());
+            if (!item.isExpanded()) {
+                item.toggleExpanded();
+            }
         });
         ImageButton delete = item.findViewById(R.id.imageButtonRemoveNote);
         delete.setOnClickListener(v -> {
@@ -96,6 +99,7 @@ public class NotesActivity extends MenuBar {
         Button saveNote = item.findViewById(R.id.btnSaveNote);
         saveNote.setOnClickListener(v -> {
             note.setName(editableTittle.getText().toString());
+            textView.setText(note.getName());
             note.setNotes(editableDesc.getText().toString());
 
             Server.passRequest(HttpMethod.POST, URLs.NOTE, note);
@@ -107,8 +111,11 @@ public class NotesActivity extends MenuBar {
                 note.setId(Long.parseLong(response.getBody()));
             }
         });
-        editableTittle.setEnabled(false);
-        editableDesc.setEnabled(false);
+
+        if (note.getId()!=0) {
+            editableTittle.setEnabled(false);
+            editableDesc.setEnabled(false);
+        }
 
         expListAdapter = new NoteExpandableListAdapter(this, notes);
     }
