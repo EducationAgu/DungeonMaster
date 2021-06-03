@@ -12,7 +12,7 @@
         <Button
             android:id="@+id/buttonMyGames"
             android:text="@string/btn_MyGames"
-            android:onClick="onClickMyGames"
+            android:onClick="onClickAvailableGames"
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -35,7 +35,7 @@
         <Button
             android:id="@+id/buttonExistingGames"
             android:text="@string/btn_ExistingGames"
-            android:onClick="onClickAvailableGames"
+            android:onClick="onClickMyGames"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

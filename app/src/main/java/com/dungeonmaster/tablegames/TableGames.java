@@ -22,7 +22,7 @@ public class TableGames extends MenuBar {
         startActivity(availableGames);
     }
     public void onClickMyGames(View view) {
-        Intent availableGames = new Intent(this, AvailableGames.class);
+        Intent availableGames = new Intent(this, GameListActivity.class);
         startActivity(availableGames);
     }
 

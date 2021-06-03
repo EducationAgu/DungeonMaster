@@ -35,6 +35,7 @@ public class AvailableGames extends MenuBar {
 
         Server.passRequest(HttpMethod.GET, URLs.SAVES_LIST, "");
         ResponseEntity<String> response = Server.getQueryResult(URLs.SAVES_LIST);
+
         if (response.getStatusCode() == HttpStatus.OK) {
             Gson gson = new Gson();
             GameProgress[] gps;
