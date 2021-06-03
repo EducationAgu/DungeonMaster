@@ -1,6 +1,6 @@
 package com.dungeonmaster.games.dnd.model;
 
-public class SavingThrows {
+public class SavingThrow {
 
     private int strength;
     private int dexterity;
@@ -9,10 +9,10 @@ public class SavingThrows {
     private int wisdom;
     private int charisma;
 
-    public SavingThrows() {}
+    public SavingThrow() {}
 
-    public  SavingThrows(int strength, int dexterity, int constitution, int intelligence,
-                         int wisdom, int charisma){
+    public SavingThrow(int strength, int dexterity, int constitution, int intelligence,
+                       int wisdom, int charisma){
         this.strength = strength;
         this.dexterity = dexterity;
         this.constitution = constitution;

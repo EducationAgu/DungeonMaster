@@ -16,7 +16,7 @@
             android:orientation="vertical">
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/playerName"
+                android:id="@+id/dndPlayerName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -32,7 +32,7 @@
                 android:textSize="20dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/characterName"
+                android:id="@+id/dndCharacterName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -48,7 +48,7 @@
                 android:textSize="20dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/characterClass"
+                android:id="@+id/dndCharacterClass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -63,7 +63,7 @@
                 android:textSize="20dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/race"
+                android:id="@+id/dndRace"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -78,7 +78,7 @@
                 android:textSize="20dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/prehistory"
+                android:id="@+id/dndPrehistory"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginLeft="16dp"
@@ -97,7 +97,7 @@
                 android:textSize="20dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/charIdeology"
+                android:id="@+id/dndCharIdeology"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginLeft="16dp"
@@ -112,7 +112,7 @@
                 android:textSize="20dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/characterTraits"
+                android:id="@+id/dndCharacterTraits"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginLeft="16dp"
@@ -128,7 +128,7 @@
                 android:textSize="20dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/characterIdeals"
+                android:id="@+id/dndCharacterIdeals"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginLeft="16dp"
@@ -147,7 +147,7 @@
                 android:textSize="20dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/charAffections"
+                android:id="@+id/dndCharAffections"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginLeft="16dp"
@@ -166,7 +166,7 @@
                 android:textSize="20dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/charWeaknesses"
+                android:id="@+id/dndCharWeaknesses"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginLeft="16dp"
@@ -207,14 +207,15 @@
                     android:layout_width="40dp"
                     android:layout_height="35dp"
                     android:textAlignment="center"
-                    android:layout_toLeftOf="@+id/level"
+                    android:onClick="onClickDecDndLevel"
+                    android:layout_toLeftOf="@+id/dndLevel"
                     android:background="@drawable/btn_app_form"
                     android:text="-"
                     android:textColor="@color/button_text_color"
                     android:textSize="16dp" />
 
                 <TextView
-                    android:id="@+id/level"
+                    android:id="@+id/dndLevel"
                     android:layout_width="100dp"
                     android:layout_height="35dp"
                     android:layout_centerHorizontal="true"
@@ -226,8 +227,9 @@
                     android:id="@+id/levelBtnDec"
                     android:layout_width="40dp"
                     android:layout_height="35dp"
-                    android:layout_toRightOf="@+id/level"
+                    android:layout_toRightOf="@+id/dndLevel"
                     android:background="@drawable/btn_app_form"
+                    android:onClick="onClickIncDndLevel"
                     android:text="+"
                     android:textAlignment="center"
                     android:textColor="@color/button_text_color"
@@ -258,6 +260,7 @@
                     android:layout_height="35dp"
                     android:layout_toLeftOf="@+id/expPoints"
                     android:background="@drawable/btn_app_form"
+                    android:onClick="onClickDecDndExp"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="@color/button_text_color"
@@ -279,6 +282,7 @@
                     android:layout_toRightOf="@+id/expPoints"
                     android:background="@drawable/btn_app_form"
                     android:text="+"
+                    android:onClick="onClickIncDndExp"
                     android:textAlignment="center"
                     android:textColor="@color/button_text_color"
                     android:textSize="16dp" />
@@ -292,31 +296,14 @@
                 android:layout_width="180dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
-
+                android:onClick="onClickAddCharacterData"
                 android:layout_marginTop="40dp"
-
                 android:textAlignment="center"
                 android:background="@drawable/btn_app_form"
                 android:fontFamily="@font/button_and_text"
                 android:text="@string/btn_Save"
                 android:textColor="@color/button_text_color"
                 android:textSize="14dp" />
-
-            <Button
-                android:id="@+id/buttonDataPrev"
-                android:layout_width="180dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="40dp"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:background="@drawable/btn_app_form"
-                android:fontFamily="@font/button_and_text"
-                android:text="@string/btn_Prev"
-                android:textColor="@color/button_text_color"
-                android:textSize="14dp" />
-
 
         </LinearLayout>
     </ScrollView>

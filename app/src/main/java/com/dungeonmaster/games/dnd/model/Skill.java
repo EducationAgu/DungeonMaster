@@ -1,6 +1,6 @@
 package com.dungeonmaster.games.dnd.model;
 
-public class Skills {
+public class Skill {
 
     private int acrobatics;
     private int investigation;
@@ -21,12 +21,12 @@ public class Skills {
     private int persuasion;
     private int animalHandling;
 
-    public Skills() {}
+    public Skill() {}
 
-    public Skills(int acrobatics, int investigation, int athletics, int perception, int survival,
-                  int performance, int intimidation, int history, int sleightOfHand, int arcana,
-                  int medicine, int deception, int nature, int insight, int religion, int stealth,
-                  int persuasion, int animalHandling) {
+    public Skill(int acrobatics, int investigation, int athletics, int perception, int survival,
+                 int performance, int intimidation, int history, int sleightOfHand, int arcana,
+                 int medicine, int deception, int nature, int insight, int religion, int stealth,
+                 int persuasion, int animalHandling) {
         this.acrobatics = acrobatics;
         this.investigation = investigation;
         this.athletics = athletics;

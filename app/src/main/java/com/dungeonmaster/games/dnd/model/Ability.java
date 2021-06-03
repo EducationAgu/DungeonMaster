@@ -1,15 +1,15 @@
 package com.dungeonmaster.games.dnd.model;
 
-public class Abilities {
+public class Ability {
 
     private String attacksAndSpells;
     private String featuresAndTraits;
     private String proficienciesAndLanguages;
 
-    public Abilities() {}
+    public Ability() {}
 
-    public Abilities(String attacksAndSpells, String featuresAndTraits,
-                     String proficienciesAndLanguages){
+    public Ability(String attacksAndSpells, String featuresAndTraits,
+                   String proficienciesAndLanguages){
         this.attacksAndSpells = attacksAndSpells;
         this.featuresAndTraits = featuresAndTraits;
         this.proficienciesAndLanguages = proficienciesAndLanguages;

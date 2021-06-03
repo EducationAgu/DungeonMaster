@@ -3,11 +3,13 @@ package com.dungeonmaster.games.dnd;
 import android.os.Bundle;
 import android.view.View;
 
+import com.dungeonmaster.ApplicationVariables;
 import com.dungeonmaster.R;
 import com.dungeonmaster.games.dnd.character.Abilities;
 import com.dungeonmaster.games.dnd.character.CharacterData;
 import com.dungeonmaster.games.dnd.character.Characteristics;
 import com.dungeonmaster.games.dnd.character.Equipment;
+import com.dungeonmaster.games.dnd.model.Hero;
 import com.dungeonmaster.menu.MainMenu;
 import com.menu.MenuBar;
 
@@ -17,6 +19,7 @@ public class CreateCharacter extends MenuBar {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_character);
+        ((ApplicationVariables) getApplicationContext()).hero = new Hero();
     }
 
     public void onClickOpenCharacterData(View view){
@@ -37,6 +40,7 @@ public class CreateCharacter extends MenuBar {
 
     @Override
     public void onBackPressed() {
+        ((ApplicationVariables) getApplicationContext()).hero = null;
         setNextScreen(DnDHelper.class, TO_LEFT);
     }
 }

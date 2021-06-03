@@ -9,8 +9,8 @@ public class Characteristics {
     private int speed;
     private int inspiration;
     private int proficiencyBonus;
-    private SavingThrows savingThrows;
-    private Skills skills;
+    private SavingThrow savingThrow;
+    private Skill skill;
     private int passiveWisdom;
     private String hitDice;
     private DeathSaves deathSaves;
@@ -19,7 +19,7 @@ public class Characteristics {
 
     public Characteristics(int currentHP, int temporaryHP, String armorClass, int initiative,
                            int speed, int inspiration, int proficiencyBonus,
-                           SavingThrows savingThrows, Skills skills, int passiveWisdom,
+                           SavingThrow savingThrow, Skill skill, int passiveWisdom,
                            String hitDice, DeathSaves deathSaves) {
         this.currentHP = currentHP;
         this.temporaryHP = temporaryHP;
@@ -28,8 +28,8 @@ public class Characteristics {
         this.speed = speed;
         this.inspiration = inspiration;
         this.proficiencyBonus = proficiencyBonus;
-        this.savingThrows = savingThrows;
-        this.skills = skills;
+        this.savingThrow = savingThrow;
+        this.skill = skill;
         this.passiveWisdom = passiveWisdom;
         this.hitDice = hitDice;
         this.deathSaves = deathSaves;
@@ -151,20 +151,20 @@ public class Characteristics {
         }
     }
 
-    public SavingThrows getSavingThrows() {
-        return savingThrows;
+    public SavingThrow getSavingThrows() {
+        return savingThrow;
     }
 
-    public void setSavingThrows(SavingThrows savingThrows) {
-        this.savingThrows = savingThrows;
+    public void setSavingThrows(SavingThrow savingThrow) {
+        this.savingThrow = savingThrow;
     }
 
-    public Skills getSkills() {
-        return skills;
+    public Skill getSkills() {
+        return skill;
     }
 
-    public void setSkills(Skills skills) {
-        this.skills = skills;
+    public void setSkills(Skill skill) {
+        this.skill = skill;
     }
 
     public int getPassiveWisdom() {

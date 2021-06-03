@@ -14,6 +14,7 @@ public class CharacterInfo {
     private String ideals;
     private String bonds;
     private String flaws;
+private String ideology;
 
     public CharacterInfo() {}
 
@@ -109,7 +110,6 @@ public class CharacterInfo {
             exp--;
         }
     }
-
     public String getAlignment() {
         return alignment;
     }
@@ -149,4 +149,13 @@ public class CharacterInfo {
     public void setFlaws(String flaws) {
         this.flaws = flaws;
     }
+
+    public String getIdeology() {
+        return ideology;
+    }
+
+    public void setIdeology(String ideology) {
+        this.ideology = ideology;
+    }
+
 }

@@ -2,6 +2,7 @@ package com.dungeonmaster;
 
 import android.app.Application;
 
+import com.dungeonmaster.games.dnd.model.Hero;
 import com.serverconnection.model.User;
 
 public class ApplicationVariables extends Application {
@@ -11,8 +12,11 @@ public class ApplicationVariables extends Application {
         return username;
     }
 
+    public Hero hero;
+
     public void setUsername(String username) {
         this.username = username;
     }
+
 
 }
