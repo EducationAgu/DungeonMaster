@@ -8,7 +8,7 @@ public class Hero {
     public CharacterInfo info;
     public Characteristics characteristics;
     public DeathSaves deathSaves;
-    public Equipment equipment;
+    public ArrayList<Equipment> equipment;
     public ArrayList<SavingThrow> savingThrows;
     public ArrayList<Skill> skills;
 
@@ -35,14 +35,6 @@ public class Hero {
 
     public void setDeathSaves(DeathSaves deathSaves) {
         this.deathSaves = deathSaves;
-    }
-
-    public Equipment getEquipment() {
-        return equipment;
-    }
-
-    public void setEquipment(Equipment equipment) {
-        this.equipment = equipment;
     }
 
     public ArrayList<Ability> getAbility() {

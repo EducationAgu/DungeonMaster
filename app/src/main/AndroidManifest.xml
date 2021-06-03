@@ -43,7 +43,7 @@
         <activity android:name=".games.dnd.character.throwers.DeathSavingThrows">
 
         </activity>
-        <activity android:name=".games.dnd.character.Equipment">
+        <activity android:name=".games.dnd.character.EquipmentActivity">
 
         </activity>
         <activity android:name=".games.dnd.character.Abilities">

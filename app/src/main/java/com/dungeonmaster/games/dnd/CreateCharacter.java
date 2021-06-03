@@ -8,9 +8,8 @@ import com.dungeonmaster.R;
 import com.dungeonmaster.games.dnd.character.Abilities;
 import com.dungeonmaster.games.dnd.character.CharacterData;
 import com.dungeonmaster.games.dnd.character.Characteristics;
-import com.dungeonmaster.games.dnd.character.Equipment;
+import com.dungeonmaster.games.dnd.character.EquipmentActivity;
 import com.dungeonmaster.games.dnd.model.Hero;
-import com.dungeonmaster.menu.MainMenu;
 import com.menu.MenuBar;
 
 public class CreateCharacter extends MenuBar {
@@ -35,7 +34,7 @@ public class CreateCharacter extends MenuBar {
     }
 
     public void onClickOpenEquipment(View view){
-        setNextScreen(Equipment.class, TO_LEFT);
+        setNextScreen(EquipmentActivity.class, TO_LEFT);
     }
 
     @Override

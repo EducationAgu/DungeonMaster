@@ -2,19 +2,39 @@ package com.dungeonmaster.games.dnd.model;
 
 public class Equipment {
 
-    private String listOfEquipment;
+    private String name;
+    private String desc;
+    private boolean weared;
 
     public Equipment() {}
 
-    public Equipment(String listOfEquipment){
-        this.listOfEquipment = listOfEquipment;
+    public Equipment(String name, String desc, boolean weared){
+        this.name = name;
+        this.desc = desc;
+        this.weared = weared;
     }
 
-    public String getListOfEquipment() {
-        return listOfEquipment;
+    public String getName() {
+        return name;
     }
 
-    public void setListOfEquipment(String listOfEquipment) {
-        this.listOfEquipment = listOfEquipment;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public boolean isWeared() {
+        return weared;
+    }
+
+    public void setWeared(boolean weared) {
+        this.weared = weared;
     }
 }
