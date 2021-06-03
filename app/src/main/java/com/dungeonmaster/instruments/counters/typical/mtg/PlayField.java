@@ -87,7 +87,7 @@ public class PlayField extends Activity {
             });
             Button cancelHealth = item.findViewById(R.id.buttonSCResetHealth);
             cancelHealth.setOnClickListener(v -> {
-                player.setHealth(0);
+                player.setHealth(20);
                 health.setText(String.valueOf(player.getHealth()));
             });
 

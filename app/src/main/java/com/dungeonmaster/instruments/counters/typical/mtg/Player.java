@@ -2,7 +2,7 @@ package com.dungeonmaster.instruments.counters.typical.mtg;
 
 public class Player {
     private String name;
-    private int health;
+    private int health = 20;
     private int infect;
     private int cardsPlayed;
     private int white;
@@ -178,7 +178,7 @@ public class Player {
     }
 
     public void reset() {
-       health = 0;
+       health = 20;
        infect = 0;
        cardsPlayed = 0;
        white = 0;
