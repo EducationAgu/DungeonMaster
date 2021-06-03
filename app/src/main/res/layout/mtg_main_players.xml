@@ -29,11 +29,11 @@
 
         <TextView
             android:id="@+id/TextViewSCHealth"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:layout_toRightOf="@+id/mtgSCIncHealth"
-            android:layout_marginLeft="20dp"
+
             android:textColor="@color/black"
             android:gravity="center"
             android:layout_centerVertical="true"
@@ -58,7 +58,6 @@
             android:layout_width="40dp"
             android:layout_height="35dp"
             android:layout_toRightOf="@+id/TextViewSCHealth"
-            android:layout_marginLeft="20dp"
             android:background="@drawable/btn_app_form"
             android:textColor="@color/button_text_color"
             android:text="-">
@@ -103,11 +102,10 @@
 
         <TextView
             android:id="@+id/TextViewSCInfect"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:layout_toRightOf="@+id/mtgSCIncInfect"
-            android:layout_marginLeft="20dp"
             android:textColor="@color/black"
             android:gravity="center"
             android:layout_centerVertical="true"
@@ -132,7 +130,6 @@
             android:layout_width="40dp"
             android:layout_height="35dp"
             android:layout_toRightOf="@+id/TextViewSCInfect"
-            android:layout_marginLeft="20dp"
             android:background="@drawable/btn_app_form"
             android:textColor="@color/button_text_color"
             android:text="-">
@@ -181,11 +178,10 @@
 
             <TextView
                 android:id="@+id/TextViewSC"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_toRightOf="@+id/mtgSCInc"
-                android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:layout_centerVertical="true"
@@ -210,7 +206,6 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TextViewSC"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="-">
@@ -253,11 +248,10 @@
 
             <TextView
                 android:id="@+id/TextViewSCW"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_toRightOf="@+id/mtgSCIncW"
-                android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:layout_centerVertical="true"
@@ -282,7 +276,6 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TextViewSCW"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="-">
@@ -325,11 +318,10 @@
 
             <TextView
                 android:id="@+id/TextViewSCBlack"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_toRightOf="@+id/mtgSCIncBlack"
-                android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:layout_centerVertical="true"
@@ -354,7 +346,6 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TextViewSCBlack"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="-">
@@ -397,11 +388,10 @@
 
             <TextView
                 android:id="@+id/TextViewSCBlue"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_toRightOf="@+id/mtgSCIncBlue"
-                android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:layout_centerVertical="true"
@@ -426,7 +416,6 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TextViewSCBlue"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="-">
@@ -469,11 +458,10 @@
 
             <TextView
                 android:id="@+id/TextViewSCGreen"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_toRightOf="@+id/mtgSCIncGreen"
-                android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:layout_centerVertical="true"
@@ -498,7 +486,6 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TextViewSCGreen"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="-">
@@ -541,11 +528,10 @@
 
             <TextView
                 android:id="@+id/TextViewSCRed"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_toRightOf="@+id/mtgSCIncRed"
-                android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:layout_centerVertical="true"
@@ -570,7 +556,6 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TextViewSCRed"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="-">
@@ -613,11 +598,10 @@
 
             <TextView
                 android:id="@+id/TextViewSCColorless"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_toRightOf="@+id/mtgSCIncColorless"
-                android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:layout_centerVertical="true"
@@ -642,7 +626,6 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TextViewSCColorless"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="-">
