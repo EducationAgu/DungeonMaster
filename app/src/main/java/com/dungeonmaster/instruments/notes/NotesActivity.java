@@ -112,7 +112,7 @@ public class NotesActivity extends MenuBar {
             }
         });
 
-        if (note.getId()!=0) {
+        if (note.getId() != null) {
             editableTittle.setEnabled(false);
             editableDesc.setEnabled(false);
         }

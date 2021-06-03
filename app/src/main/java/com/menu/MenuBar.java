@@ -14,6 +14,10 @@ import com.dungeonmaster.ApplicationVariables;
 import com.dungeonmaster.R;
 import com.dungeonmaster.menu.SignIn;
 import com.serverconnection.Server;
+import com.serverconnection.model.User;
+import com.serverconnection.model.UserData;
+
+import java.io.IOException;
 
 public class MenuBar extends MainMenuActivity {
 
@@ -24,6 +28,13 @@ public class MenuBar extends MainMenuActivity {
         String usernameStr = getApplicationVariables().getUsername();
         if (usernameStr != null) {
             setTitle(usernameStr);
+        } else {
+            try{
+                UserData user = Server.readUserData(this);
+                ((ApplicationVariables) getApplicationContext()).setUsername(user.username);
+                setTitle(user.username);
+            } catch (IOException e ){}
+
         }
     }
 

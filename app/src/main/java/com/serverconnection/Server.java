@@ -273,7 +273,7 @@ public class Server {
             userData = new UserData();
         }
         userData.encodedAuth = loginHeader;
-
+        userData.username = user.getUsername();
         saveUserData(userData, activity);
 
         passRequest(HttpMethod.POST, URLs.LOGIN, user);
