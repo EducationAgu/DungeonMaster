@@ -254,6 +254,7 @@ public class Server {
         }
         userData.encodedAuth = userDataIn.encodedAuth;
         userData.savedGameProgressIds = userDataIn.savedGameProgressIds;
+        userData.username = userDataIn.username;
 
         String JSONed = gson.toJson(userData);
         FileOutputStream outputStream;

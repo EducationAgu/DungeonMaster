@@ -20,9 +20,6 @@ public class MainMenu extends MenuBar {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         doubleBackToExitPressedOnce = false;
-        if (!Server.isAvailable() || !Server.isUserLogged()){
-//            findViewById(R.id.menu1).setVisibility(View.GONE);
-        }
     }
 
     public void onClickTableGames(View view) {

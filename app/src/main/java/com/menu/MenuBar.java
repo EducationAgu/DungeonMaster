@@ -30,7 +30,7 @@ public class MenuBar extends MainMenuActivity {
 
 //        TextView tv = findViewById(R.id.application_username);
         String usernameStr = getApplicationVariables().getUsername();
-        if (usernameStr == null) {
+        if (usernameStr == null || usernameStr.equals("")) {
             try{
                 UserData user = Server.readUserData(this);
                 ((ApplicationVariables) getApplicationContext()).setUsername(user.username);
