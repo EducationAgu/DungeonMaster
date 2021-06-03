@@ -25,17 +25,19 @@ public class MenuBar extends MainMenuActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options_menu);
+
+//        getSupportActionBar().setCustomView(R.layout.options_menu);
+
+//        TextView tv = findViewById(R.id.application_username);
         String usernameStr = getApplicationVariables().getUsername();
-        if (usernameStr != null) {
-            setTitle(usernameStr);
-        } else {
+        if (usernameStr == null) {
             try{
                 UserData user = Server.readUserData(this);
                 ((ApplicationVariables) getApplicationContext()).setUsername(user.username);
-                setTitle(user.username);
+                usernameStr = user.username;
             } catch (IOException e ){}
-
         }
+        setTitle(usernameStr);
     }
 
 

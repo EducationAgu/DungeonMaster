@@ -29,6 +29,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
@@ -186,7 +187,8 @@ public class Server {
         if (loginHeader != null) {
             headers.add("Authorization", "Basic " + loginHeader);
         }
-        headers.add("charset", "UTF-8");
+        System.out.println("My project encoding is : "+ Charset.defaultCharset());
+        headers.add("Charset", "UTF-8");
         HttpEntity<String> entity = new HttpEntity<String>(body, headers);
 
         AsyncTask<Querry, Void, ResponseEntity<String>> response;
