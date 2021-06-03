@@ -179,21 +179,23 @@ public class Server {
             body = "";
         }
         RestTemplate restTemplate = new RestTemplateWithTimeOut(5000);
-        restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
+        restTemplate.getMessageConverters().add(new StringHttpMessageConverter(Charset.defaultCharset()));
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
 
+        headers.set("Content-Type", "application/json; charset=UTF-8");
+        headers.set("Accept-Charset", "utf-8");
         if (loginHeader != null) {
             headers.add("Authorization", "Basic " + loginHeader);
         }
         System.out.println("My project encoding is : "+ Charset.defaultCharset());
-        headers.add("Charset", "UTF-8");
+
         HttpEntity<String> entity = new HttpEntity<String>(body, headers);
 
         AsyncTask<Querry, Void, ResponseEntity<String>> response;
         Querry querry = new Querry(url + urlEnd, method, entity, restTemplate);
         ExecuteExchange exchange = new ExecuteExchange();
+
         try {
             response = exchange.execute(querry);
         } catch (ResourceAccessException e) {

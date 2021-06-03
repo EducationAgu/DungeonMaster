@@ -1,6 +1,6 @@
 package com.serverconnection.model;
 
-public class GameRules {
+public class GameRule {
     public Long id;
     public String name;
     public String playersAmount;
