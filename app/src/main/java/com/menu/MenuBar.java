@@ -25,8 +25,6 @@ public class MenuBar extends MainMenuActivity {
         if (usernameStr != null) {
             setTitle(usernameStr);
         }
-//        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_actionbar);
-//        setSupportActionBar(toolbar);
     }
 
 

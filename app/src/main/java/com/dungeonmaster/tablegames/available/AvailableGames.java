@@ -15,6 +15,7 @@ import com.dungeonmaster.R;
 import com.dungeonmaster.instruments.counters.typical.MagicTheGathering;
 import com.dungeonmaster.instruments.counters.typical.Munchkin;
 import com.dungeonmaster.instruments.counters.typical.mtg.PlayField;
+import com.dungeonmaster.tablegames.TableGames;
 import com.google.gson.Gson;
 import com.menu.MenuBar;
 import com.serverconnection.Server;
@@ -102,5 +103,10 @@ public class AvailableGames extends MenuBar {
                 });
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        setNextScreen(TableGames.class, TO_LEFT);
     }
 }
