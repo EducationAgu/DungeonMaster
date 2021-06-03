@@ -49,6 +49,10 @@
         <activity android:name=".games.dnd.character.Abilities">
 
         </activity>
+        <activity android:name=".menu.Registration">
+
+        </activity>
+
         <activity android:name=".instruments.counters.TypicalCounters" />
         <activity android:name=".tablegames.available.AvailableGames" />
         <activity android:name=".games.dnd.CreateCharacter" />

@@ -3,19 +3,13 @@ package com.dungeonmaster.menu;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.dungeonmaster.LoadingScreen;
 import com.dungeonmaster.R;
 import com.serverconnection.Server;
 import com.serverconnection.model.User;
-
-import java.io.Console;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SignIn extends Activity {
 
@@ -41,7 +35,7 @@ public class SignIn extends Activity {
         String password = passwordTextBox.getText().toString();
         // userDataChecker.isValidEmail(login) &&
         if (userDataChecker.isValidPassword(password)) {
-            user.setLogin(login);
+            user.setUsername(login);
             user.setPassword(password);
 
             Server.login(user, this);

@@ -212,7 +212,7 @@ public class Server {
         loginHeader = null;
         passRequest(HttpMethod.POST, URLs.REGISTRATION, body);
 
-        String loginCredentials = user.getLogin() + ":" + user.getPassword();
+        String loginCredentials = user.getUsername() + ":" + user.getPassword();
         loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
         UserData userData;
         try {
@@ -264,7 +264,7 @@ public class Server {
     }
 
     public static void login(User user, Activity activity) {
-        String loginCredentials = user.getLogin() + ":" + user.getPassword();
+        String loginCredentials = user.getUsername() + ":" + user.getPassword();
         loginHeader = Base64.getEncoder().encodeToString(loginCredentials.getBytes());
         UserData userData;
         try {
