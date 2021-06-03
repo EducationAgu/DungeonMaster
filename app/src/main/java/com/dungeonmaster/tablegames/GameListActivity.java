@@ -67,4 +67,9 @@ public class GameListActivity extends MenuBar {
             setNextScreen(MainMenu.class, TO_RIGHT);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        setNextScreen(TableGames.class, TO_RIGHT);
+    }
 }

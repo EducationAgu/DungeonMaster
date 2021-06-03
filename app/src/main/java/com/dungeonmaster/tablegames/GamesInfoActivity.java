@@ -33,4 +33,9 @@ public class GamesInfoActivity extends MenuBar {
         TextView rules = findViewById(R.id.Rules);
         rules.setText(gameRule.rools);
     }
+
+    @Override
+    public void onBackPressed() {
+        setNextScreen(GameListActivity.class, TO_RIGHT);
+    }
 }
