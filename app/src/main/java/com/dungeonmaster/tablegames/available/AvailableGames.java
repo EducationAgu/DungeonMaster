@@ -48,7 +48,7 @@ public class AvailableGames extends MenuBar {
 
                 Button btn = new Button(this);
                 LinearLayout.LayoutParams innerLl =  new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.MATCH_PARENT);
 
                 innerLl.setMargins(0, 10,0,0);
@@ -63,7 +63,7 @@ public class AvailableGames extends MenuBar {
 
                 LinearLayout.LayoutParams innerLll =  new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.MATCH_PARENT);
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
                 innerLll.setMargins(2, 10,0,0);
                 innerLll.weight = 1;
 
