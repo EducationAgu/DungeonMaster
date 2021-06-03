@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Hero {
 
-    public ArrayList<Ability> ability;
+    public ArrayList<Ability> abilities;
     public CharacterInfo info;
     public Characteristics characteristics;
     public DeathSaves deathSaves;
@@ -37,12 +37,12 @@ public class Hero {
         this.deathSaves = deathSaves;
     }
 
-    public ArrayList<Ability> getAbility() {
-        return ability;
+    public ArrayList<Ability> getAbilities() {
+        return abilities;
     }
 
-    public void setAbility(ArrayList<Ability> ability) {
-        this.ability = ability;
+    public void setAbilities(ArrayList<Ability> abilities) {
+        this.abilities = abilities;
     }
 
     public ArrayList<SavingThrow> getSavingThrows() {

@@ -46,8 +46,8 @@ public class CharacterData extends MenuBar {
 
         hero.info.setLevel(Integer.parseInt(((TextView) findViewById(R.id.dndLevel)).getText().toString()));
         hero.info.setExp(Integer.parseInt(((TextView) findViewById(R.id.expPoints)).getText().toString()));
-        ((ApplicationVariables) getApplicationContext()).hero = hero;
 
+        ((ApplicationVariables) getApplicationContext()).hero = hero;
     }
 
     public void onClickIncDndLevel(View view) {

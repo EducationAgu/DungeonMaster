@@ -72,6 +72,7 @@
                 android:id="@+id/buttonAddAbilities"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
+                android:onClick="onClickAddAbility"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="40dp"
