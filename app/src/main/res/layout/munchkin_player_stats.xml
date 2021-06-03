@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@color/info_bar_color"
     android:orientation="vertical"
-    android:layout_marginBottom="20dp">
+    >
 
     <LinearLayout
         android:id="@+id/linearLayoutLevel"
@@ -132,7 +132,9 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         android:text="Удалить игрока"
-        android:layout_margin="40px"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:padding="5dp"
         android:textSize="14dp"
 
 

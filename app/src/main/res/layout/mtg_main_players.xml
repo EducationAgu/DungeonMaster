@@ -46,7 +46,7 @@
             android:layout_width="40dp"
             android:layout_height="35dp"
             android:layout_toRightOf="@+id/TSCHealth"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="14dp"
             android:background="@drawable/btn_app_form"
             android:textColor="@color/button_text_color"
             android:text="+">
@@ -71,7 +71,7 @@
             android:layout_height="35dp"
             android:text="@string/reset"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="14dp"
             android:background="@drawable/btn_app_form"
             android:textColor="@color/button_text_color">
         </Button>
@@ -120,7 +120,7 @@
             android:layout_width="40dp"
             android:layout_height="35dp"
             android:layout_toRightOf="@+id/TSCInfect"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="14dp"
             android:background="@drawable/btn_app_form"
             android:textColor="@color/button_text_color"
             android:text="+">
@@ -145,7 +145,7 @@
             android:layout_height="35dp"
             android:text="@string/reset"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="14dp"
             android:background="@drawable/btn_app_form"
             android:textColor="@color/button_text_color">
         </Button>
@@ -198,7 +198,7 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TSC"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="+">
@@ -223,7 +223,7 @@
                 android:layout_height="35dp"
                 android:text="@string/reset"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color">
             </Button>
@@ -270,7 +270,7 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TSCW"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="+">
@@ -295,7 +295,7 @@
                 android:layout_height="35dp"
                 android:text="@string/reset"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color">
             </Button>
@@ -342,7 +342,7 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TSCBlack"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="+">
@@ -367,7 +367,7 @@
                 android:layout_height="35dp"
                 android:text="@string/reset"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color">
             </Button>
@@ -414,7 +414,7 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TSCBlue"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="+">
@@ -439,7 +439,7 @@
                 android:layout_height="35dp"
                 android:text="@string/reset"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color">
             </Button>
@@ -486,7 +486,7 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TSCGreen"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="+">
@@ -511,7 +511,7 @@
                 android:layout_height="35dp"
                 android:text="@string/reset"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color">
             </Button>
@@ -558,7 +558,7 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TSCRed"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="+">
@@ -583,7 +583,7 @@
                 android:layout_height="35dp"
                 android:text="@string/reset"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color">
             </Button>
@@ -630,7 +630,7 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_toRightOf="@+id/TSCColorless"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color"
                 android:text="+">
@@ -655,7 +655,7 @@
                 android:layout_height="35dp"
                 android:text="@string/reset"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="14dp"
                 android:background="@drawable/btn_app_form"
                 android:textColor="@color/button_text_color">
             </Button>

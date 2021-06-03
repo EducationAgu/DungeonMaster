@@ -10,6 +10,6 @@
             android:icon="@mipmap/ex2"
             android:title="Exit"
             app:showAsAction="withText" />
-</group>
+  </group>
 
-    </menu>
+</menu>
